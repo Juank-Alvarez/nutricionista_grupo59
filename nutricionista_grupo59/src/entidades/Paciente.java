@@ -3,8 +3,9 @@ package entidades;
 
 public class Paciente {
     private String nombre;
+    private String apellido;
     private int dni;
-    private String Domicilio;
+    private String domicilio;
     private String telefono;
     private int idPaciente;
 
@@ -14,14 +15,14 @@ public class Paciente {
     public Paciente(String nombre, int dni, String Domicilio, String telefono) {
         this.nombre = nombre;
         this.dni = dni;
-        this.Domicilio = Domicilio;
+        this.domicilio = Domicilio;
         this.telefono = telefono;
     }
 
     public Paciente(String nombre, int dni, String Domicilio, String telefono, int idPaciente) {
         this.nombre = nombre;
         this.dni = dni;
-        this.Domicilio = Domicilio;
+        this.domicilio = Domicilio;
         this.telefono = telefono;
         this.idPaciente = idPaciente;
     }
@@ -43,11 +44,11 @@ public class Paciente {
     }
 
     public String getDomicilio() {
-        return Domicilio;
+        return domicilio;
     }
 
-    public void setDomicilio(String Domicilio) {
-        this.Domicilio = Domicilio;
+    public void setDomicilio(String domicilio) {
+        this.domicilio = domicilio;
     }
 
     public String getTelefono() {
@@ -64,6 +65,14 @@ public class Paciente {
 
     public void setIdPaciente(int idPaciente) {
         this.idPaciente = idPaciente;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
     
     

@@ -9,6 +9,7 @@ public class Dieta {
     private Paciente paciente;
     private LocalDate fechaInicial;
     private double pesoInicial;
+    private double pesoBuscado;
     private double pesoFinal;
     private LocalDate fechaFinal;
 
