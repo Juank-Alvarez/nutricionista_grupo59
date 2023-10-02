@@ -10,7 +10,6 @@ public class PacienteData {
     public PacienteData(){
         con=Conexion.getConexion();
     }
-    
-    
-    
+
+   
 }
