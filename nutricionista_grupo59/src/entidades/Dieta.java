@@ -14,11 +14,12 @@ public class Dieta {
     private String genero;
     private double altura;
     private LocalDate fechaFinal;
+    private boolean estado;
 
     public Dieta() {
     }
 
-    public Dieta(int idDieta, String nombre, Paciente paciente, LocalDate fechaInicial, double pesoInicial, double pesoBuscado, double pesoFinal, String genero, double altura, LocalDate fechaFinal) {
+    public Dieta(int idDieta, String nombre, Paciente paciente, LocalDate fechaInicial, double pesoInicial, double pesoBuscado, double pesoFinal, String genero, double altura, LocalDate fechaFinal, boolean estado) {
         this.idDieta = idDieta;
         this.nombre = nombre;
         this.paciente = paciente;
@@ -29,9 +30,10 @@ public class Dieta {
         this.genero = genero;
         this.altura = altura;
         this.fechaFinal = fechaFinal;
+        this.estado = estado;
     }
 
-    public Dieta(String nombre, Paciente paciente, LocalDate fechaInicial, double pesoInicial, double pesoBuscado, double pesoFinal, String genero, double altura, LocalDate fechaFinal) {
+    public Dieta(String nombre, Paciente paciente, LocalDate fechaInicial, double pesoInicial, double pesoBuscado, double pesoFinal, String genero, double altura, LocalDate fechaFinal, boolean estado) {
         this.nombre = nombre;
         this.paciente = paciente;
         this.fechaInicial = fechaInicial;
@@ -41,6 +43,15 @@ public class Dieta {
         this.genero = genero;
         this.altura = altura;
         this.fechaFinal = fechaFinal;
+        this.estado = estado;
+    }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
 
     public String getGenero() {

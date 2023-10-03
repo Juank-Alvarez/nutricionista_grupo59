@@ -7,7 +7,9 @@ import entidades.Paciente;
 public class Nutricionista_grupo59 {
 
     public static void main(String[] args) {
-        Paciente pac=new Paciente();
+        Paciente paciente1=new Paciente();
+        
+        
     }
     
 }
