@@ -45,8 +45,8 @@ public class PacienteData {
     
     //
      public void agregarPaciente(Paciente paciente){
-        String sql="INSERT INTO paciente ( nombre,apellido,dni, domicilio, telefono) "
-                + "VALUES (? ,? ,? ,? ,?)";
+        String sql="INSERT INTO paciente ( nombre,apellido,dni, domicilio, telefono, estado) "
+                + "VALUES (? ,? ,? , ?, ? ,?)";
         try {
             PreparedStatement ps=con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, paciente.getNombre());
@@ -54,6 +54,7 @@ public class PacienteData {
             ps.setInt(3, paciente.getDni());
             ps.setString(4, paciente.getDomicilio());
             ps.setString(5, paciente.getTelefono());
+            ps.setBoolean(6, paciente.isEstado());
             
             ps.executeUpdate();
             
@@ -145,7 +146,7 @@ public class PacienteData {
         
     } 
      
-     public void modificarAlumno(Paciente paciente){
+     public void modificarPaciente(Paciente paciente){
         String sql="UPDATE paciente SET dni = ?, apellido = ?, nombre = ?, domicilio = ? , telefono =?"
                 + "WHERE idPaciente = ?";
         
@@ -157,6 +158,7 @@ public class PacienteData {
             ps.setString(4, paciente.getDomicilio());
             ps.setString(5, paciente.getTelefono());
             ps.setInt(6, paciente.getIdPaciente());
+            
             int exito = ps.executeUpdate();
             if(exito==1){
                 JOptionPane.showMessageDialog(null, "Paciente modificado");
@@ -164,7 +166,7 @@ public class PacienteData {
                 JOptionPane.showMessageDialog(null, "Paciente no se pudo modificar");
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a modificarAlumno");
+            JOptionPane.showMessageDialog(null, "Error al acceder a modificarAlumno"+ex);
         }
         
     }
