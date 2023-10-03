@@ -3,9 +3,11 @@ package accesoADatos;
 
 import entidades.Paciente;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -40,5 +42,130 @@ public class PacienteData {
         }
         return pacientes;
         }
+    
+    //
+     public void agregarPaciente(Paciente paciente){
+        String sql="INSERT INTO paciente ( nombre,apellido,dni, domicilio, telefono) "
+                + "VALUES (? ,? ,? ,? ,?)";
+        try {
+            PreparedStatement ps=con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
+            ps.setString(1, paciente.getNombre());
+            ps.setString(2, paciente.getApellido());
+            ps.setInt(3, paciente.getDni());
+            ps.setString(4, paciente.getDomicilio());
+            ps.setString(5, paciente.getTelefono());
+            
+            ps.executeUpdate();
+            
+            ResultSet rs=ps.getGeneratedKeys();
+            if(rs.next()){
+                
+                paciente.setIdPaciente(rs.getInt(1));
+                JOptionPane.showMessageDialog(null, "Paciente Guardado");
+            }
+            ps.close();
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a agregarPaciente");
+        }
+    }
+     
+     //
+     public void eliminarPaciente(int id){
+        String sql="UPDATE paciente SET estado = 0 WHERE idPaciente = ?";
+        
+        try {
+            PreparedStatement ps=con.prepareStatement(sql);
+            ps.setInt (1,id);
+            int exito= ps.executeUpdate();
+            if(exito==1){
+                JOptionPane.showMessageDialog(null, "Paciente borrado");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder eliminarPaciente");
+        }
+        
+        
+        
+    }
+     
+     //
+     public Paciente buscarPaciente(int id){
+        String sql="SELECT nombre,apellido,dni, domicilio, telefono, estado  FROM paciente WHERE idPaciente = ? ";
+        Paciente paciente= null;
+        
+        try {
+            PreparedStatement ps=con.prepareStatement(sql);
+            ps.setInt(1,id);
+            ResultSet rs=ps.executeQuery();
+            if(rs.next()){
+                paciente=new Paciente();
+                paciente.setIdPaciente(id);
+                paciente.setDni(rs.getInt("dni"));
+                paciente.setApellido(rs.getString("apellido"));
+                paciente.setNombre(rs.getString("nombre"));
+                paciente.setDomicilio(rs.getString("domicilio"));
+                
+                paciente.setEstado(rs.getBoolean("estado"));
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "No se pudo acceder a buscarPaciente");
+        }
+        return paciente;
+        
+    }
    
+     public Paciente buscarPacientePorDni(int dni){
+        
+         String sql="SELECT idAlumno, nombre,apellido,dni, domicilio, telefono, estado FROM paciente WHERE dni = ? ";
+        Paciente paciente=null;
+        
+        try {
+            PreparedStatement ps=con.prepareStatement(sql);
+            ps.setInt(1,dni);
+            ResultSet rs=ps.executeQuery();
+            if(rs.next()){
+                
+                paciente=new Paciente();
+                paciente.setIdPaciente(rs.getInt("idPaciente"));
+                paciente.setDni(rs.getInt(dni));
+                paciente.setApellido(rs.getString("apellido"));
+                paciente.setNombre(rs.getString("nombre"));
+                paciente.setDomicilio(rs.getString("domicilio"));
+                
+                paciente.setEstado(rs.getBoolean("estado"));
+
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "No se pudo acceder buscarPacientePor Dni");
+        }
+        return paciente;
+        
+    } 
+     
+     public void modificarAlumno(Paciente paciente){
+        String sql="UPDATE paciente SET dni = ?, apellido = ?, nombre = ?, domicilio = ? , telefono =?"
+                + "WHERE idPaciente = ?";
+        
+        try {
+            PreparedStatement ps= con.prepareStatement(sql);
+            ps.setInt(1, paciente.getDni());
+            ps.setString(2, paciente.getApellido());
+            ps.setString(3, paciente.getNombre());
+            ps.setString(4, paciente.getDomicilio());
+            ps.setString(5, paciente.getTelefono());
+            ps.setInt(6, paciente.getIdPaciente());
+            int exito = ps.executeUpdate();
+            if(exito==1){
+                JOptionPane.showMessageDialog(null, "Paciente modificado");
+            }else{
+                JOptionPane.showMessageDialog(null, "Paciente no se pudo modificar");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a modificarAlumno");
+        }
+        
+    }
 }

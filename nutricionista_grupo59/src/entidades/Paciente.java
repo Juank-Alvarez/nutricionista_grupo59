@@ -8,24 +8,40 @@ public class Paciente {
     private String domicilio;
     private String telefono;
     private int idPaciente;
+    private boolean estado;
+    
 
     public Paciente() {
     }
 
-    public Paciente(String nombre, int dni, String Domicilio, String telefono) {
+    public Paciente(String nombre, String apellido, int dni, String domicilio, String telefono, int idPaciente, boolean estado) {
         this.nombre = nombre;
+        this.apellido = apellido;
         this.dni = dni;
-        this.domicilio = Domicilio;
-        this.telefono = telefono;
-    }
-
-    public Paciente(String nombre, int dni, String Domicilio, String telefono, int idPaciente) {
-        this.nombre = nombre;
-        this.dni = dni;
-        this.domicilio = Domicilio;
+        this.domicilio = domicilio;
         this.telefono = telefono;
         this.idPaciente = idPaciente;
+        this.estado = estado;
     }
+
+    public Paciente(String nombre, String apellido, int dni, String domicilio, String telefono, boolean estado) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.domicilio = domicilio;
+        this.telefono = telefono;
+        this.estado = estado;
+    }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+
+   
 
     public String getNombre() {
         return nombre;
