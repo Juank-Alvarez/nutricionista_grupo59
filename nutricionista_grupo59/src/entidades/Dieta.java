@@ -11,26 +11,14 @@ public class Dieta {
     private double pesoInicial;
     private double pesoBuscado;
     private double pesoFinal;
-    private char genero;
+    private String genero;
     private double altura;
     private LocalDate fechaFinal;
 
     public Dieta() {
     }
 
-    public Dieta(String nombre, Paciente paciente, LocalDate fechaInicial, double pesoInicial, double pesoBuscado, double pesoFinal, char genero, double altura, LocalDate fechaFinal) {
-        this.nombre = nombre;
-        this.paciente = paciente;
-        this.fechaInicial = fechaInicial;
-        this.pesoInicial = pesoInicial;
-        this.pesoBuscado = pesoBuscado;
-        this.pesoFinal = pesoFinal;
-        this.genero = genero;
-        this.altura = altura;
-        this.fechaFinal = fechaFinal;
-    }
-
-    public Dieta(int idDieta, String nombre, Paciente paciente, LocalDate fechaInicial, double pesoInicial, double pesoBuscado, double pesoFinal, char genero, double altura, LocalDate fechaFinal) {
+    public Dieta(int idDieta, String nombre, Paciente paciente, LocalDate fechaInicial, double pesoInicial, double pesoBuscado, double pesoFinal, String genero, double altura, LocalDate fechaFinal) {
         this.idDieta = idDieta;
         this.nombre = nombre;
         this.paciente = paciente;
@@ -43,11 +31,23 @@ public class Dieta {
         this.fechaFinal = fechaFinal;
     }
 
-    public char getGenero() {
+    public Dieta(String nombre, Paciente paciente, LocalDate fechaInicial, double pesoInicial, double pesoBuscado, double pesoFinal, String genero, double altura, LocalDate fechaFinal) {
+        this.nombre = nombre;
+        this.paciente = paciente;
+        this.fechaInicial = fechaInicial;
+        this.pesoInicial = pesoInicial;
+        this.pesoBuscado = pesoBuscado;
+        this.pesoFinal = pesoFinal;
+        this.genero = genero;
+        this.altura = altura;
+        this.fechaFinal = fechaFinal;
+    }
+
+    public String getGenero() {
         return genero;
     }
 
-    public void setGenero(char genero) {
+    public void setGenero(String genero) {
         this.genero = genero;
     }
 
@@ -124,7 +124,5 @@ public class Dieta {
     public void setFechaFinal(LocalDate fechaFinal) {
         this.fechaFinal = fechaFinal;
     }
-    
-    
-    
+     
 }
