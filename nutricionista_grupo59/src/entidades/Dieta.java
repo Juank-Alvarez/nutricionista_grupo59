@@ -11,29 +11,63 @@ public class Dieta {
     private double pesoInicial;
     private double pesoBuscado;
     private double pesoFinal;
+    private char genero;
+    private double altura;
     private LocalDate fechaFinal;
 
     public Dieta() {
     }
 
-    public Dieta(String nombre, Paciente paciente, LocalDate fechaInicial, double pesoInicial, double pesoFinal, LocalDate fechaFinal) {
+    public Dieta(String nombre, Paciente paciente, LocalDate fechaInicial, double pesoInicial, double pesoBuscado, double pesoFinal, char genero, double altura, LocalDate fechaFinal) {
         this.nombre = nombre;
         this.paciente = paciente;
         this.fechaInicial = fechaInicial;
         this.pesoInicial = pesoInicial;
+        this.pesoBuscado = pesoBuscado;
         this.pesoFinal = pesoFinal;
+        this.genero = genero;
+        this.altura = altura;
         this.fechaFinal = fechaFinal;
     }
 
-    public Dieta(int idDieta, String nombre, Paciente paciente, LocalDate fechaInicial, double pesoInicial, double pesoFinal, LocalDate fechaFinal) {
+    public Dieta(int idDieta, String nombre, Paciente paciente, LocalDate fechaInicial, double pesoInicial, double pesoBuscado, double pesoFinal, char genero, double altura, LocalDate fechaFinal) {
         this.idDieta = idDieta;
         this.nombre = nombre;
         this.paciente = paciente;
         this.fechaInicial = fechaInicial;
         this.pesoInicial = pesoInicial;
+        this.pesoBuscado = pesoBuscado;
         this.pesoFinal = pesoFinal;
+        this.genero = genero;
+        this.altura = altura;
         this.fechaFinal = fechaFinal;
     }
+
+    public char getGenero() {
+        return genero;
+    }
+
+    public void setGenero(char genero) {
+        this.genero = genero;
+    }
+
+    public double getAltura() {
+        return altura;
+    }
+
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
+
+    public double getPesoBuscado() {
+        return pesoBuscado;
+    }
+
+    public void setPesoBuscado(double pesoBuscado) {
+        this.pesoBuscado = pesoBuscado;
+    }
+
+
 
     public int getIdDieta() {
         return idDieta;
