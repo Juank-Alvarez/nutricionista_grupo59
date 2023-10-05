@@ -11,6 +11,9 @@ public class Comida {
     public Comida() {
     }
 
+    
+    
+
     public Comida(String nombre, String detalle, int cantCalorias, int idComida, boolean estado) {
         this.nombre = nombre;
         this.detalle = detalle;
@@ -66,5 +69,8 @@ public class Comida {
         this.idComida = idComida;
     }
     
-    
+    @Override
+    public String toString() {
+        return "Comida{" + "nombre=" + nombre + ", detalle=" + detalle + ", cantCalorias=" + cantCalorias + ", idComida=" + idComida + ", estado=" + estado + '}';
+    }
 }
