@@ -1,30 +1,9 @@
 
-package accesoADatos;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
-import javax.swing.JOptionPane;
-
-public class DietaComidaData {
-    private Connection con=null;
-    
-    public DietaComidaData(){
-        con=Conexion.getConexion();
-    }
-}
-
-package nutricionista_grupo59;
-
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 //package dietacomida;
@@ -222,9 +201,7 @@ public class DietaComida {
             throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
         }
     }
-    
 }
-
 
 //    public static void main(String[] args) {
 //        // TODO code application logic here
