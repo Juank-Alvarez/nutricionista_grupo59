@@ -26,7 +26,7 @@ public class ComidaData {
             ps.setString(1, comida.getNombre());
             ps.setString(2, comida.getDetalle());
             ps.setInt(3, comida.getCantCalorias());
-            ps.setBoolean(3, true);
+            ps.setBoolean(4, true);
             ps.executeUpdate();
             
             ResultSet rs=ps.getGeneratedKeys();
