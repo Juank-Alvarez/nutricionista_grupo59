@@ -22,20 +22,20 @@ public class DietaData {
     }
     
     public void agregarDieta(Dieta dieta){
-        String sql="INSERT INTO dieta ( nombre,idPaciente,fechaInicial, pesoInicial, pesoBuscado, pesoFinal, "
-                + "fechaFinal, altura, genero, estado) VALUES (? ,? ,? , ?, ? ,? , ?, ? ,? ,?)";
+        String sql="INSERT INTO dieta ( nombre,idPaciente,fechaInicial, pesoInicial, pesoFinal, "
+                + "fechaFinal, altura, genero, estado) VALUES (? ,? ,? , ?, ? ,? , ? ,? ,?)";
         try {
             PreparedStatement ps=con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, dieta.getNombre());
             ps.setInt(2, dieta.getPaciente().getIdPaciente());
             ps.setDate(3, Date.valueOf(dieta.getFechaInicial()));
             ps.setDouble(4, dieta.getPesoInicial());
-            ps.setDouble(5, dieta.getPesoBuscado());
-            ps.setDouble(6, dieta.getPesoFinal());
-            ps.setDate(7, Date.valueOf(dieta.getFechaFinal()));
-            ps.setDouble(8, dieta.getAltura());
-            ps.setString(9, dieta.getGenero());
-            ps.setBoolean(10, dieta.isEstado());
+            
+            ps.setDouble(5, dieta.getPesoFinal());
+            ps.setDate(6, Date.valueOf(dieta.getFechaFinal()));
+            ps.setDouble(7, dieta.getAltura());
+            ps.setString(8, dieta.getGenero());
+            ps.setBoolean(9, dieta.isEstado());
             
             ps.executeUpdate();
             
@@ -86,7 +86,7 @@ public class DietaData {
                 paciente.setApellido(rs.getString("apellido"));
                 dieta.setPaciente(paciente);
                 dieta.setPesoInicial(rs.getDouble("pesoInicial"));
-                dieta.setPesoBuscado(rs.getDouble("pesoBuscado"));
+                
                 dieta.setPesoFinal(rs.getDouble("pesoFinal"));
             }
             ps.close();
@@ -100,7 +100,7 @@ public class DietaData {
     public void modificarDieta(Dieta dieta){
         //no puse idpaciente, revisar despues
         String sql="UPDATE dieta SET nombre = ?, fechaInicial = ?, pesoInicial = ?, "
-                + "pesoBuscado = ?, pesoFinal = ?, fechaFinal = ?, altura = ?, genero = ?"
+                + " pesoFinal = ?, fechaFinal = ?, altura = ?, genero = ?"
                 + "WHERE idDieta = ?";
         
         try {
@@ -108,7 +108,7 @@ public class DietaData {
             ps.setString(1, dieta.getNombre());
             ps.setDate(2, Date.valueOf(dieta.getFechaInicial()));
             ps.setDouble(3, dieta.getPesoInicial());
-            ps.setDouble(4, dieta.getPesoBuscado());
+            
             ps.setDouble(5, dieta.getPesoFinal());
             ps.setDate(6, Date.valueOf(dieta.getFechaFinal()));
             ps.setDouble(7, dieta.getAltura());

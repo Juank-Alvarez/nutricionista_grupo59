@@ -40,7 +40,7 @@ public class Nutricionista_grupo59 {
 //         for(Comida co: lista){
 //             System.out.println(co.toString());
 //         }
-        Dieta dieta1=new Dieta(1,"astringente",paciente1,LocalDate.of(2020, 02, 07),100,70,90,"Masculino",1.80,LocalDate.of(2021, 05, 02),true);
+        Dieta dieta1=new Dieta(1,"astringente",paciente1,LocalDate.of(2020, 02, 07),100,90,"Masculino",1.80,LocalDate.of(2021, 05, 02),true);
         DietaData dd= new DietaData();
         Dieta dieta2=new Dieta();
 //        dd.agregarDieta(dieta1);
