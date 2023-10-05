@@ -135,5 +135,11 @@ public class Dieta {
     public void setFechaFinal(LocalDate fechaFinal) {
         this.fechaFinal = fechaFinal;
     }
+
+    @Override
+    public String toString() {
+        return "Dieta{" + "nombre dieta=" + nombre + ", nombre paciente=" + paciente.getNombre() + ", apellido paciente=" + paciente.getApellido() + ", fechaInicial=" + fechaInicial + ", pesoInicial=" + pesoInicial + ", pesoBuscado=" + pesoBuscado + ", pesoFinal=" + pesoFinal + ", genero=" + genero + ", altura=" + altura + ", fechaFinal=" + fechaFinal + '}';
+    }
      
+    
 }

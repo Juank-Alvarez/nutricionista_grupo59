@@ -26,13 +26,13 @@ public class ComidaData {
             ps.setString(1, comida.getNombre());
             ps.setString(2, comida.getDetalle());
             ps.setInt(3, comida.getCantCalorias());
-            ps.setBoolean(4, true);
+            ps.setBoolean(4, comida.isEstado());
             ps.executeUpdate();
             
             ResultSet rs=ps.getGeneratedKeys();
             if(rs.next()){
                 comida.setIdComida(rs.getInt(1));
-                JOptionPane.showMessageDialog(null, "Materia Guardada");
+                JOptionPane.showMessageDialog(null, "Comida Guardada");
             } 
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a guardarComida"+ex);
@@ -79,10 +79,10 @@ public class ComidaData {
             
             int exito=ps.executeUpdate();
             if(exito==1){
-                JOptionPane.showMessageDialog(null, "Materia modificada");
+                JOptionPane.showMessageDialog(null, "Comida modificada");
             }else{
                 //aqui error
-                JOptionPane.showMessageDialog(null, "Materia no se pudo modificar");
+                JOptionPane.showMessageDialog(null, "Comida no se pudo modificar");
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "No se pudo acceder a modificarComida"+ex);

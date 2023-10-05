@@ -23,7 +23,7 @@ public class DietaData {
     
     public void agregarDieta(Dieta dieta){
         String sql="INSERT INTO dieta ( nombre,idPaciente,fechaInicial, pesoInicial, pesoBuscado, pesoFinal, "
-                + "fechaFinal, altura, gereno, estado) VALUES (? ,? ,? , ?, ? ,? , ?, ? ,? ,?)";
+                + "fechaFinal, altura, genero, estado) VALUES (? ,? ,? , ?, ? ,? , ?, ? ,? ,?)";
         try {
             PreparedStatement ps=con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, dieta.getNombre());
@@ -113,6 +113,8 @@ public class DietaData {
             ps.setDate(6, Date.valueOf(dieta.getFechaFinal()));
             ps.setDouble(7, dieta.getAltura());
             ps.setString(8, dieta.getGenero());
+            ps.setInt(9, dieta.getIdDieta());
+            
             
             int exito = ps.executeUpdate();
             if(exito==1){
@@ -121,7 +123,7 @@ public class DietaData {
                 JOptionPane.showMessageDialog(null, "Dieta no se pudo modificar");
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a modificarDieta");
+            JOptionPane.showMessageDialog(null, "Error al acceder a modificarDieta"+ex);
         }
         
     }

@@ -14,7 +14,7 @@ public class Comida {
     
     
 
-    public Comida(String nombre, String detalle, int cantCalorias, int idComida, boolean estado) {
+    public Comida( int idComida, String nombre, String detalle, int cantCalorias, boolean estado) {
         this.nombre = nombre;
         this.detalle = detalle;
         this.cantCalorias = cantCalorias;
