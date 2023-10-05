@@ -73,11 +73,15 @@ public class ComidaData {
             ps.setString(1, comida.getNombre());
             ps.setString(2, comida.getDetalle());
             ps.setInt(3, comida.getCantCalorias());
+            ps.setBoolean(4, true);
+            ps.setInt(5, comida.getIdComida());
+                    
             
             int exito=ps.executeUpdate();
             if(exito==1){
                 JOptionPane.showMessageDialog(null, "Materia modificada");
             }else{
+                //aqui error
                 JOptionPane.showMessageDialog(null, "Materia no se pudo modificar");
             }
         } catch (SQLException ex) {
