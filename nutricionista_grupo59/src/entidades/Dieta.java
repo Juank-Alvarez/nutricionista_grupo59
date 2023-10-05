@@ -9,7 +9,7 @@ public class Dieta {
     private Paciente paciente;
     private LocalDate fechaInicial;
     private double pesoInicial;
-    private double pesoBuscado;
+    
     private double pesoFinal;
     private String genero;
     private double altura;
@@ -19,13 +19,13 @@ public class Dieta {
     public Dieta() {
     }
 
-    public Dieta(int idDieta, String nombre, Paciente paciente, LocalDate fechaInicial, double pesoInicial, double pesoBuscado, double pesoFinal, String genero, double altura, LocalDate fechaFinal, boolean estado) {
+    public Dieta(int idDieta, String nombre, Paciente paciente, LocalDate fechaInicial, double pesoInicial, double pesoFinal, String genero, double altura, LocalDate fechaFinal, boolean estado) {
         this.idDieta = idDieta;
         this.nombre = nombre;
         this.paciente = paciente;
         this.fechaInicial = fechaInicial;
         this.pesoInicial = pesoInicial;
-        this.pesoBuscado = pesoBuscado;
+        
         this.pesoFinal = pesoFinal;
         this.genero = genero;
         this.altura = altura;
@@ -38,7 +38,7 @@ public class Dieta {
         this.paciente = paciente;
         this.fechaInicial = fechaInicial;
         this.pesoInicial = pesoInicial;
-        this.pesoBuscado = pesoBuscado;
+        
         this.pesoFinal = pesoFinal;
         this.genero = genero;
         this.altura = altura;
@@ -70,13 +70,7 @@ public class Dieta {
         this.altura = altura;
     }
 
-    public double getPesoBuscado() {
-        return pesoBuscado;
-    }
-
-    public void setPesoBuscado(double pesoBuscado) {
-        this.pesoBuscado = pesoBuscado;
-    }
+   
 
 
 
@@ -138,7 +132,7 @@ public class Dieta {
 
     @Override
     public String toString() {
-        return "Dieta{" + "nombre dieta=" + nombre + ", nombre paciente=" + paciente.getNombre() + ", apellido paciente=" + paciente.getApellido() + ", fechaInicial=" + fechaInicial + ", pesoInicial=" + pesoInicial + ", pesoBuscado=" + pesoBuscado + ", pesoFinal=" + pesoFinal + ", genero=" + genero + ", altura=" + altura + ", fechaFinal=" + fechaFinal + '}';
+        return "Dieta{" + "nombre dieta=" + nombre + ", nombre paciente=" + paciente.getNombre() + ", apellido paciente=" + paciente.getApellido() + ", fechaInicial=" + fechaInicial + ", pesoInicial=" + pesoInicial +  ", pesoFinal=" + pesoFinal + ", genero=" + genero + ", altura=" + altura + ", fechaFinal=" + fechaFinal + '}';
     }
      
     

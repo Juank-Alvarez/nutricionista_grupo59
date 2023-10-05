@@ -73,7 +73,7 @@ public class ComidaData {
             ps.setString(1, comida.getNombre());
             ps.setString(2, comida.getDetalle());
             ps.setInt(3, comida.getCantCalorias());
-            ps.setBoolean(4, true);
+            ps.setBoolean(4, comida.isEstado());
             ps.setInt(5, comida.getIdComida());
                     
             
@@ -117,7 +117,7 @@ public class ComidaData {
                 comida.setNombre(rs.getString("nombre"));
                 comida.setDetalle(rs.getString("detalle"));
                 comida.setCantCalorias(rs.getInt("cantCalorias"));
-                comida.setEstado(true);
+                comida.setEstado(rs.getBoolean("estado"));
                 
                 comidas.add(comida);
              }
