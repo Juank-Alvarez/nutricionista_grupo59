@@ -26,12 +26,17 @@ public class Nutricionista_grupo59 {
 //        System.out.println(pac.toString());
 //          Comida comida1=new Comida("ensalada","mixta",150,true);
 //          Comida comida2=new Comida("tarta","dulce",500,true);
-//          ComidaData cd=new ComidaData();
+          ComidaData cd=new ComidaData();
 ////          cd.guardarComida(comida1);
 ////          cd.guardarComida(comida2);
 //            //System.out.println(cd.buscarComida(2));
 //            cd.modificarComida(comida2);
 //            System.out.println(cd.buscarComida(2));
+         ArrayList<Comida> lista=new ArrayList<>();
+         lista=(ArrayList<Comida>)cd.listarComida();
+         for(Comida co: lista){
+             System.out.println(co.toString());
+         }
 //          
     }
     
