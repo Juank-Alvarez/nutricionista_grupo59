@@ -24,3 +24,4 @@ hs_err_pid*
 replay_pid*
 /nutricionista_grupo59/build/
 *.properties
+/nutricionista_grupo59/dist/
