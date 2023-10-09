@@ -37,8 +37,12 @@ public class Segundapantalla extends javax.swing.JInternalFrame {
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
-        jlFondo = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jbSalir = new javax.swing.JButton();
 
+        setClosable(true);
+        setPreferredSize(new java.awt.Dimension(700, 600));
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
@@ -87,15 +91,34 @@ public class Segundapantalla extends javax.swing.JInternalFrame {
         getContentPane().add(jTextField5);
         jTextField5.setBounds(93, 268, 197, 22);
 
-        jlFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/istockphoto-1370276468-612x612.jpg"))); // NOI18N
-        getContentPane().add(jlFondo);
-        jlFondo.setBounds(-10, -38, 540, 450);
+        jButton1.setText("Limpiar campos");
+        getContentPane().add(jButton1);
+        jButton1.setBounds(19, 340, 150, 25);
+
+        jButton2.setText("Guardar");
+        getContentPane().add(jButton2);
+        jButton2.setBounds(220, 340, 77, 25);
+
+        jbSalir.setText("Salir");
+        jbSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSalirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jbSalir);
+        jbSalir.setBounds(360, 340, 79, 25);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
+     dispose();
+    }//GEN-LAST:event_jbSalirActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -107,6 +130,10 @@ public class Segundapantalla extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
-    private javax.swing.JLabel jlFondo;
+    private javax.swing.JButton jbSalir;
     // End of variables declaration//GEN-END:variables
-}
+
+
+        }
+
+

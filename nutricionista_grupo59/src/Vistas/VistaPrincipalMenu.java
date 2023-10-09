@@ -29,7 +29,7 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
 
         Escritorio = new javax.swing.JDesktopPane();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jbIngresar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
@@ -44,9 +44,14 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
         Escritorio.add(jButton3);
         jButton3.setBounds(41, 286, 93, 25);
 
-        jButton4.setText("Ingresar");
-        Escritorio.add(jButton4);
-        jButton4.setBounds(191, 286, 77, 25);
+        jbIngresar.setText("Ingresar");
+        jbIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbIngresarActionPerformed(evt);
+            }
+        });
+        Escritorio.add(jbIngresar);
+        jbIngresar.setBounds(191, 286, 77, 25);
 
         jLabel3.setText("Mensaje de Bienvenida");
         Escritorio.add(jLabel3);
@@ -72,18 +77,28 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         
-Escritorio.removeAll();
-        Escritorio.repaint();
-        Segundapantalla bpn=new Segundapantalla();
+        //Escritorio.removeAll();
+        //Escritorio.repaint();
+        Segundapantalla bpn = new Segundapantalla();
         bpn.setVisible(true);
         Escritorio.add(bpn);
         Escritorio.moveToFront(bpn);
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void jbIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIngresarActionPerformed
+       
+//        Escritorio.removeAll();
+//        Escritorio.repaint();
+        SegundaVista bpn=new SegundaVista();
+        bpn.setVisible(true);
+//        Escritorio.add(bpn);
+//        Escritorio.moveToFront(bpn);
+        dispose();
+        
+    }//GEN-LAST:event_jbIngresarActionPerformed
+
+  
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -119,8 +134,8 @@ Escritorio.removeAll();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane Escritorio;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton jbIngresar;
     // End of variables declaration//GEN-END:variables
 }
