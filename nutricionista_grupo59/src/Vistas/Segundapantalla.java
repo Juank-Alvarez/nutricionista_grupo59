@@ -95,9 +95,15 @@ public class Segundapantalla extends javax.swing.JInternalFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(19, 340, 150, 25);
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono_guardar_64.png"))); // NOI18N
         jButton2.setText("Guardar");
+        jButton2.setContentAreaFilled(false);
+        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton2.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono_guardar_72.png"))); // NOI18N
+        jButton2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono_guardar_96.png"))); // NOI18N
+        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         getContentPane().add(jButton2);
-        jButton2.setBounds(220, 340, 77, 25);
+        jButton2.setBounds(210, 320, 99, 120);
 
         jbSalir.setText("Salir");
         jbSalir.addActionListener(new java.awt.event.ActionListener() {
