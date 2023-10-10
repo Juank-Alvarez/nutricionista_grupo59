@@ -4,6 +4,10 @@
  */
 package Vistas;
 
+import accesoADatos.PacienteData;
+import entidades.Paciente;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Juan
@@ -33,8 +37,8 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        jtDni = new javax.swing.JTextField();
+        jtContraseña = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,7 +49,7 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
             }
         });
         Escritorio.add(jButton3);
-        jButton3.setBounds(41, 286, 93, 25);
+        jButton3.setBounds(41, 286, 89, 23);
 
         jbIngresar.setText("Ingresar");
         jbIngresar.addActionListener(new java.awt.event.ActionListener() {
@@ -54,7 +58,7 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
             }
         });
         Escritorio.add(jbIngresar);
-        jbIngresar.setBounds(190, 290, 77, 25);
+        jbIngresar.setBounds(190, 290, 72, 23);
 
         jLabel3.setText("Mensaje de Bienvenida");
         Escritorio.add(jLabel3);
@@ -67,14 +71,16 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
         jLabel2.setText("Comtraseña");
         Escritorio.add(jLabel2);
         jLabel2.setBounds(40, 430, 64, 16);
+        Escritorio.add(jtDni);
+        jtDni.setBounds(130, 370, 140, 22);
 
-        jTextField1.setText("jTextField1");
-        Escritorio.add(jTextField1);
-        jTextField1.setBounds(130, 370, 140, 22);
-
-        jPasswordField1.setText("jPasswordField1");
-        Escritorio.add(jPasswordField1);
-        jPasswordField1.setBounds(130, 420, 140, 22);
+        jtContraseña.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtContraseñaActionPerformed(evt);
+            }
+        });
+        Escritorio.add(jtContraseña);
+        jtContraseña.setBounds(130, 420, 140, 22);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -102,16 +108,32 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jbIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIngresarActionPerformed
-       
-//        Escritorio.removeAll();
-//        Escritorio.repaint();
-        SegundaVista bpn=new SegundaVista();
-        bpn.setVisible(true);
-//        Escritorio.add(bpn);
-//        Escritorio.moveToFront(bpn);
-        dispose();
         
+        PacienteData pd = new PacienteData();
+        Paciente paci = new Paciente();
+        if (jtContraseña.getText().isEmpty() || jtDni.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(this, "No puede haber campos vacios");
+                return;
+            }
+        try {
+            
+            paci = pd.buscarPacientePorDni(Integer.parseInt(jtDni.getText()));
+            if (paci != null && paci.getContraseña().equals(jtContraseña.getText()) && paci.getDni() == Integer.parseInt(jtDni.getText())) {
+                JOptionPane.showMessageDialog(this, "Se ingreso correctamente");
+                SegundaVista bpn = new SegundaVista();
+                bpn.setVisible(true);
+                dispose();
+            } else {
+                JOptionPane.showMessageDialog(this, "Usuario y/o contraseña incorrecto");
+            }
+        } catch (NumberFormatException nfe) {
+            JOptionPane.showMessageDialog(this, "Debe ingresar un dni valido");
+        }
     }//GEN-LAST:event_jbIngresarActionPerformed
+
+    private void jtContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtContraseñaActionPerformed
+        jtContraseña.setText("");
+    }//GEN-LAST:event_jtContraseñaActionPerformed
 
   
     public static void main(String args[]) {
@@ -152,8 +174,8 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton jbIngresar;
+    private javax.swing.JPasswordField jtContraseña;
+    private javax.swing.JTextField jtDni;
     // End of variables declaration//GEN-END:variables
 }

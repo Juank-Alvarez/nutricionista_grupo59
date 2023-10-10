@@ -47,7 +47,7 @@ public class PacienteData {
     //
      public void agregarPaciente(Paciente paciente){
         String sql="INSERT INTO paciente ( nombre,apellido, dni, domicilio, telefono, estado,contraseña) "
-                + "VALUES (? ,? ,? , ?, ? ,?)";
+                + "VALUES (? ,? ,? , ?, ? ,?, ?)";
         try {
             PreparedStatement ps=con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, paciente.getNombre());
@@ -119,7 +119,7 @@ public class PacienteData {
    
      public Paciente buscarPacientePorDni(int dni){
         
-         String sql="SELECT idAlumno, nombre,apellido,dni, domicilio, telefono, estado FROM paciente WHERE dni = ? ";
+         String sql="SELECT * FROM paciente WHERE dni = ? ";
         Paciente paciente=null;
         
         try {
@@ -127,20 +127,19 @@ public class PacienteData {
             ps.setInt(1,dni);
             ResultSet rs=ps.executeQuery();
             if(rs.next()){
-                
                 paciente=new Paciente();
                 paciente.setIdPaciente(rs.getInt("idPaciente"));
-                paciente.setDni(rs.getInt(dni));
+                paciente.setDni(dni);
                 paciente.setApellido(rs.getString("apellido"));
                 paciente.setNombre(rs.getString("nombre"));
                 paciente.setDomicilio(rs.getString("domicilio"));
-                
+                paciente.setContraseña(rs.getString("contraseña"));
                 paciente.setEstado(rs.getBoolean("estado"));
 
             }
             ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "No se pudo acceder buscarPacientePor Dni");
+            JOptionPane.showMessageDialog(null, "No se pudo acceder buscarPacientePor Dni "+ ex);
         }
         return paciente;
         
