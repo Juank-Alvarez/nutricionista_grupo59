@@ -42,7 +42,7 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
             }
         });
         Escritorio.add(jButton3);
-        jButton3.setBounds(41, 286, 93, 25);
+        jButton3.setBounds(41, 286, 89, 23);
 
         jbIngresar.setText("Ingresar");
         jbIngresar.addActionListener(new java.awt.event.ActionListener() {
@@ -51,7 +51,7 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
             }
         });
         Escritorio.add(jbIngresar);
-        jbIngresar.setBounds(191, 286, 77, 25);
+        jbIngresar.setBounds(191, 286, 72, 23);
 
         jLabel3.setText("Mensaje de Bienvenida");
         Escritorio.add(jLabel3);
@@ -73,16 +73,16 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         
         //Escritorio.removeAll();
         //Escritorio.repaint();
-        Segundapantalla bpn = new Segundapantalla();
+        PantallaRegistro bpn = new PantallaRegistro();
         bpn.setVisible(true);
-        Escritorio.add(bpn);
-        Escritorio.moveToFront(bpn);
+        dispose();
         
     }//GEN-LAST:event_jButton3ActionPerformed
 

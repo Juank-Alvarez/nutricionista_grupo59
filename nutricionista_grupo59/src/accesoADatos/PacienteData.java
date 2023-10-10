@@ -73,22 +73,20 @@ public class PacienteData {
     }
      
      //
-     public void eliminarPaciente(int id){
-        String sql="UPDATE paciente SET estado = 0 WHERE idPaciente = ?";
+     public void eliminarPaciente(int dni){
+        String sql="UPDATE paciente SET estado = 0 WHERE dni = ?";
         
         try {
             PreparedStatement ps=con.prepareStatement(sql);
-            ps.setInt (1,id);
-            int exito= ps.executeUpdate();
+            ps.setInt (1,dni);
+            int exito = ps.executeUpdate();
             if(exito==1){
                 JOptionPane.showMessageDialog(null, "Paciente borrado");
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder eliminarPaciente");
         }
-        
-        
-        
+ 
     }
      
      //
