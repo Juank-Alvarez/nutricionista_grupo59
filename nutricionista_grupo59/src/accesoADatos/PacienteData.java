@@ -46,8 +46,8 @@ public class PacienteData {
     
     //
      public void agregarPaciente(Paciente paciente){
-        String sql="INSERT INTO paciente,registropacientes ( nombre,apellido,paciente.dni, domicilio, telefono, estado,resgistropaciente.dni,contraseña) "
-                + "VALUES (? ,? ,? , ?, ? ,?,?,?)";
+        String sql="INSERT INTO paciente ( nombre,apellido, dni, domicilio, telefono, estado,contraseña) "
+                + "VALUES (? ,? ,? , ?, ? ,?)";
         try {
             PreparedStatement ps=con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, paciente.getNombre());
@@ -56,8 +56,7 @@ public class PacienteData {
             ps.setString(4, paciente.getDomicilio());
             ps.setString(5, paciente.getTelefono());
             ps.setBoolean(6, paciente.isEstado());
-            ps.setInt(7, paciente.getDni());
-            ps.setString(8, paciente.getContraseña());
+            ps.setString(7, paciente.getContraseña());
             
             ps.executeUpdate();
             
