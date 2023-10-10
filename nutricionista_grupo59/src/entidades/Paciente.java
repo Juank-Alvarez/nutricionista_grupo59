@@ -9,12 +9,13 @@ public class Paciente {
     private String telefono;
     private int idPaciente;
     private boolean estado;
+    private String contraseña;
     
 
     public Paciente() {
     }
 
-    public Paciente(String nombre, String apellido, int dni, String domicilio, String telefono, int idPaciente, boolean estado) {
+    public Paciente(String nombre, String apellido, int dni, String domicilio, String telefono, int idPaciente, boolean estado, String contraseña) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
@@ -22,15 +23,25 @@ public class Paciente {
         this.telefono = telefono;
         this.idPaciente = idPaciente;
         this.estado = estado;
+        this.contraseña = contraseña;
     }
 
-    public Paciente(String nombre, String apellido, int dni, String domicilio, String telefono, boolean estado) {
+    public Paciente(String nombre, String apellido, int dni, String domicilio, String telefono, boolean estado,String contraseña) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
         this.domicilio = domicilio;
         this.telefono = telefono;
         this.estado = estado;
+        this.contraseña = contraseña;
+    }
+
+    public String getContraseña() {
+        return contraseña;
+    }
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
     }
 
     public boolean isEstado() {

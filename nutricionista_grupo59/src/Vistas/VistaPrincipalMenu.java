@@ -31,7 +31,10 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jbIngresar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jPasswordField1 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,7 +45,7 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
             }
         });
         Escritorio.add(jButton3);
-        jButton3.setBounds(41, 286, 89, 23);
+        jButton3.setBounds(41, 286, 93, 25);
 
         jbIngresar.setText("Ingresar");
         jbIngresar.addActionListener(new java.awt.event.ActionListener() {
@@ -51,15 +54,27 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
             }
         });
         Escritorio.add(jbIngresar);
-        jbIngresar.setBounds(191, 286, 72, 23);
+        jbIngresar.setBounds(190, 290, 77, 25);
 
         jLabel3.setText("Mensaje de Bienvenida");
         Escritorio.add(jLabel3);
         jLabel3.setBounds(49, 50, 149, 177);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/IMG_20230925_173935332.jpg"))); // NOI18N
-        Escritorio.add(jLabel4);
-        jLabel4.setBounds(-9, 0, 820, 510);
+        jLabel1.setText("Dni");
+        Escritorio.add(jLabel1);
+        jLabel1.setBounds(40, 370, 70, 16);
+
+        jLabel2.setText("Comtraseña");
+        Escritorio.add(jLabel2);
+        jLabel2.setBounds(40, 430, 64, 16);
+
+        jTextField1.setText("jTextField1");
+        Escritorio.add(jTextField1);
+        jTextField1.setBounds(130, 370, 140, 22);
+
+        jPasswordField1.setText("jPasswordField1");
+        Escritorio.add(jPasswordField1);
+        jPasswordField1.setBounds(130, 420, 140, 22);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -134,8 +149,11 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane Escritorio;
     private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton jbIngresar;
     // End of variables declaration//GEN-END:variables
 }
