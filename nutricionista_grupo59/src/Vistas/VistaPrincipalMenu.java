@@ -6,7 +6,9 @@ package Vistas;
 
 import accesoADatos.PacienteData;
 import entidades.Paciente;
+import java.awt.BorderLayout;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -39,6 +41,7 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jtDni = new javax.swing.JTextField();
         jtContraseña = new javax.swing.JPasswordField();
+        contenido = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,7 +52,7 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
             }
         });
         Escritorio.add(jButton3);
-        jButton3.setBounds(41, 286, 89, 23);
+        jButton3.setBounds(20, 280, 120, 23);
 
         jbIngresar.setText("Ingresar");
         jbIngresar.addActionListener(new java.awt.event.ActionListener() {
@@ -58,11 +61,11 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
             }
         });
         Escritorio.add(jbIngresar);
-        jbIngresar.setBounds(190, 290, 72, 23);
+        jbIngresar.setBounds(160, 280, 120, 23);
 
         jLabel3.setText("Mensaje de Bienvenida");
         Escritorio.add(jLabel3);
-        jLabel3.setBounds(49, 50, 149, 177);
+        jLabel3.setBounds(50, 40, 149, 177);
 
         jLabel1.setText("Dni");
         Escritorio.add(jLabel1);
@@ -80,7 +83,23 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
             }
         });
         Escritorio.add(jtContraseña);
-        jtContraseña.setBounds(130, 420, 140, 22);
+        jtContraseña.setBounds(130, 430, 140, 22);
+
+        contenido.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout contenidoLayout = new javax.swing.GroupLayout(contenido);
+        contenido.setLayout(contenidoLayout);
+        contenidoLayout.setHorizontalGroup(
+            contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 520, Short.MAX_VALUE)
+        );
+        contenidoLayout.setVerticalGroup(
+            contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 510, Short.MAX_VALUE)
+        );
+
+        Escritorio.add(contenido);
+        contenido.setBounds(290, 0, 520, 510);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,11 +118,12 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         
-        //Escritorio.removeAll();
-        //Escritorio.repaint();
-        PantallaRegistro bpn = new PantallaRegistro();
-        bpn.setVisible(true);
-        dispose();
+        
+        VistaRegistro p1=new VistaRegistro();
+        ShowPanel(p1);
+//        PantallaRegistro bpn = new PantallaRegistro();
+//        bpn.setVisible(true);
+//        dispose();
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -170,12 +190,28 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane Escritorio;
+    private javax.swing.JPanel contenido;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JButton jbIngresar;
+    private javax.swing.JButton jbSalir;
+    private javax.swing.JButton jbSalir1;
+    private javax.swing.JButton jbSalir2;
     private javax.swing.JPasswordField jtContraseña;
     private javax.swing.JTextField jtDni;
     // End of variables declaration//GEN-END:variables
+
+    private void ShowPanel(JPanel panel) {
+
+        panel.setSize(680, 508);
+        panel.setLocation(0, 0);
+
+        contenido.removeAll();
+        contenido.add(panel, BorderLayout.CENTER);
+        contenido.revalidate();
+        contenido.repaint();
+    }
+
 }
