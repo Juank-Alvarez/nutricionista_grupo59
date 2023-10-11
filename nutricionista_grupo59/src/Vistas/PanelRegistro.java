@@ -6,18 +6,20 @@ package Vistas;
 
 import accesoADatos.PacienteData;
 import entidades.Paciente;
+import java.awt.BorderLayout;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
  * @author Usuario
  */
-public class VistaRegistro extends javax.swing.JPanel {
+public class PanelRegistro extends javax.swing.JPanel {
 
     /**
      * Creates new form VistaRegistro
      */
-    public VistaRegistro() {
+    public PanelRegistro() {
         initComponents();
     }
 
@@ -46,6 +48,7 @@ public class VistaRegistro extends javax.swing.JPanel {
         contraseña = new javax.swing.JPasswordField();
         jbLimpiar = new javax.swing.JButton();
         jbGuardar = new javax.swing.JButton();
+        jbVolver = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 51, 204));
@@ -89,6 +92,13 @@ public class VistaRegistro extends javax.swing.JPanel {
             }
         });
 
+        jbVolver.setText("Volver");
+        jbVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbVolverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -102,7 +112,9 @@ public class VistaRegistro extends javax.swing.JPanel {
                         .addGap(24, 24, 24)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jbLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jbLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jbVolver))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jbGuardar))
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -160,13 +172,15 @@ public class VistaRegistro extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jbGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(68, 68, 68)
-                        .addComponent(jbLimpiar)))
+                        .addComponent(jbLimpiar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jbVolver)))
                 .addContainerGap(68, Short.MAX_VALUE))
         );
 
@@ -192,7 +206,7 @@ public class VistaRegistro extends javax.swing.JPanel {
 
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
         //(String nombre, String apellido, int dni, String domicilio, String telefono, int idPaciente, boolean estado)
-
+        boolean b=false;
         if (jtNombre.getText().isEmpty() || jtApellido.getText().isEmpty() || jtDni.getText().isEmpty() || jtDomicilio.getText().isEmpty() || jtTelefono.getText().isEmpty() || contraseña.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "no puede haber campos vacios");
             return;
@@ -208,14 +222,24 @@ public class VistaRegistro extends javax.swing.JPanel {
             paci.setEstado(true);
             paci.setContraseña(contraseña.getText());
             pd.agregarPaciente(paci);
+            b=true;
         }catch (NumberFormatException nfe) {
             JOptionPane.showMessageDialog(this, "Debe ingresar datos validos");
         }
+        if(b==true){
+            PanelPorDefecto p1= new PanelPorDefecto();
+            ShowPanel(p1);
+        }   
     }//GEN-LAST:event_jbGuardarActionPerformed
 
     private void jtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtNombreActionPerformed
+
+    private void jbVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVolverActionPerformed
+        PanelPorDefecto p1= new PanelPorDefecto();
+        ShowPanel(p1);
+    }//GEN-LAST:event_jbVolverActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -230,10 +254,22 @@ public class VistaRegistro extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbGuardar;
     private javax.swing.JButton jbLimpiar;
+    private javax.swing.JButton jbVolver;
     private javax.swing.JTextField jtApellido;
     private javax.swing.JTextField jtDni;
     private javax.swing.JTextField jtDomicilio;
     private javax.swing.JTextField jtNombre;
     private javax.swing.JTextField jtTelefono;
     // End of variables declaration//GEN-END:variables
+private void ShowPanel(JPanel panel) {
+
+        panel.setSize(680, 420);
+        panel.setLocation(0, 0);
+
+        jPanel1.removeAll();
+        jPanel1.add(panel, BorderLayout.CENTER);
+        jPanel1.revalidate();
+        jPanel1.repaint();
+    }
+
 }

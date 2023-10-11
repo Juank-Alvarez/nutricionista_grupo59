@@ -16,11 +16,13 @@ import javax.swing.JPanel;
  */
 public class VistaPrincipalMenu extends javax.swing.JFrame {
 
-    /**
-     * Creates new form VistaPrincipalMenu
-     */
+    PacienteData pd = new PacienteData();
+    Paciente paci = new Paciente();
+    
     public VistaPrincipalMenu() {
         initComponents();
+        PanelPorDefecto p1=new PanelPorDefecto();
+        ShowPanel(p1);
         
     }
 
@@ -119,7 +121,7 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         
         
-        VistaRegistro p1=new VistaRegistro();
+        PanelRegistro p1=new PanelRegistro();
         ShowPanel(p1);
 //        PantallaRegistro bpn = new PantallaRegistro();
 //        bpn.setVisible(true);
@@ -129,8 +131,6 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
 
     private void jbIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIngresarActionPerformed
         
-        PacienteData pd = new PacienteData();
-        Paciente paci = new Paciente();
         if (jtContraseña.getText().isEmpty() || jtDni.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(this, "No puede haber campos vacios");
                 return;
@@ -139,8 +139,8 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
             
             paci = pd.buscarPacientePorDni(Integer.parseInt(jtDni.getText()));
             if (paci != null && paci.getContraseña().equals(jtContraseña.getText()) && paci.getDni() == Integer.parseInt(jtDni.getText())) {
-                JOptionPane.showMessageDialog(this, "Se ingreso correctamente");
-                SegundaVista bpn = new SegundaVista();
+                JOptionPane.showMessageDialog(this, "Bienvenido "+paci.getNombre());
+                SegundaVistaPrincipal bpn = new SegundaVistaPrincipal();
                 bpn.setVisible(true);
                 dispose();
             } else {
@@ -203,6 +203,10 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
     private javax.swing.JTextField jtDni;
     // End of variables declaration//GEN-END:variables
 
+    public Paciente SaludoPaciente(){
+        return paci;
+    }
+    
     private void ShowPanel(JPanel panel) {
 
         panel.setSize(680, 508);
