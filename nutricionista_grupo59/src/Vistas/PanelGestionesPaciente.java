@@ -51,6 +51,7 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
         jbBuscar = new javax.swing.JButton();
         jrEstado = new javax.swing.JRadioButton();
         jLabel7 = new javax.swing.JLabel();
+        jbAltaBaja = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 51, 204));
@@ -108,6 +109,13 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
 
         jLabel7.setText("Estado");
 
+        jbAltaBaja.setText("AltaBaja");
+        jbAltaBaja.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbAltaBajaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -148,7 +156,8 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jbVolver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jbGuardar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbBuscar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jbBuscar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbAltaBaja, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(23, 23, 23))
         );
         jPanel1Layout.setVerticalGroup(
@@ -184,11 +193,16 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addComponent(jbBuscar)))
-                .addGap(35, 35, 35)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jrEstado)
-                    .addComponent(jLabel7))
-                .addGap(45, 45, 45)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jrEstado)
+                            .addComponent(jLabel7)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jbAltaBaja)))
+                .addGap(36, 36, 36)
                 .addComponent(jbLimpiar)
                 .addGap(18, 18, 18)
                 .addComponent(jbVolver)
@@ -284,10 +298,22 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
             jtDomicilio.setText(paci.getDomicilio());
             jtTelefono.setText(paci.getTelefono());
             jrEstado.setSelected(paci.isEstado());
-            
+        }        
     }//GEN-LAST:event_jbBuscarActionPerformed
 
-    }
+    private void jbAltaBajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAltaBajaActionPerformed
+        if(jrEstado.isSelected()){
+            jrEstado.setSelected(false);
+            JOptionPane.showMessageDialog(this,"Se dio de baja al paciente ");
+        }else{
+            jrEstado.setSelected(true);
+            JOptionPane.showMessageDialog(this,"Se dio de alta al paciente ");
+            
+            }
+            
+    }//GEN-LAST:event_jbAltaBajaActionPerformed
+
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -297,6 +323,7 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton jbAltaBaja;
     private javax.swing.JButton jbBuscar;
     private javax.swing.JButton jbGuardar;
     private javax.swing.JButton jbLimpiar;
@@ -320,3 +347,4 @@ private void ShowPanel(JPanel panel) {
     }
 
 }
+
