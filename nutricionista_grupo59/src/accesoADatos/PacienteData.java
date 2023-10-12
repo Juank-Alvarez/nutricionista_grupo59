@@ -21,7 +21,7 @@ public class PacienteData {
     }
     
     public List<Paciente> listarPacientes(){
-        String sql="SELECT idPaciente, nombre, apellido, dni, domicilio, telefono, paciente.estado FROM paciente"; /*, dieta WHERE pesoFinal != pesoBuscado";*/
+        String sql="SELECT idPaciente, nombre, apellido, dni, domicilio, telefono, paciente.estado FROM paciente"; 
         ArrayList<Paciente> pacientes=new ArrayList<>();
         try{
             PreparedStatement ps=con.prepareStatement(sql);
@@ -46,8 +46,8 @@ public class PacienteData {
     
     //
      public void agregarPaciente(Paciente paciente){
-        String sql="INSERT INTO paciente ( nombre,apellido, dni, domicilio, telefono, estado,contraseña) "
-                + "VALUES (? ,? ,? , ?, ? ,?, ?)";
+        String sql="INSERT INTO paciente ( nombre,apellido, dni, domicilio, telefono, estado) "
+                + "VALUES (? ,? ,? , ?, ? ,?)";
         try {
             PreparedStatement ps=con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, paciente.getNombre());
@@ -56,7 +56,7 @@ public class PacienteData {
             ps.setString(4, paciente.getDomicilio());
             ps.setString(5, paciente.getTelefono());
             ps.setBoolean(6, paciente.isEstado());
-            ps.setString(7, paciente.getContraseña());
+           // ps.setString(7, paciente.getContraseña());
             
             ps.executeUpdate();
             
@@ -133,7 +133,7 @@ public class PacienteData {
                 paciente.setApellido(rs.getString("apellido"));
                 paciente.setNombre(rs.getString("nombre"));
                 paciente.setDomicilio(rs.getString("domicilio"));
-                paciente.setContraseña(rs.getString("contraseña"));
+               // paciente.setContraseña(rs.getString("contraseña"));
                 paciente.setEstado(rs.getBoolean("estado"));
 
             }

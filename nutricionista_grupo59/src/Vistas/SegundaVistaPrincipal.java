@@ -20,7 +20,7 @@ public class SegundaVistaPrincipal extends javax.swing.JFrame {
      */
     public SegundaVistaPrincipal() {
         initComponents();
-        PanelRecetas p1=new PanelRecetas();
+        PanelPorDefecto p1=new PanelPorDefecto();
         ShowPanel(p1);
         VistaPrincipalMenu cd=new VistaPrincipalMenu();
         Paciente paci=new Paciente();
@@ -37,35 +37,32 @@ public class SegundaVistaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jbRecetas = new javax.swing.JButton();
+        jbGestionesPaciente = new javax.swing.JButton();
         jbVerMiDieta = new javax.swing.JButton();
         jbModificarMiDieta = new javax.swing.JButton();
-        jbDarmeDeBaja = new javax.swing.JButton();
         jbCargarAvances = new javax.swing.JButton();
         jbSalir = new javax.swing.JButton();
         content = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jbRecetas.setText("Recetas");
-        jbRecetas.addActionListener(new java.awt.event.ActionListener() {
+        jbGestionesPaciente.setText("Gestiones Paciente");
+        jbGestionesPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbRecetasActionPerformed(evt);
+                jbGestionesPacienteActionPerformed(evt);
             }
         });
 
-        jbVerMiDieta.setText("Ver mi dieta");
+        jbVerMiDieta.setText("Ver dieta");
 
-        jbModificarMiDieta.setText("Modificar mi dieta");
-
-        jbDarmeDeBaja.setText("Darme de baja");
-        jbDarmeDeBaja.addActionListener(new java.awt.event.ActionListener() {
+        jbModificarMiDieta.setText("Modificar dieta");
+        jbModificarMiDieta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbDarmeDeBajaActionPerformed(evt);
+                jbModificarMiDietaActionPerformed(evt);
             }
         });
 
-        jbCargarAvances.setText("Cargar avances");
+        jbCargarAvances.setText("Informacion del Paciente");
 
         jbSalir.setText("Salir");
         jbSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -91,11 +88,10 @@ public class SegundaVistaPrincipal extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jbRecetas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbGestionesPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jbModificarMiDieta, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
                     .addComponent(jbVerMiDieta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbDarmeDeBaja, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbCargarAvances, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbCargarAvances, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
                     .addComponent(jbSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(content, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -108,14 +104,12 @@ public class SegundaVistaPrincipal extends javax.swing.JFrame {
                     .addComponent(content, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jbRecetas, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jbGestionesPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jbModificarMiDieta, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jbVerMiDieta, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jbDarmeDeBaja, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(57, 57, 57)
                         .addComponent(jbCargarAvances, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jbSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -139,11 +133,6 @@ public class SegundaVistaPrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbDarmeDeBajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDarmeDeBajaActionPerformed
-        PanelDarmeDeBaja p1=new PanelDarmeDeBaja();
-        ShowPanel(p1);
-    }//GEN-LAST:event_jbDarmeDeBajaActionPerformed
-
     private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
 
         
@@ -159,10 +148,14 @@ public class SegundaVistaPrincipal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jbSalirActionPerformed
 
-    private void jbRecetasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRecetasActionPerformed
-        PanelRecetas p1=new PanelRecetas();
+    private void jbGestionesPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGestionesPacienteActionPerformed
+        PanelGestionesPaciente p1=new PanelGestionesPaciente();
         ShowPanel(p1);
-    }//GEN-LAST:event_jbRecetasActionPerformed
+    }//GEN-LAST:event_jbGestionesPacienteActionPerformed
+
+    private void jbModificarMiDietaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbModificarMiDietaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbModificarMiDietaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -203,9 +196,8 @@ public class SegundaVistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel content;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbCargarAvances;
-    private javax.swing.JButton jbDarmeDeBaja;
+    private javax.swing.JButton jbGestionesPaciente;
     private javax.swing.JButton jbModificarMiDieta;
-    private javax.swing.JButton jbRecetas;
     private javax.swing.JButton jbSalir;
     private javax.swing.JButton jbVerMiDieta;
     // End of variables declaration//GEN-END:variables

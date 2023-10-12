@@ -23,7 +23,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Component id="jPanel1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -43,11 +43,10 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jbRecetas" max="32767" attributes="0"/>
+                      <Component id="jbGestionesPaciente" max="32767" attributes="0"/>
                       <Component id="jbModificarMiDieta" pref="247" max="32767" attributes="0"/>
                       <Component id="jbVerMiDieta" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jbDarmeDeBaja" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jbCargarAvances" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jbCargarAvances" alignment="0" pref="247" max="32767" attributes="0"/>
                       <Component id="jbSalir" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -63,14 +62,12 @@
                       <Component id="content" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jbRecetas" min="-2" pref="49" max="-2" attributes="0"/>
+                          <Component id="jbGestionesPaciente" min="-2" pref="49" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jbModificarMiDieta" min="-2" pref="49" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jbVerMiDieta" min="-2" pref="43" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jbDarmeDeBaja" min="-2" pref="43" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                           <Component id="jbCargarAvances" min="-2" pref="45" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jbSalir" min="-2" pref="43" max="-2" attributes="0"/>
@@ -82,35 +79,30 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="jbRecetas">
+        <Component class="javax.swing.JButton" name="jbGestionesPaciente">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Recetas"/>
+            <Property name="text" type="java.lang.String" value="Gestiones Paciente"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbRecetasActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbGestionesPacienteActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jbVerMiDieta">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Ver mi dieta"/>
+            <Property name="text" type="java.lang.String" value="Ver dieta"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jbModificarMiDieta">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Modificar mi dieta"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="jbDarmeDeBaja">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Darme de baja"/>
+            <Property name="text" type="java.lang.String" value="Modificar dieta"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbDarmeDeBajaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbModificarMiDietaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jbCargarAvances">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Cargar avances"/>
+            <Property name="text" type="java.lang.String" value="Informacion del Paciente"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jbSalir">
