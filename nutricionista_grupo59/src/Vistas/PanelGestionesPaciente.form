@@ -78,11 +78,9 @@
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                       <Component id="jbVolver" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jButton2" max="32767" attributes="0"/>
-                          <Component id="jbGuardar" max="32767" attributes="0"/>
-                          <Component id="jbBuscar" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="jButton2" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jbGuardar" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jbBuscar" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               </Group>

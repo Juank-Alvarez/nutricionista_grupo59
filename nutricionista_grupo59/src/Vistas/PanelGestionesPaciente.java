@@ -19,6 +19,7 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
     /**
      * Creates new form VistaRegistro
      */
+    
     public PanelGestionesPaciente() {
         initComponents();
     }
@@ -223,46 +224,45 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
 
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
         //(String nombre, String apellido, int dni, String domicilio, String telefono, int idPaciente, boolean estado)
-        boolean b=false;
-        if (jtNombre.getText().isEmpty() || jtApellido.getText().isEmpty() || jtDni.getText().isEmpty() || jtDomicilio.getText().isEmpty() || jtTelefono.getText().isEmpty() ) {
+        boolean b = false;
+        
+        if (jtNombre.getText().isEmpty() || jtApellido.getText().isEmpty() || jtDni.getText().isEmpty() || jtDomicilio.getText().isEmpty() || jtTelefono.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "no puede haber campos vacios");
             return;
         }
         try {
-                
-                
             Paciente paci = new Paciente();
+            Paciente paciente = new Paciente();
             PacienteData pd = new PacienteData();
             paci = pd.buscarPacientePorDni(Integer.parseInt(jtDni.getText()));
-            if (paci == null ){
-            paci.setNombre(jtNombre.getText());
-            paci.setApellido(jtApellido.getText());
-            paci.setDni(Integer.parseInt(jtDni.getText()));
-            paci.setDomicilio(jtDomicilio.getText());
-            paci.setTelefono(jtTelefono.getText());
-            paci.setEstado(jrEstado.isSelected());
-          
-            pd.agregarPaciente(paci);
-            b=true;
-            }else
-                {
+            if (paci == null) {
+                
+                paciente.setNombre(jtNombre.getText());
+                paciente.setApellido(jtApellido.getText());
+                paciente.setDni(Integer.parseInt(jtDni.getText()));
+                paciente.setDomicilio(jtDomicilio.getText());
+                paciente.setTelefono(jtTelefono.getText());
+                paciente.setEstado(jrEstado.isSelected());
+
+                pd.agregarPaciente(paciente);
+                b = true;
+            } else {
                 paci.setNombre(jtNombre.getText());
-            paci.setApellido(jtApellido.getText());
-            
-            paci.setDomicilio(jtDomicilio.getText());
-            paci.setTelefono(jtTelefono.getText());
-            paci.setEstado(jrEstado.isSelected());
-                    pd.modificarPaciente(paci);
+                paci.setApellido(jtApellido.getText());
+                paci.setDni(Integer.parseInt(jtDni.getText()));
+                paci.setDomicilio(jtDomicilio.getText());
+                paci.setTelefono(jtTelefono.getText());
+                paci.setEstado(jrEstado.isSelected());
+                pd.modificarPaciente(paci);
             }
-            
-            
-        }catch (NumberFormatException nfe) {
+
+        } catch (NumberFormatException nfe) {
             JOptionPane.showMessageDialog(this, "Debe ingresar datos validos");
         }
-        if(b==true){
-            PanelPorDefecto p1= new PanelPorDefecto();
+        if (b == true) {
+            PanelPorDefecto p1 = new PanelPorDefecto();
             ShowPanel(p1);
-        }   
+        }
     }//GEN-LAST:event_jbGuardarActionPerformed
 
     private void jtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtNombreActionPerformed
