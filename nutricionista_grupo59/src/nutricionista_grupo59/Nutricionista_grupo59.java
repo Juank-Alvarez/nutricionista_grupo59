@@ -2,10 +2,12 @@
 package nutricionista_grupo59;
 
 import accesoADatos.ComidaData;
+import accesoADatos.DietaComidaData;
 import accesoADatos.DietaData;
 import accesoADatos.PacienteData;
 import entidades.Comida;
 import entidades.Dieta;
+import entidades.Dietacomida;
 import entidades.Paciente;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -40,11 +42,11 @@ public class Nutricionista_grupo59 {
 //         for(Comida co: lista){
 //             System.out.println(co.toString());
 //         }
-//        Dieta dieta1=new Dieta(1,"astringente",paciente1,LocalDate.of(2020, 02, 07),100,90,"Masculino",1.80,LocalDate.of(2021, 05, 02),true);
-//        DietaData dd= new DietaData();
-//        Dieta dieta2=new Dieta();
-////        dd.agregarDieta(dieta1);
-//        dieta2=dd.buscarDieta(1);
+      //  Dieta dieta1=new Dieta(1,"astringente",paciente1,LocalDate.of(2020, 02, 07),100,90,"Masculino",1.80,LocalDate.of(2021, 05, 02),true);
+       // DietaData dd= new DietaData();
+        //Dieta dieta2=new Dieta();
+        //dd.agregarDieta(dieta1);
+       //dieta2=dd.buscarDieta(1);
 //        System.out.println(dieta2.toString());
 ///*String nombre, Paciente paciente, LocalDate fechaInicial, double pesoInicial, double pesoBuscado, double pesoFinal, String genero, double altura, LocalDate fechaFinal, boolean estado)*/
         
@@ -53,6 +55,7 @@ public class Nutricionista_grupo59 {
 //         System.out.println(cd.buscarNombreComida(3));
          
 //          
+        
     }
     
 }

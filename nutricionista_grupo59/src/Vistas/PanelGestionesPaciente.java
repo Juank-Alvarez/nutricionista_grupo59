@@ -49,7 +49,6 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
         jbGuardar = new javax.swing.JButton();
         jbVolver = new javax.swing.JButton();
         jbBuscar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jrEstado = new javax.swing.JRadioButton();
         jLabel7 = new javax.swing.JLabel();
 
@@ -101,8 +100,11 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
         });
 
         jbBuscar.setText("Buscar");
-
-        jButton2.setText("Dar de baja");
+        jbBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbBuscarActionPerformed(evt);
+            }
+        });
 
         jLabel7.setText("Estado");
 
@@ -145,10 +147,8 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jbVolver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jbGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jbBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jbGuardar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbBuscar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(23, 23, 23))
         );
         jPanel1Layout.setVerticalGroup(
@@ -184,16 +184,11 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addComponent(jbBuscar)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(jButton2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jrEstado)
-                            .addComponent(jLabel7))))
-                .addGap(31, 31, 31)
+                .addGap(35, 35, 35)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jrEstado)
+                    .addComponent(jLabel7))
+                .addGap(45, 45, 45)
                 .addComponent(jbLimpiar)
                 .addGap(18, 18, 18)
                 .addComponent(jbVolver)
@@ -220,6 +215,7 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
         jtDni.setText("");
         jtDomicilio.setText("");
         jtTelefono.setText("");
+        jrEstado.setSelected(false);
     }//GEN-LAST:event_jbLimpiarActionPerformed
 
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
@@ -274,9 +270,25 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
         ShowPanel(p1);
     }//GEN-LAST:event_jbVolverActionPerformed
 
+    private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
+         
+        PacienteData pd= new PacienteData();
+        Paciente paci=new Paciente();
+        paci = pd.buscarPacientePorDni(Integer.parseInt(jtDni.getText()));
+        if (paci == null){
+            JOptionPane.showMessageDialog(this,"El paciente no existe");
+            
+        }else{
+            jtNombre.setText(paci.getNombre());
+            jtApellido.setText(paci.getApellido());
+            jtDomicilio.setText(paci.getDomicilio());
+            jtTelefono.setText(paci.getTelefono());
+            jrEstado.setSelected(paci.isEstado());
+            
+    }//GEN-LAST:event_jbBuscarActionPerformed
 
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
