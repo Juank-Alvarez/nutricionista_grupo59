@@ -26,3 +26,4 @@ replay_pid*
 *.properties
 /nutricionista_grupo59/dist/
 *.properties
+nutricionista_grupo59/nbproject/private/private.xml
