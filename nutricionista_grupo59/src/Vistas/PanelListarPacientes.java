@@ -175,11 +175,8 @@ public class PanelListarPacientes extends javax.swing.JPanel {
 
         int filaseleccionada=jtPacientes.getSelectedRow();
         if(filaseleccionada != -1){
-            paci.setDni((Integer) jtPacientes.getValueAt(filaseleccionada,3));
-        }
-        if(paci.getDni()!=0){
-            PanelGestionesPaciente p1=new PanelGestionesPaciente();
-            ShowPanel(p1);
+            PanelGestionesPaciente pgp=new PanelGestionesPaciente((Integer) jtPacientes.getValueAt(filaseleccionada,3));
+            ShowPanel(pgp);
         }
         
     }//GEN-LAST:event_jbIraActionPerformed
@@ -227,8 +224,4 @@ public class PanelListarPacientes extends javax.swing.JPanel {
         contenido.repaint();
     }
     
-    public Paciente MandarPaciente(){
-        
-        return paci;
-    }
 }

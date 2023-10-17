@@ -29,7 +29,7 @@ public class PanelPorDefecto extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
-        jLabel1.setText("POR DEFECTO alñskdjfklasdf");
+        jLabel1.setText("POR DEFECTO ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

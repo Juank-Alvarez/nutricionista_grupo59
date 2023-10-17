@@ -15,21 +15,19 @@ import javax.swing.JPanel;
  * @author Usuario
  */
 public class PanelGestionesPaciente extends javax.swing.JPanel {
-
-    /**
-     * Creates new form VistaRegistro
-     */
+    
     
     public PanelGestionesPaciente() {
         initComponents();
-        PanelListarPacientes plp=new PanelListarPacientes();
-        
-        int dni=plp.MandarPaciente().getDni();
-        JOptionPane.showMessageDialog(this, dni);
+                
+    }
+    
+    public PanelGestionesPaciente(int dni){
+        initComponents();
         if(dni!=0){
             PacienteData pd=new PacienteData();
             Paciente paci=new Paciente();
-            paci=pd.buscarPacientePorDni(plp.MandarPaciente().getDni());
+            paci=pd.buscarPacientePorDni(dni);
             jtNombre.setText(paci.getNombre());
             jtApellido.setText(paci.getApellido());
             jtDni.setText(paci.getDni()+"");

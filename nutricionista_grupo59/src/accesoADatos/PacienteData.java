@@ -133,7 +133,7 @@ public class PacienteData {
                 paciente.setApellido(rs.getString("apellido"));
                 paciente.setNombre(rs.getString("nombre"));
                 paciente.setDomicilio(rs.getString("domicilio"));
-               // paciente.setContraseña(rs.getString("contraseña"));
+                paciente.setTelefono(rs.getString("telefono"));
                 paciente.setEstado(rs.getBoolean("estado"));
 
             }
