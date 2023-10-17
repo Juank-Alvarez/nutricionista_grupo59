@@ -6,6 +6,7 @@ import entidades.Paciente;
 import java.awt.BorderLayout;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -38,6 +39,8 @@ public class PanelListarPacientes extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jbIra = new javax.swing.JButton();
+
+        contenido.setPreferredSize(new java.awt.Dimension(752, 603));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jLabel1.setText("Pacientes que no llegaron al peso buscado");
@@ -89,22 +92,22 @@ public class PanelListarPacientes extends javax.swing.JPanel {
             .addGroup(contenidoLayout.createSequentialGroup()
                 .addGroup(contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(contenidoLayout.createSequentialGroup()
-                        .addGap(66, 66, 66)
+                        .addContainerGap()
+                        .addComponent(jbIra))
+                    .addGroup(contenidoLayout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addGroup(contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)))
+                    .addGroup(contenidoLayout.createSequentialGroup()
+                        .addGap(63, 63, 63)
                         .addComponent(jrCumplieron))
                     .addGroup(contenidoLayout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addComponent(jrNoCumplieron))
-                    .addGroup(contenidoLayout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addGroup(contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2)))
-                    .addGroup(contenidoLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jbIra)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(80, Short.MAX_VALUE))
+                        .addGap(63, 63, 63)
+                        .addComponent(jrNoCumplieron)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70))
         );
         contenidoLayout.setVerticalGroup(
             contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,30 +117,31 @@ public class PanelListarPacientes extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(contenidoLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addGap(24, 24, 24))
-                    .addGroup(contenidoLayout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(jrCumplieron)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jrCumplieron)
+                        .addGap(29, 29, 29)
                         .addComponent(jLabel3)
-                        .addGap(15, 15, 15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jrNoCumplieron)
-                        .addGap(38, 38, 38)
-                        .addComponent(jbIra)
-                        .addContainerGap(77, Short.MAX_VALUE))))
+                        .addGap(88, 88, 88)
+                        .addComponent(jbIra))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(274, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(contenido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(contenido, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(contenido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(contenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -169,10 +173,11 @@ public class PanelListarPacientes extends javax.swing.JPanel {
 
     private void jbIraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIraActionPerformed
 
-        PacienteData pd=new PacienteData();
         int filaseleccionada=jtPacientes.getSelectedRow();
         if(filaseleccionada != -1){
             paci.setDni((Integer) jtPacientes.getValueAt(filaseleccionada,3));
+        }
+        if(paci.getDni()!=0){
             PanelGestionesPaciente p1=new PanelGestionesPaciente();
             ShowPanel(p1);
         }
