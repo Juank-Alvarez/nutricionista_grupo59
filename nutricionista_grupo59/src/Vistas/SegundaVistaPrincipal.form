@@ -102,8 +102,11 @@
         </Component>
         <Component class="javax.swing.JButton" name="jbCargarAvances">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Informacion del Paciente"/>
+            <Property name="text" type="java.lang.String" value="Listar Pacientes"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbCargarAvancesActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jbSalir">
           <Properties>

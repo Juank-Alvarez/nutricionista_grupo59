@@ -22,6 +22,19 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
     
     public PanelGestionesPaciente() {
         initComponents();
+        PanelListarPacientes plp=new PanelListarPacientes();
+        int dni=plp.MandarPaciente().getDni();
+        if(dni!=0){
+            PacienteData pd=new PacienteData();
+            Paciente paci=new Paciente();
+            paci=pd.buscarPacientePorDni(plp.MandarPaciente().getDni());
+            jtNombre.setText(paci.getNombre());
+            jtApellido.setText(paci.getApellido());
+            jtDni.setText(paci.getDni()+"");
+            jtDomicilio.setText(paci.getDomicilio());
+            jtTelefono.setText(paci.getTelefono());
+            jrEstado.setSelected(paci.isEstado());
+        }
     }
 
     /**
@@ -68,6 +81,12 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
         jLabel3.setText("Apellido");
 
         jLabel4.setText("Dni");
+
+        jtDni.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtDniActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Domicilio");
 
@@ -312,6 +331,10 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
             }
             
     }//GEN-LAST:event_jbAltaBajaActionPerformed
+
+    private void jtDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtDniActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtDniActionPerformed
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

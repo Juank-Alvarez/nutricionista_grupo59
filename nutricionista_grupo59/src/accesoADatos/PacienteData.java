@@ -169,4 +169,58 @@ public class PacienteData {
         }
         
     }
+     
+     public List<Paciente> listarPacientesQueCumplieron(){
+        String sql="SELECT paciente.idPaciente, paciente.nombre, paciente.apellido, paciente.dni "
+                + "FROM dieta, paciente WHERE dieta.idPaciente = paciente.idPaciente "
+                + "AND dieta.pesoBuscado = dieta.pesoFinal;"; 
+        
+        ArrayList<Paciente> pacientes=new ArrayList<>();
+        try{
+            PreparedStatement ps=con.prepareStatement(sql);
+            ResultSet rs=ps.executeQuery() ;
+            while(rs.next()){
+                Paciente paciente=new Paciente();
+                paciente.setIdPaciente(rs.getInt("idPaciente"));
+                paciente.setDni(rs.getInt("dni"));
+                paciente.setNombre(rs.getString("nombre"));
+                paciente.setApellido(rs.getString("apellido"));
+//                paciente.setDomicilio(rs.getString("domicilio"));
+//                paciente.setTelefono(rs.getString("telefono"));
+//                paciente.setEstado(rs.getBoolean("estado"));
+                pacientes.add(paciente);
+             }
+            ps.close();
+        }catch (SQLException ex){
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla listarPacientes"+ex);
+        }
+        return pacientes;
+        }
+     
+     public List<Paciente> listarPacientesQueNoCumplieron(){
+        String sql="SELECT paciente.idPaciente, paciente.nombre, paciente.apellido, paciente.dni "
+                + "FROM dieta, paciente WHERE dieta.idPaciente = paciente.idPaciente "
+                + "AND dieta.pesoBuscado != dieta.pesoFinal;"; 
+        
+        ArrayList<Paciente> pacientes=new ArrayList<>();
+        try{
+            PreparedStatement ps=con.prepareStatement(sql);
+            ResultSet rs=ps.executeQuery() ;
+            while(rs.next()){
+                Paciente paciente=new Paciente();
+                paciente.setIdPaciente(rs.getInt("idPaciente"));
+                paciente.setDni(rs.getInt("dni"));
+                paciente.setNombre(rs.getString("nombre"));
+                paciente.setApellido(rs.getString("apellido"));
+//                paciente.setDomicilio(rs.getString("domicilio"));
+//                paciente.setTelefono(rs.getString("telefono"));
+//                paciente.setEstado(rs.getBoolean("estado"));
+                pacientes.add(paciente);
+             }
+            ps.close();
+        }catch (SQLException ex){
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla listarPacientes"+ex);
+        }
+        return pacientes;
+        }
 }

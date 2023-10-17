@@ -62,7 +62,12 @@ public class SegundaVistaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jbCargarAvances.setText("Informacion del Paciente");
+        jbCargarAvances.setText("Listar Pacientes");
+        jbCargarAvances.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbCargarAvancesActionPerformed(evt);
+            }
+        });
 
         jbSalir.setText("Salir");
         jbSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -156,6 +161,11 @@ public class SegundaVistaPrincipal extends javax.swing.JFrame {
     private void jbModificarMiDietaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbModificarMiDietaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbModificarMiDietaActionPerformed
+
+    private void jbCargarAvancesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCargarAvancesActionPerformed
+        PanelListarPacientes p1=new PanelListarPacientes();
+        ShowPanel(p1);
+    }//GEN-LAST:event_jbCargarAvancesActionPerformed
 
     /**
      * @param args the command line arguments
