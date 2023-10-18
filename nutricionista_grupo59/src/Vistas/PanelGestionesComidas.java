@@ -43,6 +43,11 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
         });
 
         jButton2.setText("Modificar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Eliminar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -154,7 +159,7 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
         
         ComidaData cm= new ComidaData();
         Comida comi = new Comida();
-        //comi = cm.buscarNombreComida(jtNombreComida.getText());
+        comi = cm.buscarNombreComida(jtNombreComida.getText());
         
         if (comi == null){
             JOptionPane.showMessageDialog(this,"La comida no existe");
@@ -182,7 +187,7 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
             Comida comi = new Comida();
             Comida comidas = new Comida();
             ComidaData cm = new ComidaData();
-            comi = cm.buscarComida(Integer.parseInt(jtNombreComida.getText()));
+            comi = cm.buscarNombreComida(jtNombreComida.getText());
             if (comi == null) {
                 
                 comidas.setNombre(jtNombreComida.getText());
@@ -222,6 +227,10 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
             
         
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

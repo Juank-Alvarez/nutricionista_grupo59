@@ -55,8 +55,6 @@ public class ComidaData {
                 //comida.setCantCalorias( rs.getInt("cantCalorias"));
                 comida.setCantCalorias(rs.getInt("cantCalorias"));
                 comida.setEstado(rs.getBoolean("estado"));
-            }else {
-                JOptionPane.showMessageDialog(null, "No existe esa materia");
             }
             ps.close();
         } catch (SQLException ex) {
@@ -128,20 +126,27 @@ public class ComidaData {
         return comidas;
     }
    
-   public String buscarNombreComida(String nombre){
-        String sql="SELECT nombre FROM comida WHERE nombre = ? ";
-        String comida="";
+   public Comida buscarNombreComida(String nombre){
+        String sql="SELECT detalle,cantCalorias,estado FROM `comida` WHERE nombre = '?'";
+        Comida comida=null;
         
         try {
             PreparedStatement ps=con.prepareStatement(sql);
-            ps.setString(1,nombre);
+            ps.setString(1, nombre);
             ResultSet rs=ps.executeQuery();
             if(rs.next()){
-                comida=rs.getString("nombre");
+                comida=new Comida();
+                comida.setIdComida(rs.getInt("idComida"));
+                comida.setNombre(nombre);
+                comida.setDetalle(rs.getString("detalle"));
+    
+                comida.setCantCalorias(rs.getInt("cantCalorias"));
+              
+               comida.setEstado(rs.getBoolean("estado"));
             }
             ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "No se pudo acceder a buscarNombreComida"+ex);
+            JOptionPane.showMessageDialog(null, "No se pudo acceder a buscarComida"+ex);
         }
         return comida;
     }
