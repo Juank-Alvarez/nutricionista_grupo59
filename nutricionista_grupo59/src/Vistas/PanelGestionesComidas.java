@@ -154,7 +154,7 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
         
         ComidaData cm= new ComidaData();
         Comida comi = new Comida();
-        comi = cm.buscarNombreComida(jtNombreComida.getText());
+        //comi = cm.buscarNombreComida(jtNombreComida.getText());
         
         if (comi == null){
             JOptionPane.showMessageDialog(this,"La comida no existe");

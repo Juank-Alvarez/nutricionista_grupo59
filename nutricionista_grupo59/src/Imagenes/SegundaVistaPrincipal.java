@@ -1,18 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-package Vistas;
 
+package Imagenes;
+
+import Vistas.PanelGestionesComidas;
+import Vistas.PanelGestionesPaciente;
+import Vistas.PanelListarPacientes;
+import Vistas.PanelPorDefecto;
+import Vistas.VistaPrincipalMenu;
 import entidades.Paciente;
 import java.awt.BorderLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-/**
- *
- * @author Usuario
- */
+
 public class SegundaVistaPrincipal extends javax.swing.JFrame {
 
     /**
