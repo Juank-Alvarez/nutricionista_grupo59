@@ -38,8 +38,8 @@ public class SegundaVistaPrincipal extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jbGestionesPaciente = new javax.swing.JButton();
-        jbVerMiDieta = new javax.swing.JButton();
-        jbModificarMiDieta = new javax.swing.JButton();
+        jbGestionesDieta = new javax.swing.JButton();
+        jbGestionesComidas = new javax.swing.JButton();
         jbCargarAvances = new javax.swing.JButton();
         jbSalir = new javax.swing.JButton();
         content = new javax.swing.JPanel();
@@ -53,15 +53,16 @@ public class SegundaVistaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jbVerMiDieta.setText("Ver dieta");
+        jbGestionesDieta.setText("Gestiones Dietas");
 
-        jbModificarMiDieta.setText("Modificar dieta");
-        jbModificarMiDieta.addActionListener(new java.awt.event.ActionListener() {
+        jbGestionesComidas.setText("Gestiones Comidas");
+        jbGestionesComidas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbModificarMiDietaActionPerformed(evt);
+                jbGestionesComidasActionPerformed(evt);
             }
         });
 
+<<<<<<< Updated upstream
         jbCargarAvances.setText("Listar Pacientes");
         jbCargarAvances.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,6 +70,8 @@ public class SegundaVistaPrincipal extends javax.swing.JFrame {
             }
         });
 
+=======
+>>>>>>> Stashed changes
         jbSalir.setText("Salir");
         jbSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,9 +97,15 @@ public class SegundaVistaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jbGestionesPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+<<<<<<< Updated upstream
                     .addComponent(jbModificarMiDieta, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE)
                     .addComponent(jbVerMiDieta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jbCargarAvances, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE)
+=======
+                    .addComponent(jbGestionesComidas, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
+                    .addComponent(jbGestionesDieta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbCargarAvances, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
+>>>>>>> Stashed changes
                     .addComponent(jbSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(content, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -104,6 +113,7 @@ public class SegundaVistaPrincipal extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+<<<<<<< Updated upstream
                 .addContainerGap()
                 .addComponent(jbGestionesPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -114,6 +124,21 @@ public class SegundaVistaPrincipal extends javax.swing.JFrame {
                 .addComponent(jbCargarAvances, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jbSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+=======
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(content, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jbGestionesPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jbGestionesComidas, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jbGestionesDieta, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(57, 57, 57)
+                        .addComponent(jbCargarAvances, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jbSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+>>>>>>> Stashed changes
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(content, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -157,9 +182,10 @@ public class SegundaVistaPrincipal extends javax.swing.JFrame {
         ShowPanel(p1);
     }//GEN-LAST:event_jbGestionesPacienteActionPerformed
 
-    private void jbModificarMiDietaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbModificarMiDietaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jbModificarMiDietaActionPerformed
+    private void jbGestionesComidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGestionesComidasActionPerformed
+       PanelGestionesComidas p1=new PanelGestionesComidas();
+        ShowPanel(p1);
+    }//GEN-LAST:event_jbGestionesComidasActionPerformed
 
     private void jbCargarAvancesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCargarAvancesActionPerformed
         PanelListarPacientes p1=new PanelListarPacientes();
@@ -205,10 +231,10 @@ public class SegundaVistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel content;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbCargarAvances;
+    private javax.swing.JButton jbGestionesComidas;
+    private javax.swing.JButton jbGestionesDieta;
     private javax.swing.JButton jbGestionesPaciente;
-    private javax.swing.JButton jbModificarMiDieta;
     private javax.swing.JButton jbSalir;
-    private javax.swing.JButton jbVerMiDieta;
     // End of variables declaration//GEN-END:variables
 
 private void ShowPanel(JPanel panel) {
