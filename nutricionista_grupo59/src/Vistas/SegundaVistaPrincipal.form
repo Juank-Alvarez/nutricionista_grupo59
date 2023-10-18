@@ -44,9 +44,15 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jbGestionesPaciente" max="32767" attributes="0"/>
+<<<<<<< Updated upstream
                       <Component id="jbModificarMiDieta" pref="342" max="32767" attributes="0"/>
                       <Component id="jbVerMiDieta" alignment="0" max="32767" attributes="0"/>
                       <Component id="jbCargarAvances" alignment="0" pref="342" max="32767" attributes="0"/>
+=======
+                      <Component id="jbGestionesComidas" pref="247" max="32767" attributes="0"/>
+                      <Component id="jbGestionesDieta" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jbCargarAvances" alignment="0" pref="247" max="32767" attributes="0"/>
+>>>>>>> Stashed changes
                       <Component id="jbSalir" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -57,6 +63,7 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
+<<<<<<< Updated upstream
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jbGestionesPaciente" min="-2" pref="49" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -67,6 +74,23 @@
                   <Component id="jbCargarAvances" min="-2" pref="45" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jbSalir" min="-2" pref="43" max="-2" attributes="0"/>
+=======
+                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="content" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jbGestionesPaciente" min="-2" pref="49" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jbGestionesComidas" min="-2" pref="49" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jbGestionesDieta" min="-2" pref="43" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                          <Component id="jbCargarAvances" min="-2" pref="45" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jbSalir" min="-2" pref="43" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+>>>>>>> Stashed changes
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
@@ -85,26 +109,29 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbGestionesPacienteActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jbVerMiDieta">
+        <Component class="javax.swing.JButton" name="jbGestionesDieta">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Ver dieta"/>
+            <Property name="text" type="java.lang.String" value="Gestiones Dietas"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jbModificarMiDieta">
+        <Component class="javax.swing.JButton" name="jbGestionesComidas">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Modificar dieta"/>
+            <Property name="text" type="java.lang.String" value="Gestiones Comidas"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbModificarMiDietaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbGestionesComidasActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jbCargarAvances">
+<<<<<<< Updated upstream
           <Properties>
             <Property name="text" type="java.lang.String" value="Listar Pacientes"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbCargarAvancesActionPerformed"/>
           </Events>
+=======
+>>>>>>> Stashed changes
         </Component>
         <Component class="javax.swing.JButton" name="jbSalir">
           <Properties>

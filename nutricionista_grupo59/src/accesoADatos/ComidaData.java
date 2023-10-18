@@ -128,13 +128,13 @@ public class ComidaData {
         return comidas;
     }
    
-   public String buscarNombreComida(int idComida){
-        String sql="SELECT nombre FROM comida WHERE idComida = ? ";
+   public String buscarNombreComida(String nombre){
+        String sql="SELECT nombre FROM comida WHERE nombre = ? ";
         String comida="";
         
         try {
             PreparedStatement ps=con.prepareStatement(sql);
-            ps.setInt(1,idComida);
+            ps.setString(1,nombre);
             ResultSet rs=ps.executeQuery();
             if(rs.next()){
                 comida=rs.getString("nombre");
