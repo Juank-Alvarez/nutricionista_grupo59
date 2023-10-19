@@ -16,9 +16,7 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
         initComponents();
         PanelPorDefecto p1=new PanelPorDefecto();
         ShowPanel(p1);
-        VistaPrincipalMenu cd=new VistaPrincipalMenu();
-        Paciente paci=new Paciente();
-        paci=cd.SaludoPaciente();
+
     }
 
     
@@ -33,6 +31,7 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
         jbCargarAvances = new javax.swing.JButton();
         jbSalir = new javax.swing.JButton();
         Contenido = new javax.swing.JPanel();
+        jbBuscarCalorias = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,12 +71,19 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
         Contenido.setLayout(ContenidoLayout);
         ContenidoLayout.setHorizontalGroup(
             ContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 794, Short.MAX_VALUE)
+            .addGap(0, 751, Short.MAX_VALUE)
         );
         ContenidoLayout.setVerticalGroup(
             ContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
+
+        jbBuscarCalorias.setText("Buscar comida por calorias");
+        jbBuscarCalorias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbBuscarCaloriasActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -90,7 +96,8 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
                     .addComponent(jbGestionesComidas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jbCargarAvances, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jbSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbBuscarCalorias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(65, 65, 65)
                 .addComponent(Contenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -106,9 +113,11 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
                 .addComponent(jButton3)
                 .addGap(18, 18, 18)
                 .addComponent(jbCargarAvances)
-                .addGap(31, 31, 31)
+                .addGap(18, 18, 18)
+                .addComponent(jbBuscarCalorias)
+                .addGap(39, 39, 39)
                 .addComponent(jbSalir)
-                .addContainerGap(403, Short.MAX_VALUE))
+                .addContainerGap(354, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Contenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -161,6 +170,11 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jbSalirActionPerformed
 
+    private void jbBuscarCaloriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarCaloriasActionPerformed
+        PanelBuscarComidas p1=new PanelBuscarComidas();
+        ShowPanel(p1);
+    }//GEN-LAST:event_jbBuscarCaloriasActionPerformed
+
     
      
      
@@ -200,6 +214,7 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
     private javax.swing.JPanel Contenido;
     private javax.swing.JButton jButton3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton jbBuscarCalorias;
     private javax.swing.JButton jbCargarAvances;
     private javax.swing.JButton jbGestionesComidas;
     private javax.swing.JButton jbGestionesPaciente;
