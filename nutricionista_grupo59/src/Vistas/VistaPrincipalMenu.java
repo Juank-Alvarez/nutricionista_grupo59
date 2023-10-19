@@ -93,7 +93,7 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
             
            
                 JOptionPane.showMessageDialog(this, "Bienvenido ");
-                SegundaVistaPrincipal bpn = new SegundaVistaPrincipal();
+                SegundaVistaPrincipalMenu bpn = new SegundaVistaPrincipalMenu();
                 bpn.setVisible(true);
                 dispose();
            
