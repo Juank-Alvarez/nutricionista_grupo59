@@ -77,7 +77,7 @@ public class ComidaData {
             
             int exito=ps.executeUpdate();
             if(exito==1){
-                JOptionPane.showMessageDialog(null, "Comida modificada");
+                JOptionPane.showMessageDialog(null, "Se actualizaron los datos de la comida");
             }else{
                 //aqui error
                 JOptionPane.showMessageDialog(null, "Comida no se pudo modificar");

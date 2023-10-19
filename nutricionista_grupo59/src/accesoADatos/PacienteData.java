@@ -160,12 +160,12 @@ public class PacienteData {
             
             int exito = ps.executeUpdate();
             if(exito==1){
-                JOptionPane.showMessageDialog(null, "Paciente modificado");
+                JOptionPane.showMessageDialog(null, "Se actualizaron los datos del paciente");
             }else{
                 JOptionPane.showMessageDialog(null, "Paciente no se pudo modificar");
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a modificarAlumno"+ex);
+            JOptionPane.showMessageDialog(null, "Error al acceder a modificar al paciente"+ex);
         }
         
     }
