@@ -88,20 +88,13 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
 
     private void jbIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIngresarActionPerformed
         
-        
-        try {
-            
+
            
                 JOptionPane.showMessageDialog(this, "Bienvenido ");
                 SegundaVistaPrincipalMenu bpn = new SegundaVistaPrincipalMenu();
                 bpn.setVisible(true);
                 dispose();
            
-                
-            
-        } catch (NumberFormatException nfe) {
-            JOptionPane.showMessageDialog(this, "Debe ingresar un dni valido");
-        }
     }//GEN-LAST:event_jbIngresarActionPerformed
 
   

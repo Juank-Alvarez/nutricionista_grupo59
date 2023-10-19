@@ -41,7 +41,7 @@ public class ComidaData {
     }
 
     public Comida buscarComida(int id) {
-        String sql = "SELECT nombre, detalle,cantCalorias,estado FROM `comida` WHERE idComida= ? ";
+        String sql = "SELECT * FROM comida WHERE idComida= ? ";
         Comida comida = null;
 
         try {
@@ -53,7 +53,6 @@ public class ComidaData {
                 comida.setIdComida(id);
                 comida.setNombre(rs.getString("nombre"));
                 comida.setDetalle(rs.getString("detalle"));
-                //comida.setCantCalorias( rs.getInt("cantCalorias"));
                 comida.setCantCalorias(rs.getInt("cantCalorias"));
                 comida.setEstado(rs.getBoolean("estado"));
             }
