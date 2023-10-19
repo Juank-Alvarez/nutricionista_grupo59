@@ -143,10 +143,6 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JButton jbIngresar;
     // End of variables declaration//GEN-END:variables
-
-    public Paciente SaludoPaciente(){
-        return paci;
-    }
     
     private void ShowPanel(JPanel panel) {
 

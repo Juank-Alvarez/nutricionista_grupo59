@@ -61,7 +61,7 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jbModificar = new javax.swing.JButton();
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(752, 603));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1000, 650));
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 51, 204));
@@ -82,6 +82,11 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
         jtDni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtDniActionPerformed(evt);
+            }
+        });
+        jtDni.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtDniKeyTyped(evt);
             }
         });
 
@@ -139,7 +144,7 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addContainerGap(249, Short.MAX_VALUE))
+                .addContainerGap(497, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -222,7 +227,7 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbLimpiar)
                     .addComponent(jbVolver))
-                .addContainerGap(244, Short.MAX_VALUE))
+                .addContainerGap(291, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -231,7 +236,7 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 746, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 994, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,8 +254,7 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
     }//GEN-LAST:event_jbLimpiarActionPerformed
 
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
-        //(String nombre, String apellido, int dni, String domicilio, String telefono, int idPaciente, boolean estado)
-        boolean b = false;
+
         
         if (jtNombre.getText().isEmpty() || jtApellido.getText().isEmpty() || jtDni.getText().isEmpty() || jtDomicilio.getText().isEmpty() || jtTelefono.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "no puede haber campos vacios");
@@ -268,27 +272,15 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
                 paciente.setDni(Integer.parseInt(jtDni.getText()));
                 paciente.setDomicilio(jtDomicilio.getText());
                 paciente.setTelefono(jtTelefono.getText());
+                
                 paciente.setEstado(jrEstado.isSelected());
-
                 pd.agregarPaciente(paciente);
-                b = true;
             } else {
-                JOptionPane.showMessageDialog(this, "No se pudo agregar el paciente ya existe");
-//                paci.setNombre(jtNombre.getText());
-//                paci.setApellido(jtApellido.getText());
-//                paci.setDni(Integer.parseInt(jtDni.getText()));
-//                paci.setDomicilio(jtDomicilio.getText());
-//                paci.setTelefono(jtTelefono.getText());
-//                paci.setEstado(jrEstado.isSelected());
-//                pd.modificarPaciente(paci);
+                JOptionPane.showMessageDialog(this, "No se pudo agregar el paciente porque ya existe");
             }
 
         } catch (NumberFormatException nfe) {
             JOptionPane.showMessageDialog(this, "Debe ingresar datos validos");
-        }
-        if (b == true) {
-            PanelPorDefecto p1 = new PanelPorDefecto();
-            ShowPanel(p1);
         }
     }//GEN-LAST:event_jbGuardarActionPerformed
 
@@ -302,73 +294,67 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
     }//GEN-LAST:event_jbVolverActionPerformed
 
     private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
-         
-        PacienteData pd= new PacienteData();
-        Paciente paci=new Paciente();
-        paci = pd.buscarPacientePorDni(Integer.parseInt(jtDni.getText()));
-        if (paci == null){
-            JOptionPane.showMessageDialog(this,"El paciente no existe");
-            
-        }else{
-            jtNombre.setText(paci.getNombre());
-            jtApellido.setText(paci.getApellido());
-            jtDomicilio.setText(paci.getDomicilio());
-            jtTelefono.setText(paci.getTelefono());
-            jrEstado.setSelected(paci.isEstado());
-        }        
+        
+        if (jtDni.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Para buscar un paciente debe ingresar un dni");
+        } else {
+            PacienteData pd = new PacienteData();
+            Paciente paci = new Paciente();
+            paci = pd.buscarPacientePorDni(Integer.parseInt(jtDni.getText()));
+            if (paci == null) {
+                JOptionPane.showMessageDialog(this, "El paciente no existe");
+
+            } else {
+                jtNombre.setText(paci.getNombre());
+                jtApellido.setText(paci.getApellido());
+                jtDomicilio.setText(paci.getDomicilio());
+                jtTelefono.setText(paci.getTelefono());
+                jrEstado.setSelected(paci.isEstado());
+            }
+        }
+       
     }//GEN-LAST:event_jbBuscarActionPerformed
 
     private void jbModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbModificarActionPerformed
-        
+
         if (jtNombre.getText().isEmpty() || jtApellido.getText().isEmpty() || jtDni.getText().isEmpty() || jtDomicilio.getText().isEmpty() || jtTelefono.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "no puede haber campos vacios");
             return;
         }
         try {
             Paciente paci = new Paciente();
-            Paciente paciente = new Paciente();
             PacienteData pd = new PacienteData();
             paci = pd.buscarPacientePorDni(Integer.parseInt(jtDni.getText()));
             if (paci != null) {
-                
-               
+                paci.setNombre(jtNombre.getText());
+                paci.setApellido(jtApellido.getText());
+                paci.setDni(Integer.parseInt(jtDni.getText()));
+                paci.setDomicilio(jtDomicilio.getText());
+                paci.setTelefono(jtTelefono.getText());
+                paci.setEstado(jrEstado.isSelected());
+                pd.modificarPaciente(paci);
 
-                
-                b = true;
             } else {
-                JOptionPane.showMessageDialog(this, "No se pudo agregar el paciente ya existe");
-//                paci.setNombre(jtNombre.getText());
-//                paci.setApellido(jtApellido.getText());
-//                paci.setDni(Integer.parseInt(jtDni.getText()));
-//                paci.setDomicilio(jtDomicilio.getText());
-//                paci.setTelefono(jtTelefono.getText());
-//                paci.setEstado(jrEstado.isSelected());
-//                pd.modificarPaciente(paci);
+                JOptionPane.showMessageDialog(this, "El paciente no existe");
             }
 
         } catch (NumberFormatException nfe) {
             JOptionPane.showMessageDialog(this, "Debe ingresar datos validos");
         }
-//        if (b == true) {
-//            PanelPorDefecto p1 = new PanelPorDefecto();
-//            ShowPanel(p1);
+
 //        
-//        
-//        
-//        if(jrEstado.isSelected()){
-//            jrEstado.setSelected(false);
-//            JOptionPane.showMessageDialog(this,"Se dio de baja al paciente ");
-//        }else{
-//            jrEstado.setSelected(true);
-//            JOptionPane.showMessageDialog(this,"Se dio de alta al paciente ");
-//            
-//            }
-            
+
     }//GEN-LAST:event_jbModificarActionPerformed
 
     private void jtDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtDniActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtDniActionPerformed
+
+    private void jtDniKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtDniKeyTyped
+
+        char c = evt.getKeyChar();
+        if (c < '0' || c > '9') evt.consume();
+    }//GEN-LAST:event_jtDniKeyTyped
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -402,6 +388,8 @@ private void ShowPanel(JPanel panel) {
         jPanel1.revalidate();
         jPanel1.repaint();
     }
+
+
 
 }
 
