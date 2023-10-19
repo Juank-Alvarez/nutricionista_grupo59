@@ -21,7 +21,7 @@ public class DietaData {
         con=Conexion.getConexion();
     }
     
-    public void agregarDieta(Dieta dieta){
+    public void guardarDieta(Dieta dieta){
         String sql="INSERT INTO dieta ( nombre,idPaciente,fechaInicial, pesoInicial, pesoFinal, "
                 + "fechaFinal, altura, genero, estado) VALUES (? ,? ,? , ?, ? ,? , ? ,? ,?)";
         try {
