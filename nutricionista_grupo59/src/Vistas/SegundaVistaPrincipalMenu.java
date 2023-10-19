@@ -16,9 +16,7 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
         initComponents();
         PanelPorDefecto p1=new PanelPorDefecto();
         ShowPanel(p1);
-        VistaPrincipalMenu cd=new VistaPrincipalMenu();
-        Paciente paci=new Paciente();
-        paci=cd.SaludoPaciente();
+
     }
 
     
@@ -36,7 +34,7 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(752, 603));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1000, 650));
 
         jbGestionesPaciente.setText("Gestiones Paciente");
         jbGestionesPaciente.addActionListener(new java.awt.event.ActionListener() {
@@ -77,7 +75,7 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
         Contenido.setLayout(ContenidoLayout);
         ContenidoLayout.setHorizontalGroup(
             ContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 515, Short.MAX_VALUE)
+            .addGap(0, 794, Short.MAX_VALUE)
         );
         ContenidoLayout.setVerticalGroup(
             ContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,14 +116,14 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(Contenido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addContainerGap(166, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 737, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
