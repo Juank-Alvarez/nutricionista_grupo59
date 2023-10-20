@@ -126,11 +126,71 @@ public class DietaComidaData {
             ps.close();
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla");
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla obtener DietaPorPaciente");
         }
 
         return diet;
 
     }
 
+    
+    public List<Comida> obtenerComidasPorDieta(int idDieta) {
+
+        ArrayList<Comida> comidas = new ArrayList();
+
+          String sql = "SELECT comida.idComida, comida.nombre, comida.cantCalorias "
+                  + "FROM comida, dietacomida WHERE dietacomida.idComida = comida.idComida "
+                  + "AND idDieta = ?";
+
+        try {
+
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, idDieta);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+
+                Comida comi= new Comida();
+                comi.setNombre(rs.getString("nombre"));
+                comi.setIdComida(rs.getInt("idComida"));
+                comi.setCantCalorias(rs.getInt("cantCalorias"));
+                comidas.add(comi);
+            }
+            ps.close();
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla obtenerComidaPorDieta");
+        }
+        return comidas;
+    }
+    
+    public List<Comida> obtenerComidasSinDieta(int idDieta) {
+
+        ArrayList<Comida> comidas = new ArrayList();
+
+          String sql = "SELECT comida.idComida, comida.nombre, comida.cantCalorias "
+                  + "FROM comida, dietacomida WHERE dietacomida.idComida = comida.idComida "
+                  + "AND idDieta != ?";
+
+        try {
+
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, idDieta);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+
+                Comida comi= new Comida();
+                comi.setNombre(rs.getString("nombre"));
+                comi.setIdComida(rs.getInt("idComida"));
+                comi.setCantCalorias(rs.getInt("cantCalorias"));
+                comidas.add(comi);
+            }
+            ps.close();
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla obtenerComidaPorDieta");
+        }
+        return comidas;
+    }
 }

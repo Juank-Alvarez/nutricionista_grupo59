@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import java.sql.*;
+import java.time.LocalDate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -127,5 +128,33 @@ public class DietaData {
         }
         
     }
+    
+    public List<Dieta> listarDietas(){
+        String sql="SELECT * FROM dieta"; 
+        ArrayList<Dieta> dietas=new ArrayList<>();
+        try{
+            PreparedStatement ps=con.prepareStatement(sql);
+            ResultSet rs=ps.executeQuery() ;
+            while(rs.next()){
+                Dieta dieta=new Dieta();
+                Paciente paci=new Paciente();
+                dieta.setIdDieta(rs.getInt("idDieta"));
+                dieta.setNombre(rs.getString("nombre"));
+                paci.setIdPaciente(rs.getInt("idPaciente"));
+                dieta.setFechaInicial(rs.getDate("fechaInicial").toLocalDate());
+                dieta.setPesoInicial(rs.getInt("pesoInicial"));
+//                dieta.setPesoBuscado(rs.getInt("pesoBuscado");
+                dieta.setPesoFinal(rs.getInt("pesoFinal"));
+                dieta.setAltura(rs.getDouble("altura"));
+                dieta.setGenero(rs.getString("genero"));
+                dieta.setEstado(rs.getBoolean("estado"));
+                dietas.add(dieta);
+             }
+            ps.close();
+        }catch (SQLException ex){
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla listarPacientes"+ex);
+        }
+        return dietas;
+        }
     
 }
