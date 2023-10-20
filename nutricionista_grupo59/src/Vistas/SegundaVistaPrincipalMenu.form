@@ -54,6 +54,8 @@
                       <Component id="jbGestionesDietas" max="32767" attributes="0"/>
                       <Component id="jbCargarAvances" max="32767" attributes="0"/>
                       <Component id="jbSalir" max="32767" attributes="0"/>
+                      <Component id="jbBuscarComidas" max="32767" attributes="0"/>
+                      <Component id="jButton1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                   <Component id="Contenido" max="32767" attributes="0"/>
@@ -74,7 +76,11 @@
                           <Component id="jbGestionesDietas" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jbCargarAvances" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                          <Component id="jbBuscarComidas" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jbSalir" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -82,7 +88,7 @@
                           <Component id="Contenido" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="166" max="32767" attributes="0"/>
+                  <EmptySpace pref="159" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -133,7 +139,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="794" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="778" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -143,6 +149,19 @@
             </DimensionLayout>
           </Layout>
         </Container>
+        <Component class="javax.swing.JButton" name="jbBuscarComidas">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Buscar Comidas"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbBuscarComidasActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Manejo Dietas"/>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>

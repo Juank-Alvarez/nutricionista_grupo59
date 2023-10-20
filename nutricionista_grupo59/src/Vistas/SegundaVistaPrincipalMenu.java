@@ -31,6 +31,8 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
         jbCargarAvances = new javax.swing.JButton();
         jbSalir = new javax.swing.JButton();
         Contenido = new javax.swing.JPanel();
+        jbBuscarComidas = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,12 +77,21 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
         Contenido.setLayout(ContenidoLayout);
         ContenidoLayout.setHorizontalGroup(
             ContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 794, Short.MAX_VALUE)
+            .addGap(0, 778, Short.MAX_VALUE)
         );
         ContenidoLayout.setVerticalGroup(
             ContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 478, Short.MAX_VALUE)
         );
+
+        jbBuscarComidas.setText("Buscar Comidas");
+        jbBuscarComidas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbBuscarComidasActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Manejo Dietas");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -93,7 +104,9 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
                     .addComponent(jbGestionesComidas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jbGestionesDietas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jbCargarAvances, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jbSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbBuscarComidas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(65, 65, 65)
                 .addComponent(Contenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -111,12 +124,16 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
                         .addComponent(jbGestionesDietas)
                         .addGap(18, 18, 18)
                         .addComponent(jbCargarAvances)
-                        .addGap(31, 31, 31)
+                        .addGap(15, 15, 15)
+                        .addComponent(jbBuscarComidas)
+                        .addGap(19, 19, 19)
+                        .addComponent(jButton1)
+                        .addGap(18, 18, 18)
                         .addComponent(jbSalir))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(Contenido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(166, Short.MAX_VALUE))
+                .addContainerGap(159, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -173,6 +190,12 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
         ShowPanel(p1);
     }//GEN-LAST:event_jbGestionesDietasActionPerformed
 
+    private void jbBuscarComidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarComidasActionPerformed
+       PanelBuscarComidas p1=new PanelBuscarComidas();
+        ShowPanel(p1);
+        
+    }//GEN-LAST:event_jbBuscarComidasActionPerformed
+
     
      
      
@@ -210,7 +233,9 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Contenido;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton jbBuscarComidas;
     private javax.swing.JButton jbCargarAvances;
     private javax.swing.JButton jbGestionesComidas;
     private javax.swing.JButton jbGestionesDietas;
