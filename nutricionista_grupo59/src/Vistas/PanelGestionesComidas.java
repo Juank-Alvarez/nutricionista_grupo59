@@ -80,6 +80,8 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
         jtComidas = new javax.swing.JTable();
         jbSeleccionar = new javax.swing.JButton();
 
+        contenido.setPreferredSize(new java.awt.Dimension(1000, 650));
+
         jLabel1.setText("Gestion Comidas");
 
         jbAgregar.setText("Agregar");
@@ -188,7 +190,7 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contenidoLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 313, Short.MAX_VALUE)
                         .addComponent(jbSeleccionar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(220, 220, 220))))
         );
@@ -226,7 +228,7 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
                 .addGroup(contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbAgregar)
                     .addComponent(jbSeleccionar))
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addContainerGap(258, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

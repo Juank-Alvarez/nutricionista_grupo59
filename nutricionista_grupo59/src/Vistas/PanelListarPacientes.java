@@ -40,6 +40,8 @@ public class PanelListarPacientes extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jbIra = new javax.swing.JButton();
 
+        setPreferredSize(new java.awt.Dimension(1000, 650));
+
         contenido.setPreferredSize(new java.awt.Dimension(752, 603));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N

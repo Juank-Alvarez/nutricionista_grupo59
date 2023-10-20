@@ -14,8 +14,8 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
     
     public SegundaVistaPrincipalMenu() {
         initComponents();
-        PanelPorDefecto p1=new PanelPorDefecto();
-        ShowPanel(p1);
+//        PanelPorDefecto p1=new PanelPorDefecto();
+//        ShowPanel(p1);
 
     }
 
@@ -30,13 +30,18 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
         jbGestionesDietas = new javax.swing.JButton();
         jbCargarAvances = new javax.swing.JButton();
         jbSalir = new javax.swing.JButton();
-        Contenido = new javax.swing.JPanel();
         jbBuscarComidas = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        Contenido = new javax.swing.JPanel();
+        Fondo = new javax.swing.JLabel();
+        FONDO_MENU = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1000, 650));
+        getContentPane().setLayout(null);
 
         jPanel1.setPreferredSize(new java.awt.Dimension(1000, 650));
+        jPanel1.setLayout(null);
 
         jbGestionesPaciente.setText("Gestiones Paciente");
         jbGestionesPaciente.addActionListener(new java.awt.event.ActionListener() {
@@ -44,6 +49,8 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
                 jbGestionesPacienteActionPerformed(evt);
             }
         });
+        jPanel1.add(jbGestionesPaciente);
+        jbGestionesPaciente.setBounds(12, 47, 133, 25);
 
         jbGestionesComidas.setText("Gestion Comidas");
         jbGestionesComidas.addActionListener(new java.awt.event.ActionListener() {
@@ -51,6 +58,8 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
                 jbGestionesComidasActionPerformed(evt);
             }
         });
+        jPanel1.add(jbGestionesComidas);
+        jbGestionesComidas.setBounds(12, 90, 133, 25);
 
         jbGestionesDietas.setText("Gestion Dietas");
         jbGestionesDietas.addActionListener(new java.awt.event.ActionListener() {
@@ -58,6 +67,8 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
                 jbGestionesDietasActionPerformed(evt);
             }
         });
+        jPanel1.add(jbGestionesDietas);
+        jbGestionesDietas.setBounds(12, 133, 133, 25);
 
         jbCargarAvances.setText("Listar Pacientes");
         jbCargarAvances.addActionListener(new java.awt.event.ActionListener() {
@@ -65,6 +76,8 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
                 jbCargarAvancesActionPerformed(evt);
             }
         });
+        jPanel1.add(jbCargarAvances);
+        jbCargarAvances.setBounds(12, 176, 133, 25);
 
         jbSalir.setText("Salir");
         jbSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -72,17 +85,8 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
                 jbSalirActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout ContenidoLayout = new javax.swing.GroupLayout(Contenido);
-        Contenido.setLayout(ContenidoLayout);
-        ContenidoLayout.setHorizontalGroup(
-            ContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 778, Short.MAX_VALUE)
-        );
-        ContenidoLayout.setVerticalGroup(
-            ContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 478, Short.MAX_VALUE)
-        );
+        jPanel1.add(jbSalir);
+        jbSalir.setBounds(12, 303, 133, 25);
 
         jbBuscarComidas.setText("Buscar Comidas");
         jbBuscarComidas.addActionListener(new java.awt.event.ActionListener() {
@@ -90,64 +94,37 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
                 jbBuscarComidasActionPerformed(evt);
             }
         });
+        jPanel1.add(jbBuscarComidas);
+        jbBuscarComidas.setBounds(12, 216, 133, 25);
 
         jButton1.setText("Manejo Dietas");
+        jPanel1.add(jButton1);
+        jButton1.setBounds(12, 260, 133, 25);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jbGestionesPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbGestionesComidas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbGestionesDietas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbCargarAvances, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbBuscarComidas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(65, 65, 65)
-                .addComponent(Contenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/italian-cuisine-2378729_1280.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout ContenidoLayout = new javax.swing.GroupLayout(Contenido);
+        Contenido.setLayout(ContenidoLayout);
+        ContenidoLayout.setHorizontalGroup(
+            ContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenidoLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(Fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 2277, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(jbGestionesPaciente)
-                        .addGap(18, 18, 18)
-                        .addComponent(jbGestionesComidas)
-                        .addGap(18, 18, 18)
-                        .addComponent(jbGestionesDietas)
-                        .addGap(18, 18, 18)
-                        .addComponent(jbCargarAvances)
-                        .addGap(15, 15, 15)
-                        .addComponent(jbBuscarComidas)
-                        .addGap(19, 19, 19)
-                        .addComponent(jButton1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jbSalir))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Contenido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(159, Short.MAX_VALUE))
+        ContenidoLayout.setVerticalGroup(
+            ContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        jPanel1.add(Contenido);
+        Contenido.setBounds(173, 0, 1770, 831);
+
+        FONDO_MENU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/paper-1074131_1280.jpg"))); // NOI18N
+        jPanel1.add(FONDO_MENU);
+        FONDO_MENU.setBounds(0, 0, 180, 650);
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(-1, 0, 1610, 650);
 
         pack();
         setLocationRelativeTo(null);
@@ -233,6 +210,8 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Contenido;
+    private javax.swing.JLabel FONDO_MENU;
+    private javax.swing.JLabel Fondo;
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbBuscarComidas;
