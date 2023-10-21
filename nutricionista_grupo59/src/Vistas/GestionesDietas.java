@@ -294,11 +294,12 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
 
         DietaData dd = new DietaData();
         Dieta dieta = new Dieta();
+        Paciente paci= new  Paciente();
         try {
             Integer id=Integer.parseInt(jtId.getText());
             dieta = dd.buscarDieta(id);
             jtNombre.setText(dieta.getNombre());
-            //jtPaciente.setText(dieta.getPaciente());
+            jtPaciente.setText(paci.getNombre());
             jrEstado.setSelected(dieta.isEstado());
             LocalDate lc = dieta.getFechaInicial();
             java.util.Date date = java.util.Date.from(lc.atStartOfDay(ZoneId.systemDefault()).toInstant());
@@ -318,6 +319,7 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
         
         DietaData dd = new DietaData();
         Dieta dieta = null;
+        Paciente paci=new Paciente();
 
         if (jtNombre.getText().isEmpty() || jdFechaInicial.getDate() == null || jtPesoInicial.getText().isEmpty()|| jdFechaFinal.getDate() == null) {
             JOptionPane.showMessageDialog(this, "no puede haber campos vacios");
@@ -333,7 +335,8 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
                 if (dieta == null) {
                     dieta = new Dieta();
                     dieta.setNombre(jtNombre.getText());
-                    //dieta.setPaciente(nombre.getText());
+                    paci.setNombre(jtPaciente.getText());
+                    dieta.setPaciente(paci);
                     dieta.setFechaInicial(fechaInicial);
                     dieta.setFechaFinal(fechaInicial);
                     dieta.setEstado(jrEstado.isSelected());
