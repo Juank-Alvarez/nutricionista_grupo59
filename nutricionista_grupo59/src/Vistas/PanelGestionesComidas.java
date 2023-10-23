@@ -93,6 +93,8 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
         contenido.add(jLabel1);
         jLabel1.setBounds(30, 10, 180, 40);
 
+        jbAgregar.setBackground(java.awt.SystemColor.activeCaption);
+        jbAgregar.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbAgregar.setText("Agregar");
         jbAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,8 +102,10 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
             }
         });
         contenido.add(jbAgregar);
-        jbAgregar.setBounds(14, 367, 121, 25);
+        jbAgregar.setBounds(14, 367, 121, 27);
 
+        jbLimpiarCampos.setBackground(java.awt.SystemColor.activeCaption);
+        jbLimpiarCampos.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbLimpiarCampos.setText("Limpiar Campos");
         jbLimpiarCampos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,8 +113,10 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
             }
         });
         contenido.add(jbLimpiarCampos);
-        jbLimpiarCampos.setBounds(14, 238, 121, 25);
+        jbLimpiarCampos.setBounds(14, 238, 129, 27);
 
+        jbModificar.setBackground(java.awt.SystemColor.activeCaption);
+        jbModificar.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbModificar.setText("Modificar");
         jbModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,8 +124,10 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
             }
         });
         contenido.add(jbModificar);
-        jbModificar.setBounds(14, 324, 121, 25);
+        jbModificar.setBounds(14, 324, 121, 27);
 
+        jbBuscar.setBackground(java.awt.SystemColor.activeCaption);
+        jbBuscar.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbBuscar.setText("Buscar");
         jbBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,7 +135,7 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
             }
         });
         contenido.add(jbBuscar);
-        jbBuscar.setBounds(14, 281, 121, 25);
+        jbBuscar.setBounds(14, 281, 121, 27);
 
         jLabel2.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jLabel2.setText("Nombre Comida");
@@ -176,7 +184,7 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
         jtCantCalorias.setBounds(190, 160, 224, 22);
 
         jtComidas.setBackground(new java.awt.Color(255, 204, 153));
-        jtComidas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jtComidas.setBorder(javax.swing.BorderFactory.createCompoundBorder(null, new javax.swing.border.MatteBorder(null)));
         jtComidas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -193,6 +201,8 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
         contenido.add(jScrollPane1);
         jScrollPane1.setBounds(490, 30, 302, 230);
 
+        jbSeleccionar.setBackground(java.awt.SystemColor.activeCaption);
+        jbSeleccionar.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbSeleccionar.setText("Seleccionar");
         jbSeleccionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,7 +210,7 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
             }
         });
         contenido.add(jbSeleccionar);
-        jbSeleccionar.setBounds(500, 290, 109, 25);
+        jbSeleccionar.setBounds(500, 290, 109, 27);
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/breakfast-5132879_1920.jpg"))); // NOI18N
         contenido.add(Fondo);

@@ -135,7 +135,8 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
         jPanel1.add(jtTelefono);
         jtTelefono.setBounds(200, 240, 197, 22);
 
-        jbLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/paper-1074131_1280.jpg"))); // NOI18N
+        jbLimpiar.setBackground(java.awt.SystemColor.activeCaption);
+        jbLimpiar.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbLimpiar.setText("Limpiar campos");
         jbLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,12 +146,12 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
         jPanel1.add(jbLimpiar);
         jbLimpiar.setBounds(20, 360, 150, 40);
 
-        jbGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono_guardar_64.png"))); // NOI18N
+        jbGuardar.setBackground(java.awt.SystemColor.activeCaption);
+        jbGuardar.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbGuardar.setText("Guardar");
         jbGuardar.setContentAreaFilled(false);
         jbGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jbGuardar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono_guardar_72.png"))); // NOI18N
-        jbGuardar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono_guardar_96.png"))); // NOI18N
+        jbGuardar.setOpaque(true);
         jbGuardar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jbGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,8 +159,10 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jbGuardar);
-        jbGuardar.setBounds(610, 40, 99, 120);
+        jbGuardar.setBounds(610, 60, 100, 40);
 
+        jbVolver.setBackground(java.awt.SystemColor.activeCaption);
+        jbVolver.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbVolver.setText("Volver");
         jbVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,8 +170,10 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jbVolver);
-        jbVolver.setBounds(610, 340, 99, 25);
+        jbVolver.setBounds(610, 260, 99, 27);
 
+        jbBuscar.setBackground(java.awt.SystemColor.activeCaption);
+        jbBuscar.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbBuscar.setText("Buscar");
         jbBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -176,7 +181,7 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jbBuscar);
-        jbBuscar.setBounds(610, 200, 99, 25);
+        jbBuscar.setBounds(610, 130, 99, 27);
 
         jrEstado.setBackground(new java.awt.Color(255, 204, 153));
         jPanel1.add(jrEstado);
@@ -187,6 +192,8 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
         jPanel1.add(jLabel7);
         jLabel7.setBounds(20, 290, 90, 23);
 
+        jbModificar.setBackground(java.awt.SystemColor.activeCaption);
+        jbModificar.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbModificar.setText("Modificar ");
         jbModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -194,7 +201,7 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jbModificar);
-        jbModificar.setBounds(610, 270, 99, 25);
+        jbModificar.setBounds(610, 190, 99, 27);
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/bell-pepper-2179100_1280.jpg"))); // NOI18N
         jPanel1.add(Fondo);
@@ -249,8 +256,16 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
     }//GEN-LAST:event_jtNombreActionPerformed
 
     private void jbVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVolverActionPerformed
-        PanelPorDefecto p1= new PanelPorDefecto();
-        ShowPanel(p1);
+        
+        SegundaVistaPrincipalMenu bpm = new SegundaVistaPrincipalMenu();
+        bpm.setVisible(true);
+       // dispose();
+        
+        
+                
+                
+                
+        
     }//GEN-LAST:event_jbVolverActionPerformed
 
     private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
@@ -349,6 +364,10 @@ private void ShowPanel(JPanel panel) {
         jPanel1.revalidate();
         jPanel1.repaint();
     }
+
+    
+
+ 
 
 
 

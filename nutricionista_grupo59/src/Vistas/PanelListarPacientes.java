@@ -31,6 +31,7 @@ public class PanelListarPacientes extends javax.swing.JPanel {
     private void initComponents() {
 
         contenido = new javax.swing.JPanel();
+        jbVolver = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtPacientes = new javax.swing.JTable();
@@ -46,6 +47,17 @@ public class PanelListarPacientes extends javax.swing.JPanel {
         contenido.setPreferredSize(new java.awt.Dimension(752, 603));
         contenido.setLayout(null);
 
+        jbVolver.setBackground(java.awt.SystemColor.activeCaption);
+        jbVolver.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        jbVolver.setText("Volver");
+        jbVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbVolverActionPerformed(evt);
+            }
+        });
+        contenido.add(jbVolver);
+        jbVolver.setBounds(20, 410, 99, 27);
+
         jLabel1.setFont(new java.awt.Font("Bodoni MT", 2, 24)); // NOI18N
         jLabel1.setText("Pacientes que no llegaron al peso buscado");
         jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -53,6 +65,7 @@ public class PanelListarPacientes extends javax.swing.JPanel {
         jLabel1.setBounds(20, 18, 420, 40);
 
         jtPacientes.setBackground(new java.awt.Color(255, 204, 153));
+        jtPacientes.setBorder(new javax.swing.border.MatteBorder(null));
         jtPacientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -97,6 +110,8 @@ public class PanelListarPacientes extends javax.swing.JPanel {
         contenido.add(jLabel3);
         jLabel3.setBounds(20, 240, 171, 23);
 
+        jbIra.setBackground(java.awt.SystemColor.activeCaption);
+        jbIra.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbIra.setText("Ir a Gention del Paciente");
         jbIra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,7 +119,7 @@ public class PanelListarPacientes extends javax.swing.JPanel {
             }
         });
         contenido.add(jbIra);
-        jbIra.setBounds(20, 340, 163, 25);
+        jbIra.setBounds(20, 340, 200, 27);
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/strawberries-6309951_1280.jpg"))); // NOI18N
         contenido.add(Fondo);
@@ -150,6 +165,14 @@ public class PanelListarPacientes extends javax.swing.JPanel {
         
     }//GEN-LAST:event_jbIraActionPerformed
 
+    private void jbVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVolverActionPerformed
+
+        SegundaVistaPrincipalMenu bpm = new SegundaVistaPrincipalMenu();
+        bpm.setVisible(true);
+         //dispose();
+
+    }//GEN-LAST:event_jbVolverActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fondo;
@@ -159,6 +182,7 @@ public class PanelListarPacientes extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbIra;
+    private javax.swing.JButton jbVolver;
     private javax.swing.JRadioButton jrCumplieron;
     private javax.swing.JRadioButton jrNoCumplieron;
     private javax.swing.JTable jtPacientes;

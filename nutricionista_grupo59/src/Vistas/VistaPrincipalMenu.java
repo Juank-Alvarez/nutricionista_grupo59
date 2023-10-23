@@ -21,8 +21,7 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
     
     public VistaPrincipalMenu() {
         initComponents();
-//        PanelPorDefecto p1=new PanelPorDefecto();
-//        ShowPanel(p1);
+
         
     }
 
