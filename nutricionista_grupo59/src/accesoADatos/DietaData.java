@@ -23,20 +23,21 @@ public class DietaData {
     }
     
     public void guardarDieta(Dieta dieta){
-        String sql="INSERT INTO dieta ( nombre,idPaciente,fechaInicial, pesoInicial, pesoFinal, "
-                + "fechaFinal, altura, genero, estado) VALUES (? ,? ,? , ?, ? ,? , ? ,? ,?)";
+        String sql="INSERT INTO dieta ( idDieta, nombre,idPaciente,fechaInicial, pesoInicial,pesoBuscado,fechaFinal, "
+                + "pesoFinal, altura, genero, estado) VALUES (? ,? ,? , ?, ? ,? , ? ,? ,?,?,?)";
         try {
             PreparedStatement ps=con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
-            ps.setString(1, dieta.getNombre());
-            ps.setInt(2, dieta.getPaciente().getIdPaciente());
-            ps.setDate(3, Date.valueOf(dieta.getFechaInicial()));
-            ps.setDouble(4, dieta.getPesoInicial());
-            
-            ps.setDouble(5, dieta.getPesoFinal());
-            ps.setDate(6, Date.valueOf(dieta.getFechaFinal()));
-            ps.setDouble(7, dieta.getAltura());
-            ps.setString(8, dieta.getGenero());
-            ps.setBoolean(9, dieta.isEstado());
+            ps.setInt(1, dieta.getIdDieta());
+            ps.setString(2, dieta.getNombre());
+            ps.setInt(3, dieta.getPaciente().getIdPaciente());
+            ps.setDate(4, Date.valueOf(dieta.getFechaInicial()));
+            ps.setDouble(5, dieta.getPesoInicial());
+            ps.setDouble(6, dieta.getPesoBuscado());
+            ps.setDouble(7, dieta.getPesoFinal());
+            ps.setDate(8, Date.valueOf(dieta.getFechaFinal()));
+            ps.setDouble(9, dieta.getAltura());
+            ps.setString(10, dieta.getGenero());
+            ps.setBoolean(11, dieta.isEstado());
             
             ps.executeUpdate();
             
@@ -49,7 +50,7 @@ public class DietaData {
             ps.close();
             
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a agregar dieta");
+            JOptionPane.showMessageDialog(null, "Error al acceder a guardar dieta");
         }
     }
     
@@ -69,7 +70,7 @@ public class DietaData {
     }
     
     public Dieta buscarDieta(int id){
-        String sql="SELECT dieta.nombre, paciente.nombre, paciente.apellido, pesoInicial, pesoBuscado, pesoFinal "
+        String sql="SELECT idDieta,dieta.nombre, dieta.idpaciente, fechaInicial, pesoInicial,pesoBuscado,fechaFinal, pesoFinal,altura, genero, dieta.estado "
                 + "FROM dieta, paciente WHERE idDieta = ? ";
         Dieta dieta= null;
         Paciente paciente=null;
@@ -83,16 +84,20 @@ public class DietaData {
                 paciente=new Paciente();
                 dieta.setIdDieta(id);
                 dieta.setNombre(rs.getString("dieta.nombre"));
-                paciente.setNombre(rs.getString("paciente.nombre"));
-                paciente.setApellido(rs.getString("apellido"));
+                paciente.setIdPaciente(id);
                 dieta.setPaciente(paciente);
+                dieta.setFechaInicial(LocalDate.MIN);
+                //dieta.setFechaInicial(rs.getDate("fechaInicial").toLocalDate());
                 dieta.setPesoInicial(rs.getDouble("pesoInicial"));
-                
+                dieta.setPesoBuscado(rs.getDouble("pesoBuscado"));
+                dieta.setFechaFinal(LocalDate.MIN);
+                //dieta.setFechaInicial(rs.getDate("fechafinal").toLocalDate());
                 dieta.setPesoFinal(rs.getDouble("pesoFinal"));
+                dieta.setEstado(rs.getBoolean("estado"));
             }
             ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "No se pudo acceder a buscarPaciente");
+            JOptionPane.showMessageDialog(null, "No se pudo acceder a buscarDieta"+ex);
         }
         return dieta;
         

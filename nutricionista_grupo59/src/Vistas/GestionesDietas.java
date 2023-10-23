@@ -5,6 +5,7 @@
 package Vistas;
 
 import accesoADatos.DietaData;
+import accesoADatos.PacienteData;
 import entidades.Dieta;
 import entidades.Paciente;
 import java.sql.Date;
@@ -250,25 +251,32 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
 
     private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
 
-        DietaData dd = new DietaData();
-        Dieta dieta = new Dieta();
-        Paciente paci= new  Paciente();
-        try {
-            Integer id=Integer.parseInt(jtId.getText());
-            dieta = dd.buscarDieta(id);
-            jtNombre.setText(dieta.getNombre());
-            jtPaciente.setText(paci.getNombre());
-            jrEstado.setSelected(dieta.isEstado());
-            LocalDate lc = dieta.getFechaInicial();
-            java.util.Date date = java.util.Date.from(lc.atStartOfDay(ZoneId.systemDefault()).toInstant());
-            jdFechaInicial.setDate(date);
-            jtPesoInicial.setText(Double.toString((Double)dieta.getPesoInicial()));
-            jdFechaFinal.setDate(date);
-            jtPesoFinal.setText(Double.toString((Double)dieta.getPesoFinal()));
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Debe ingresar un dato valido");
-        }
+         if (jtId.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Ingresar un Id");
+        } else {
+            DietaData dd = new DietaData();
+            Dieta dieta = new Dieta();
+            PacienteData pd = new PacienteData();
+            Paciente paci = new Paciente();
+            dieta = dd.buscarDieta(Integer.parseInt(jtId.getText()));
+            paci = pd.buscarPaciente(Integer.parseInt(jtId.getText()));
+            if (dieta == null) {
+                JOptionPane.showMessageDialog(this, "Dieta no existe");
 
+            } else {
+                jtNombre.setText(dieta.getNombre());
+                jtPaciente.setText(paci.getIdPaciente()+"");
+                LocalDate lc = dieta.getFechaInicial();
+                //java.util.Date date = java.util.Date.from(lc.atStartOfDay(ZoneId.systemDefault()).toInstant());
+                //jdFechaInicial.setDate(date);
+                jtPesoInicial.setText(Double.toString((Double)dieta.getPesoInicial()));
+                //jdFechaFinal.setDate(date);
+                jtPesoFinal.setText(Double.toString((Double)dieta.getPesoFinal()));
+                jrEstado.setSelected(paci.isEstado());
+            }
+        }
+        
+      
                                 // TODO add your handling code here:
     }//GEN-LAST:event_jbBuscarActionPerformed
 
@@ -277,9 +285,10 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
         
         DietaData dd = new DietaData();
         Dieta dieta = null;
+        PacienteData pd=new PacienteData();
         Paciente paci=new Paciente();
 
-        if (jtNombre.getText().isEmpty() || jdFechaInicial.getDate() == null || jtPesoInicial.getText().isEmpty()|| jdFechaFinal.getDate() == null) {
+        if (jtNombre.getText().isEmpty() || jtPaciente.getText().isEmpty() || jdFechaInicial.getDate() == null || jtPesoInicial.getText().isEmpty()|| jdFechaFinal.getDate() == null || jtPesoInicial.getText().isEmpty()|| jtPesoBuscado.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "no puede haber campos vacios");
             return;
         }
@@ -296,13 +305,22 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
                     paci.setNombre(jtPaciente.getText());
                     dieta.setPaciente(paci);
                     dieta.setFechaInicial(fechaInicial);
+                    dieta.setPesoInicial(jtPesoInicial.getAlignmentX());
                     dieta.setFechaFinal(fechaInicial);
+                     dieta.setPesoFinal(jtPesoFinal.getAlignmentX());
+                     dieta.setPesoBuscado(jtPesoBuscado.getAlignmentX());
                     dieta.setEstado(jrEstado.isSelected());
                     dd.guardarDieta(dieta);
                 } else {
                     dieta.setNombre(jtNombre.getText());
+                    paci.setNombre(jtPaciente.getText());
+                    dieta.setPaciente(paci);
                     dieta.setFechaInicial(fechaInicial);
+                    dieta.setPesoInicial(jtPesoInicial.getAlignmentX());
+                    dieta.setFechaFinal(fechaInicial);
+                    dieta.setPesoFinal(jtPesoFinal.getAlignmentX());
                     dieta.setEstado(jrEstado.isSelected());
+                   dieta.setEstado(jrEstado.isSelected());
                     dd.modificarDieta(dieta);
                 }
 

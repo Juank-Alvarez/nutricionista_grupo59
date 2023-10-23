@@ -92,7 +92,7 @@ public class PacienteData {
      
      //
      public Paciente buscarPaciente(int id){
-        String sql="SELECT nombre,apellido,dni, domicilio, telefono, estado  FROM paciente WHERE idPaciente = ? ";
+        String sql="SELECT idPaciente,nombre,apellido,dni, domicilio, telefono, estado  FROM paciente WHERE idPaciente = ? ";
         Paciente paciente= null;
         
         try {
@@ -101,7 +101,7 @@ public class PacienteData {
             ResultSet rs=ps.executeQuery();
             if(rs.next()){
                 paciente=new Paciente();
-                paciente.setIdPaciente(id);
+                paciente.setIdPaciente(rs.getInt("idPaciente"));
                 paciente.setDni(rs.getInt("dni"));
                 paciente.setApellido(rs.getString("apellido"));
                 paciente.setNombre(rs.getString("nombre"));
@@ -111,7 +111,7 @@ public class PacienteData {
             }
             ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "No se pudo acceder a buscarPaciente");
+            JOptionPane.showMessageDialog(null, "No se pudo acceder a buscarPaciente"+ex);
         }
         return paciente;
         
