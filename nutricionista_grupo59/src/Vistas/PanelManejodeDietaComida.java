@@ -166,9 +166,8 @@ public class PanelManejodeDietaComida extends javax.swing.JPanel {
                 .addComponent(jLabel3)
                 .addGap(8, 8, 8)
                 .addGroup(contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel5)
-                        .addComponent(jLabel4))
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel4)
                     .addComponent(jrComidasnoAgregadas)
                     .addComponent(jrComidasAgregadas))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -205,7 +204,7 @@ public class PanelManejodeDietaComida extends javax.swing.JPanel {
             for(Comida com: lista){
                 modelo.addRow(new Object[]{com.getIdComida(), com.getNombre(), com.getCantCalorias()});
             }
-        }
+        }else borrarFilasTabla();
     }//GEN-LAST:event_jrComidasAgregadasActionPerformed
 
     private void jrComidasnoAgregadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrComidasnoAgregadasActionPerformed
@@ -219,7 +218,7 @@ public class PanelManejodeDietaComida extends javax.swing.JPanel {
             for(Comida com: lista){
                 modelo.addRow(new Object[]{com.getIdComida(), com.getNombre(), com.getCantCalorias()});
             }
-        }
+        }else borrarFilasTabla();
     }//GEN-LAST:event_jrComidasnoAgregadasActionPerformed
 
     private void jbAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAgregarActionPerformed
@@ -239,6 +238,7 @@ public class PanelManejodeDietaComida extends javax.swing.JPanel {
     }//GEN-LAST:event_jbAgregarActionPerformed
 
     private void jbQuitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbQuitarActionPerformed
+
         DietaComidaData dietcomi=new DietaComidaData();
         int idcomida, iddieta;
         Dieta diet=(Dieta) jcbDietas.getSelectedItem();
@@ -248,6 +248,18 @@ public class PanelManejodeDietaComida extends javax.swing.JPanel {
             iddieta= diet.getIdDieta();
             dietcomi.borrarDietaComida(idcomida, iddieta);
         }
+        
+        Dieta selec= (Dieta) jcbDietas.getSelectedItem();
+        DietaComidaData dcd= new DietaComidaData();
+        List<Comida> lista= dcd.obtenerComidasPorDieta(selec.getIdDieta());
+        
+        if(jrComidasAgregadas.isSelected()){
+            jrComidasnoAgregadas.setSelected(false);
+            borrarFilasTabla();
+            for(Comida com: lista){
+                modelo.addRow(new Object[]{com.getIdComida(), com.getNombre(), com.getCantCalorias()});
+            }
+        }else borrarFilasTabla();
     }//GEN-LAST:event_jbQuitarActionPerformed
 
     private void jcbDietasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbDietasActionPerformed

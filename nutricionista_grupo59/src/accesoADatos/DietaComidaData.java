@@ -168,10 +168,15 @@ public class DietaComidaData {
 
         ArrayList<Comida> comidas = new ArrayList();
 
-          String sql = "SELECT comida.idComida, comida.nombre, comida.cantCalorias "
-                  + "FROM comida, dietacomida WHERE dietacomida.idComida = comida.idComida "
-                  + "AND idDieta != ?";
+//          String sql = "SELECT comida.idComida, comida.nombre, comida.cantCalorias "
+//                  + "FROM comida, dietacomida WHERE dietacomida.idComida != comida.idComida ";
 
+        String sql = "SELECT comida.idComida, comida.nombre, comida.cantCalorias "
+           + "FROM comida "
+           + "WHERE comida.idComida NOT IN ("
+           + "    SELECT dietacomida.idComida "
+           + "    FROM dietacomida "
+           + "    WHERE dietacomida.idDieta = ?)";
         try {
 
             PreparedStatement ps = con.prepareStatement(sql);

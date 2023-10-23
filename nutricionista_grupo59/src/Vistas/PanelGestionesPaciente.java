@@ -257,9 +257,9 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
 
     private void jbVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVolverActionPerformed
         
-        SegundaVistaPrincipalMenu bpm = new SegundaVistaPrincipalMenu();
-        bpm.setVisible(true);
-       // dispose();
+        PanelPorDefecto bpm = new PanelPorDefecto();
+        ShowPanel(bpm);
+        
         
         
                 
