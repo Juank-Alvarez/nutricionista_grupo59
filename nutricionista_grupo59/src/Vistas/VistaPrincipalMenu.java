@@ -21,8 +21,8 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
     
     public VistaPrincipalMenu() {
         initComponents();
-        PanelPorDefecto p1=new PanelPorDefecto();
-        ShowPanel(p1);
+//        PanelPorDefecto p1=new PanelPorDefecto();
+//        ShowPanel(p1);
         
     }
 
@@ -38,48 +38,54 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
         Escritorio = new javax.swing.JDesktopPane();
         jbIngresar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        contenido = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jbIngresar.setFont(new java.awt.Font("Bodoni MT", 1, 12)); // NOI18N
+        jbIngresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/flecha entrar.png"))); // NOI18N
         jbIngresar.setText("Ingresar");
+        jbIngresar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jbIngresar.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        jbIngresar.setOpaque(false);
+        jbIngresar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/Flecha entrar mas grand.png"))); // NOI18N
+        jbIngresar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/Flecha entrar mas grande todavia.png"))); // NOI18N
+        jbIngresar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jbIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbIngresarActionPerformed(evt);
             }
         });
         Escritorio.add(jbIngresar);
-        jbIngresar.setBounds(50, 240, 120, 25);
+        jbIngresar.setBounds(30, 370, 180, 130);
 
-        jLabel3.setText("Mensaje de Bienvenida");
+        jLabel3.setFont(new java.awt.Font("Bodoni MT", 2, 30)); // NOI18N
+        jLabel3.setText("La solución integral para la gestión eficiente ");
         Escritorio.add(jLabel3);
-        jLabel3.setBounds(50, 40, 149, 177);
+        jLabel3.setBounds(10, 200, 540, 70);
 
-        contenido.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Bodoni MT", 2, 30)); // NOI18N
+        jLabel1.setText("de tu consultorio nutricional.");
+        Escritorio.add(jLabel1);
+        jLabel1.setBounds(10, 270, 470, 60);
 
-        javax.swing.GroupLayout contenidoLayout = new javax.swing.GroupLayout(contenido);
-        contenido.setLayout(contenidoLayout);
-        contenidoLayout.setHorizontalGroup(
-            contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 520, Short.MAX_VALUE)
-        );
-        contenidoLayout.setVerticalGroup(
-            contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 510, Short.MAX_VALUE)
-        );
-
-        Escritorio.add(contenido);
-        contenido.setBounds(290, 0, 520, 510);
+        Fondo.setFont(new java.awt.Font("Bodoni MT", 2, 24)); // NOI18N
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/Imagen pantalla principal.jpg"))); // NOI18N
+        Escritorio.add(Fondo);
+        Fondo.setBounds(0, 0, 1000, 650);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 804, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(Escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
+            .addComponent(Escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 651, Short.MAX_VALUE)
         );
 
         pack();
@@ -132,20 +138,21 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane Escritorio;
-    private javax.swing.JPanel contenido;
+    private javax.swing.JLabel Fondo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JButton jbIngresar;
     // End of variables declaration//GEN-END:variables
     
-    private void ShowPanel(JPanel panel) {
-
-        panel.setSize(680, 508);
-        panel.setLocation(0, 0);
-
-        contenido.removeAll();
-        contenido.add(panel, BorderLayout.CENTER);
-        contenido.revalidate();
-        contenido.repaint();
+//    private void ShowPanel(JPanel panel) {
+//
+//        panel.setSize(680, 508);
+//        panel.setLocation(0, 0);
+//
+//        contenido.removeAll();
+//        contenido.add(panel, BorderLayout.CENTER);
+//        contenido.revalidate();
+//        contenido.repaint();
     }
 
-}
+

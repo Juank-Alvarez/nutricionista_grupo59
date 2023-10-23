@@ -39,12 +39,20 @@ public class PanelListarPacientes extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jbIra = new javax.swing.JButton();
+        Fondo = new javax.swing.JLabel();
+
+        setLayout(null);
 
         contenido.setPreferredSize(new java.awt.Dimension(752, 603));
+        contenido.setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Bodoni MT", 2, 24)); // NOI18N
         jLabel1.setText("Pacientes que no llegaron al peso buscado");
+        jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        contenido.add(jLabel1);
+        jLabel1.setBounds(20, 18, 420, 40);
 
+        jtPacientes.setBackground(new java.awt.Color(255, 204, 153));
         jtPacientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -58,21 +66,36 @@ public class PanelListarPacientes extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jtPacientes);
 
+        contenido.add(jScrollPane1);
+        jScrollPane1.setBounds(260, 110, 327, 257);
+
+        jrCumplieron.setBackground(new java.awt.Color(255, 204, 153));
         jrCumplieron.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jrCumplieronActionPerformed(evt);
             }
         });
+        contenido.add(jrCumplieron);
+        jrCumplieron.setBounds(90, 190, 21, 21);
 
+        jrNoCumplieron.setBackground(new java.awt.Color(255, 204, 153));
         jrNoCumplieron.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jrNoCumplieronActionPerformed(evt);
             }
         });
+        contenido.add(jrNoCumplieron);
+        jrNoCumplieron.setBounds(90, 290, 21, 21);
 
+        jLabel2.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jLabel2.setText("Cumplieron la meta");
+        contenido.add(jLabel2);
+        jLabel2.setBounds(20, 140, 150, 30);
 
+        jLabel3.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jLabel3.setText("No cumplieron la meta");
+        contenido.add(jLabel3);
+        jLabel3.setBounds(20, 240, 171, 23);
 
         jbIra.setText("Ir a Gention del Paciente");
         jbIra.addActionListener(new java.awt.event.ActionListener() {
@@ -80,69 +103,15 @@ public class PanelListarPacientes extends javax.swing.JPanel {
                 jbIraActionPerformed(evt);
             }
         });
+        contenido.add(jbIra);
+        jbIra.setBounds(20, 340, 163, 25);
 
-        javax.swing.GroupLayout contenidoLayout = new javax.swing.GroupLayout(contenido);
-        contenido.setLayout(contenidoLayout);
-        contenidoLayout.setHorizontalGroup(
-            contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(contenidoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(83, 83, 83))
-            .addGroup(contenidoLayout.createSequentialGroup()
-                .addGroup(contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(contenidoLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jbIra))
-                    .addGroup(contenidoLayout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)))
-                    .addGroup(contenidoLayout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addComponent(jrCumplieron))
-                    .addGroup(contenidoLayout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addComponent(jrNoCumplieron)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(70, 70, 70))
-        );
-        contenidoLayout.setVerticalGroup(
-            contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(contenidoLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(contenidoLayout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jrCumplieron)
-                        .addGap(29, 29, 29)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jrNoCumplieron)
-                        .addGap(88, 88, 88)
-                        .addComponent(jbIra))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(274, Short.MAX_VALUE))
-        );
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/strawberries-6309951_1280.jpg"))); // NOI18N
+        contenido.add(Fondo);
+        Fondo.setBounds(0, 0, 1000, 670);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(contenido, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(contenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        add(contenido);
+        contenido.setBounds(0, 0, 1000, 665);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jrCumplieronActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrCumplieronActionPerformed
@@ -183,6 +152,7 @@ public class PanelListarPacientes extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Fondo;
     private javax.swing.JPanel contenido;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

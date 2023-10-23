@@ -79,8 +79,19 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jtComidas = new javax.swing.JTable();
         jbSeleccionar = new javax.swing.JButton();
+        Fondo = new javax.swing.JLabel();
 
+        setPreferredSize(new java.awt.Dimension(1000, 680));
+        setLayout(null);
+
+        contenido.setPreferredSize(new java.awt.Dimension(1000, 650));
+        contenido.setLayout(null);
+
+        jLabel1.setFont(new java.awt.Font("Bodoni MT", 2, 24)); // NOI18N
         jLabel1.setText("Gestion Comidas");
+        jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        contenido.add(jLabel1);
+        jLabel1.setBounds(30, 10, 180, 40);
 
         jbAgregar.setText("Agregar");
         jbAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -88,6 +99,8 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
                 jbAgregarActionPerformed(evt);
             }
         });
+        contenido.add(jbAgregar);
+        jbAgregar.setBounds(14, 367, 121, 25);
 
         jbLimpiarCampos.setText("Limpiar Campos");
         jbLimpiarCampos.addActionListener(new java.awt.event.ActionListener() {
@@ -95,6 +108,8 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
                 jbLimpiarCamposActionPerformed(evt);
             }
         });
+        contenido.add(jbLimpiarCampos);
+        jbLimpiarCampos.setBounds(14, 238, 121, 25);
 
         jbModificar.setText("Modificar");
         jbModificar.addActionListener(new java.awt.event.ActionListener() {
@@ -102,6 +117,8 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
                 jbModificarActionPerformed(evt);
             }
         });
+        contenido.add(jbModificar);
+        jbModificar.setBounds(14, 324, 121, 25);
 
         jbBuscar.setText("Buscar");
         jbBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -109,27 +126,57 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
                 jbBuscarActionPerformed(evt);
             }
         });
+        contenido.add(jbBuscar);
+        jbBuscar.setBounds(14, 281, 121, 25);
 
+        jLabel2.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jLabel2.setText("Nombre Comida");
+        contenido.add(jLabel2);
+        jLabel2.setBounds(12, 76, 140, 23);
 
+        jLabel3.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jLabel3.setText("Detalle");
+        contenido.add(jLabel3);
+        jLabel3.setBounds(12, 116, 120, 23);
 
+        jLabel4.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jLabel4.setText("Cantidad Calorias");
+        contenido.add(jLabel4);
+        jLabel4.setBounds(12, 161, 140, 23);
 
+        jLabel5.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jLabel5.setText("Estado");
+        contenido.add(jLabel5);
+        jLabel5.setBounds(12, 199, 120, 23);
 
+        rbEstado.setBackground(new java.awt.Color(255, 204, 153));
+        contenido.add(rbEstado);
+        rbEstado.setBounds(190, 200, 21, 21);
+
+        jtNombreComida.setBackground(new java.awt.Color(255, 204, 153));
         jtNombreComida.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jtNombreComidaKeyTyped(evt);
             }
         });
+        contenido.add(jtNombreComida);
+        jtNombreComida.setBounds(190, 70, 224, 22);
 
+        jtDetalle.setBackground(new java.awt.Color(255, 204, 153));
+        contenido.add(jtDetalle);
+        jtDetalle.setBounds(190, 110, 224, 22);
+
+        jtCantCalorias.setBackground(new java.awt.Color(255, 204, 153));
         jtCantCalorias.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jtCantCaloriasKeyTyped(evt);
             }
         });
+        contenido.add(jtCantCalorias);
+        jtCantCalorias.setBounds(190, 160, 224, 22);
 
+        jtComidas.setBackground(new java.awt.Color(255, 204, 153));
+        jtComidas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jtComidas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -143,104 +190,24 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jtComidas);
 
+        contenido.add(jScrollPane1);
+        jScrollPane1.setBounds(490, 30, 302, 230);
+
         jbSeleccionar.setText("Seleccionar");
         jbSeleccionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbSeleccionarActionPerformed(evt);
             }
         });
+        contenido.add(jbSeleccionar);
+        jbSeleccionar.setBounds(500, 290, 109, 25);
 
-        javax.swing.GroupLayout contenidoLayout = new javax.swing.GroupLayout(contenido);
-        contenido.setLayout(contenidoLayout);
-        contenidoLayout.setHorizontalGroup(
-            contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(contenidoLayout.createSequentialGroup()
-                .addGroup(contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(contenidoLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addGroup(contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jbBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jbLimpiarCampos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jbModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jbAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(contenidoLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel4))
-                    .addGroup(contenidoLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel5))
-                        .addGap(33, 33, 33)
-                        .addGroup(contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(rbEstado)
-                            .addComponent(jtDetalle)
-                            .addComponent(jtNombreComida)
-                            .addComponent(jtCantCalorias, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)))
-                    .addGroup(contenidoLayout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(contenidoLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contenidoLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
-                        .addComponent(jbSeleccionar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(220, 220, 220))))
-        );
-        contenidoLayout.setVerticalGroup(
-            contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(contenidoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(contenidoLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(44, 44, 44)
-                        .addGroup(contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jtNombreComida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(jtDetalle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(23, 23, 23)
-                        .addGroup(contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(jtCantCalorias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(19, 19, 19)
-                        .addGroup(contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(rbEstado))
-                        .addGap(18, 18, 18)
-                        .addComponent(jbLimpiarCampos)
-                        .addGap(18, 18, 18)
-                        .addComponent(jbBuscar)
-                        .addGap(18, 18, 18)
-                        .addComponent(jbModificar))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbAgregar)
-                    .addComponent(jbSeleccionar))
-                .addContainerGap(127, Short.MAX_VALUE))
-        );
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/breakfast-5132879_1920.jpg"))); // NOI18N
+        contenido.add(Fondo);
+        Fondo.setBounds(0, 0, 1030, 680);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(contenido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(contenido, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        add(contenido);
+        contenido.setBounds(0, 0, 930, 680);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
@@ -369,6 +336,7 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Fondo;
     private javax.swing.JPanel contenido;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -399,7 +367,7 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
     
     private void ShowPanel(JPanel panel) {
 
-        panel.setSize(680, 420);
+        panel.setSize(1000, 680);
         panel.setLocation(0, 0);
 
         contenido.removeAll();

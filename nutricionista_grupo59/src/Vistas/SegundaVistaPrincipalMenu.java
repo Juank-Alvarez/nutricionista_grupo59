@@ -14,8 +14,8 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
     
     public SegundaVistaPrincipalMenu() {
         initComponents();
-        PanelPorDefecto p1=new PanelPorDefecto();
-        ShowPanel(p1);
+//        PanelPorDefecto p1=new PanelPorDefecto();
+//        ShowPanel(p1);
 
     }
 
@@ -31,93 +31,97 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
         jbCargarAvances = new javax.swing.JButton();
         jbSalir = new javax.swing.JButton();
         Contenido = new javax.swing.JPanel();
+        Fondo = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jlFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1000, 700));
 
         jPanel1.setPreferredSize(new java.awt.Dimension(1000, 650));
+        jPanel1.setLayout(null);
 
+        jbGestionesPaciente.setBackground(java.awt.SystemColor.activeCaption);
+        jbGestionesPaciente.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbGestionesPaciente.setText("Gestiones Paciente");
         jbGestionesPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbGestionesPacienteActionPerformed(evt);
             }
         });
+        jPanel1.add(jbGestionesPaciente);
+        jbGestionesPaciente.setBounds(12, 47, 150, 27);
 
+        jbGestionesComidas.setBackground(java.awt.SystemColor.activeCaption);
+        jbGestionesComidas.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbGestionesComidas.setText("Gestion Comidas");
         jbGestionesComidas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbGestionesComidasActionPerformed(evt);
             }
         });
+        jPanel1.add(jbGestionesComidas);
+        jbGestionesComidas.setBounds(12, 90, 150, 27);
 
+        jbGestionesDietas.setBackground(java.awt.SystemColor.activeCaption);
+        jbGestionesDietas.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbGestionesDietas.setText("Gestion Dietas");
         jbGestionesDietas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbGestionesDietasActionPerformed(evt);
             }
         });
+        jPanel1.add(jbGestionesDietas);
+        jbGestionesDietas.setBounds(12, 133, 150, 27);
 
+        jbCargarAvances.setBackground(java.awt.SystemColor.activeCaption);
+        jbCargarAvances.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbCargarAvances.setText("Listar Pacientes");
         jbCargarAvances.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbCargarAvancesActionPerformed(evt);
             }
         });
+        jPanel1.add(jbCargarAvances);
+        jbCargarAvances.setBounds(12, 176, 150, 27);
 
+        jbSalir.setBackground(java.awt.SystemColor.activeCaption);
+        jbSalir.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbSalir.setText("Salir");
         jbSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbSalirActionPerformed(evt);
             }
         });
+        jPanel1.add(jbSalir);
+        jbSalir.setBounds(10, 390, 150, 27);
 
-        javax.swing.GroupLayout ContenidoLayout = new javax.swing.GroupLayout(Contenido);
-        Contenido.setLayout(ContenidoLayout);
-        ContenidoLayout.setHorizontalGroup(
-            ContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 794, Short.MAX_VALUE)
-        );
-        ContenidoLayout.setVerticalGroup(
-            ContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 478, Short.MAX_VALUE)
-        );
+        Contenido.setLayout(null);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jbGestionesPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbGestionesComidas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbGestionesDietas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbCargarAvances, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(65, 65, 65)
-                .addComponent(Contenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(jbGestionesPaciente)
-                        .addGap(18, 18, 18)
-                        .addComponent(jbGestionesComidas)
-                        .addGap(18, 18, 18)
-                        .addComponent(jbGestionesDietas)
-                        .addGap(18, 18, 18)
-                        .addComponent(jbCargarAvances)
-                        .addGap(31, 31, 31)
-                        .addComponent(jbSalir))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Contenido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(166, Short.MAX_VALUE))
-        );
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/italian-cuisine-2378729_1280.jpg"))); // NOI18N
+        Contenido.add(Fondo);
+        Fondo.setBounds(0, 0, 850, 680);
+
+        jPanel1.add(Contenido);
+        Contenido.setBounds(170, 0, 830, 650);
+
+        jButton1.setText("jButton1");
+        jPanel1.add(jButton1);
+        jButton1.setBounds(20, 230, 79, 25);
+
+        jButton2.setText("jButton2");
+        jPanel1.add(jButton2);
+        jButton2.setBounds(20, 280, 79, 25);
+
+        jButton3.setText("jButton3");
+        jPanel1.add(jButton3);
+        jButton3.setBounds(20, 330, 79, 25);
+
+        jlFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/paper-1074131_1280.jpg"))); // NOI18N
+        jPanel1.add(jlFondo);
+        jlFondo.setBounds(0, 0, 170, 680);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -127,9 +131,7 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -157,8 +159,8 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
 
     private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
         
-           String botones[] = {"Cerrar Sesion", "Cancelar"};
-        int eleccion = JOptionPane.showOptionDialog(this, "¿Desea cerrar sesion?", "Título", 0, 0, null, botones, this);
+           String botones[] = {"Salir", "Cancelar"};
+        int eleccion = JOptionPane.showOptionDialog(this, "¿Desea Salir de la App?", "Título", 0, 0, null, botones, this);
         if (eleccion == JOptionPane.YES_OPTION) {
             VistaPrincipalMenu bpn = new VistaPrincipalMenu();
             bpn.setVisible(true);
@@ -210,17 +212,22 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Contenido;
+    private javax.swing.JLabel Fondo;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbCargarAvances;
     private javax.swing.JButton jbGestionesComidas;
     private javax.swing.JButton jbGestionesDietas;
     private javax.swing.JButton jbGestionesPaciente;
     private javax.swing.JButton jbSalir;
+    private javax.swing.JLabel jlFondo;
     // End of variables declaration//GEN-END:variables
 
 private void ShowPanel(JPanel panel) {
 
-        panel.setSize(680, 420);
+        panel.setSize(1000, 650);
         panel.setLocation(0, 0);
 
         Contenido.removeAll();
