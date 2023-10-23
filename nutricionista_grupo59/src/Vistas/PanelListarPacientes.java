@@ -56,7 +56,7 @@ public class PanelListarPacientes extends javax.swing.JPanel {
             }
         });
         contenido.add(jbVolver);
-        jbVolver.setBounds(20, 410, 99, 27);
+        jbVolver.setBounds(20, 410, 99, 24);
 
         jLabel1.setFont(new java.awt.Font("Bodoni MT", 2, 24)); // NOI18N
         jLabel1.setText("Pacientes que no llegaron al peso buscado");
@@ -89,7 +89,7 @@ public class PanelListarPacientes extends javax.swing.JPanel {
             }
         });
         contenido.add(jrCumplieron);
-        jrCumplieron.setBounds(90, 190, 21, 21);
+        jrCumplieron.setBounds(90, 190, 19, 20);
 
         jrNoCumplieron.setBackground(new java.awt.Color(255, 204, 153));
         jrNoCumplieron.addActionListener(new java.awt.event.ActionListener() {
@@ -98,7 +98,7 @@ public class PanelListarPacientes extends javax.swing.JPanel {
             }
         });
         contenido.add(jrNoCumplieron);
-        jrNoCumplieron.setBounds(90, 290, 21, 21);
+        jrNoCumplieron.setBounds(90, 290, 19, 20);
 
         jLabel2.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jLabel2.setText("Cumplieron la meta");
@@ -119,7 +119,7 @@ public class PanelListarPacientes extends javax.swing.JPanel {
             }
         });
         contenido.add(jbIra);
-        jbIra.setBounds(20, 340, 200, 27);
+        jbIra.setBounds(20, 340, 200, 24);
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/strawberries-6309951_1280.jpg"))); // NOI18N
         contenido.add(Fondo);

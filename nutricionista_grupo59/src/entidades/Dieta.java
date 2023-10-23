@@ -133,7 +133,7 @@ public class Dieta {
 
     @Override
     public String toString() {
-        return "Dieta{" + "nombre dieta=" + nombre + ", nombre paciente=" + paciente.getNombre() + ", apellido paciente=" + paciente.getApellido() + ", fechaInicial=" + fechaInicial + ", pesoInicial=" + pesoInicial +  ", pesoFinal=" + pesoFinal + ", genero=" + genero + ", altura=" + altura + ", fechaFinal=" + fechaFinal + '}';
+        return idDieta + " - " + nombre;
     }
      
     

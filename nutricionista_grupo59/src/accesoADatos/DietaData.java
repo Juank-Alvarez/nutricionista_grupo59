@@ -10,7 +10,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import java.sql.*;
-import java.time.LocalDate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -86,8 +85,9 @@ public class DietaData {
                 paciente.setNombre(rs.getString("paciente.nombre"));
                 paciente.setApellido(rs.getString("apellido"));
                 dieta.setPaciente(paciente);
+                dieta.setFechaInicial(rs.getDate("fechaInicial").toLocalDate());
+                dieta.setFechaInicial(rs.getDate("fechafinal").toLocalDate());
                 dieta.setPesoInicial(rs.getDouble("pesoInicial"));
-                
                 dieta.setPesoFinal(rs.getDouble("pesoFinal"));
             }
             ps.close();

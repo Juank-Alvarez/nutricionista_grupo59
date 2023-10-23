@@ -52,7 +52,7 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jbGestionesPaciente);
-        jbGestionesPaciente.setBounds(12, 47, 150, 27);
+        jbGestionesPaciente.setBounds(12, 47, 150, 24);
 
         jbGestionesComidas.setBackground(java.awt.SystemColor.activeCaption);
         jbGestionesComidas.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
@@ -63,7 +63,7 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jbGestionesComidas);
-        jbGestionesComidas.setBounds(12, 90, 150, 27);
+        jbGestionesComidas.setBounds(12, 90, 150, 24);
 
         jbGestionesDietas.setBackground(java.awt.SystemColor.activeCaption);
         jbGestionesDietas.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
@@ -74,7 +74,7 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jbGestionesDietas);
-        jbGestionesDietas.setBounds(12, 133, 150, 27);
+        jbGestionesDietas.setBounds(12, 133, 150, 24);
 
         jbCargarAvances.setBackground(java.awt.SystemColor.activeCaption);
         jbCargarAvances.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
@@ -85,7 +85,7 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jbCargarAvances);
-        jbCargarAvances.setBounds(12, 176, 150, 27);
+        jbCargarAvances.setBounds(12, 176, 150, 24);
 
         jbSalir.setBackground(java.awt.SystemColor.activeCaption);
         jbSalir.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
@@ -96,7 +96,7 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jbSalir);
-        jbSalir.setBounds(10, 390, 150, 27);
+        jbSalir.setBounds(10, 390, 150, 24);
 
         Contenido.setLayout(null);
 
@@ -109,15 +109,20 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
 
         jButton1.setText("jButton1");
         jPanel1.add(jButton1);
-        jButton1.setBounds(20, 230, 79, 25);
+        jButton1.setBounds(20, 230, 75, 23);
 
         jButton2.setText("jButton2");
         jPanel1.add(jButton2);
-        jButton2.setBounds(20, 280, 79, 25);
+        jButton2.setBounds(20, 280, 75, 23);
 
-        jButton3.setText("jButton3");
+        jButton3.setText("Dietas Registradas");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton3);
-        jButton3.setBounds(20, 330, 79, 25);
+        jButton3.setBounds(10, 330, 150, 23);
 
         jlFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/paper-1074131_1280.jpg"))); // NOI18N
         jPanel1.add(jlFondo);
@@ -174,6 +179,11 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
         GestionesDietas p1=new GestionesDietas();
         ShowPanel(p1);
     }//GEN-LAST:event_jbGestionesDietasActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+       PanelManejodeDietaComida p1=new PanelManejodeDietaComida();
+       ShowPanel(p1);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     
      
