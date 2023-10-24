@@ -143,6 +143,7 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
         jbLimpiar.setBackground(java.awt.SystemColor.activeCaption);
         jbLimpiar.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbLimpiar.setText("Limpiar campos");
+        jbLimpiar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbLimpiarActionPerformed(evt);
@@ -154,6 +155,7 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
         jbGuardar.setBackground(java.awt.SystemColor.activeCaption);
         jbGuardar.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbGuardar.setText("Guardar");
+        jbGuardar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbGuardar.setContentAreaFilled(false);
         jbGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jbGuardar.setOpaque(true);
@@ -169,24 +171,26 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
         jbVolver.setBackground(java.awt.SystemColor.activeCaption);
         jbVolver.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbVolver.setText("Volver");
+        jbVolver.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbVolverActionPerformed(evt);
             }
         });
         jPanel1.add(jbVolver);
-        jbVolver.setBounds(610, 260, 99, 27);
+        jbVolver.setBounds(610, 260, 99, 21);
 
         jbBuscar.setBackground(java.awt.SystemColor.activeCaption);
         jbBuscar.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbBuscar.setText("Buscar");
+        jbBuscar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbBuscarActionPerformed(evt);
             }
         });
         jPanel1.add(jbBuscar);
-        jbBuscar.setBounds(610, 130, 99, 27);
+        jbBuscar.setBounds(610, 130, 99, 21);
 
         jrEstado.setBackground(new java.awt.Color(255, 204, 153));
         jPanel1.add(jrEstado);
@@ -200,13 +204,14 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
         jbModificar.setBackground(java.awt.SystemColor.activeCaption);
         jbModificar.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbModificar.setText("Modificar ");
+        jbModificar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbModificarActionPerformed(evt);
             }
         });
         jPanel1.add(jbModificar);
-        jbModificar.setBounds(610, 190, 99, 27);
+        jbModificar.setBounds(610, 190, 99, 21);
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/bell-pepper-2179100_1280.jpg"))); // NOI18N
         jPanel1.add(Fondo);

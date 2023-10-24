@@ -31,6 +31,8 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
         jbCargarAvances = new javax.swing.JButton();
         jbSalir = new javax.swing.JButton();
         Contenido = new javax.swing.JPanel();
+        jlSaludo = new javax.swing.JLabel();
+        jlMensaje = new javax.swing.JLabel();
         Fondo = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -108,6 +110,17 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
         jbSalir.setBounds(10, 280, 150, 30);
 
         Contenido.setLayout(null);
+
+        jlSaludo.setFont(new java.awt.Font("Bodoni MT", 2, 36)); // NOI18N
+        jlSaludo.setForeground(new java.awt.Color(51, 51, 51));
+        jlSaludo.setText("¡Bienvenido a NutriApp!");
+        jlSaludo.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        Contenido.add(jlSaludo);
+        jlSaludo.setBounds(0, 0, 380, 80);
+
+        jlMensaje.setText("NutriApp es tu herramienta completa de gestión para tu consultorio nutricional.");
+        Contenido.add(jlMensaje);
+        jlMensaje.setBounds(10, 100, 480, 70);
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/italian-cuisine-2378729_1280.jpg"))); // NOI18N
         Contenido.add(Fondo);
@@ -246,6 +259,8 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
     private javax.swing.JButton jbGestionesPaciente;
     private javax.swing.JButton jbSalir;
     private javax.swing.JLabel jlFondo;
+    private javax.swing.JLabel jlMensaje;
+    private javax.swing.JLabel jlSaludo;
     // End of variables declaration//GEN-END:variables
 
 private void ShowPanel(JPanel panel) {
