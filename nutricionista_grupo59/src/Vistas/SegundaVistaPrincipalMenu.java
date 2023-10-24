@@ -31,6 +31,13 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
         jbCargarAvances = new javax.swing.JButton();
         jbSalir = new javax.swing.JButton();
         Contenido = new javax.swing.JPanel();
+        jlNombre = new javax.swing.JLabel();
+        jlMensaje5 = new javax.swing.JLabel();
+        jlMensaje6 = new javax.swing.JLabel();
+        jlMensaje3 = new javax.swing.JLabel();
+        jlMensaje4 = new javax.swing.JLabel();
+        jMensaje2 = new javax.swing.JLabel();
+        jMensaje1 = new javax.swing.JLabel();
         Fondo = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -108,6 +115,42 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
         jbSalir.setBounds(10, 300, 150, 25);
 
         Contenido.setLayout(null);
+
+        jlNombre.setFont(new java.awt.Font("Bodoni MT Condensed", 3, 48)); // NOI18N
+        jlNombre.setText("¡Bienvenido a NutriApp!");
+        Contenido.add(jlNombre);
+        jlNombre.setBounds(50, 0, 390, 70);
+
+        jlMensaje5.setFont(new java.awt.Font("Bodoni MT Condensed", 3, 20)); // NOI18N
+        jlMensaje5.setText(" ayudar a tus pacientes a alcanzar sus objetivos de salud.");
+        Contenido.add(jlMensaje5);
+        jlMensaje5.setBounds(10, 230, 510, 20);
+
+        jlMensaje6.setFont(new java.awt.Font("Bodoni MT Condensed", 3, 20)); // NOI18N
+        jlMensaje6.setText("¡Bienvenido a un nuevo nivel de eficiencia en tu consultorio nutricional  con NutriApp! ");
+        Contenido.add(jlMensaje6);
+        jlMensaje6.setBounds(10, 260, 680, 30);
+
+        jlMensaje3.setFont(new java.awt.Font("Bodoni MT Condensed", 3, 20)); // NOI18N
+        jlMensaje3.setText("En NutriApp, nuestra misión es hacer que la gestión de tu consultorio sea");
+        jlMensaje3.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        Contenido.add(jlMensaje3);
+        jlMensaje3.setBounds(10, 150, 600, 40);
+
+        jlMensaje4.setFont(new java.awt.Font("Bodoni MT Condensed", 3, 20)); // NOI18N
+        jlMensaje4.setText("más eficiente para que puedas enfocarte en lo que mejor sabes  hacer:");
+        Contenido.add(jlMensaje4);
+        jlMensaje4.setBounds(10, 190, 560, 30);
+
+        jMensaje2.setFont(new java.awt.Font("Bodoni MT Condensed", 3, 20)); // NOI18N
+        jMensaje2.setText("Estamos encantados de tenerte a bordo para simplificar  y optimizar la administración de tu práctica.");
+        Contenido.add(jMensaje2);
+        jMensaje2.setBounds(10, 120, 740, 30);
+
+        jMensaje1.setFont(new java.awt.Font("Bodoni MT Condensed", 3, 20)); // NOI18N
+        jMensaje1.setText("NutriApp es tu herramienta completa de gestión para tu consultorio nutricional.");
+        Contenido.add(jMensaje1);
+        jMensaje1.setBounds(10, 80, 700, 30);
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/italian-cuisine-2378729_1280.jpg"))); // NOI18N
         Contenido.add(Fondo);
@@ -254,6 +297,8 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jMensaje1;
+    private javax.swing.JLabel jMensaje2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbCargarAvances;
     private javax.swing.JButton jbGestionesComidas;
@@ -261,6 +306,11 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
     private javax.swing.JButton jbGestionesPaciente;
     private javax.swing.JButton jbSalir;
     private javax.swing.JLabel jlFondo;
+    private javax.swing.JLabel jlMensaje3;
+    private javax.swing.JLabel jlMensaje4;
+    private javax.swing.JLabel jlMensaje5;
+    private javax.swing.JLabel jlMensaje6;
+    private javax.swing.JLabel jlNombre;
     // End of variables declaration//GEN-END:variables
 
 private void ShowPanel(JPanel panel) {
