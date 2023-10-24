@@ -81,13 +81,14 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
         jLabel2.setBounds(20, 60, 100, 29);
 
         jtNombre.setBackground(new java.awt.Color(255, 204, 153));
+        jtNombre.setPreferredSize(new java.awt.Dimension(10, 30));
         jtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtNombreActionPerformed(evt);
             }
         });
         jPanel1.add(jtNombre);
-        jtNombre.setBounds(200, 60, 197, 22);
+        jtNombre.setBounds(200, 60, 197, 30);
 
         jLabel3.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jLabel3.setText("Apellido");
@@ -95,8 +96,9 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
         jLabel3.setBounds(20, 100, 100, 23);
 
         jtApellido.setBackground(new java.awt.Color(255, 204, 153));
+        jtApellido.setPreferredSize(new java.awt.Dimension(10, 30));
         jPanel1.add(jtApellido);
-        jtApellido.setBounds(200, 100, 197, 22);
+        jtApellido.setBounds(200, 100, 197, 30);
 
         jLabel4.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jLabel4.setText("Dni");
@@ -104,6 +106,7 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
         jLabel4.setBounds(20, 150, 100, 23);
 
         jtDni.setBackground(new java.awt.Color(255, 204, 153));
+        jtDni.setPreferredSize(new java.awt.Dimension(10, 30));
         jtDni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtDniActionPerformed(evt);
@@ -115,7 +118,7 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jtDni);
-        jtDni.setBounds(200, 150, 197, 22);
+        jtDni.setBounds(200, 150, 197, 30);
 
         jLabel5.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jLabel5.setText("Domicilio");
@@ -123,8 +126,9 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
         jLabel5.setBounds(20, 190, 100, 23);
 
         jtDomicilio.setBackground(new java.awt.Color(255, 204, 153));
+        jtDomicilio.setPreferredSize(new java.awt.Dimension(10, 30));
         jPanel1.add(jtDomicilio);
-        jtDomicilio.setBounds(200, 190, 197, 22);
+        jtDomicilio.setBounds(200, 190, 197, 30);
 
         jLabel6.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jLabel6.setText("Telefono");
@@ -132,8 +136,9 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
         jLabel6.setBounds(20, 240, 100, 23);
 
         jtTelefono.setBackground(new java.awt.Color(255, 204, 153));
+        jtTelefono.setPreferredSize(new java.awt.Dimension(10, 30));
         jPanel1.add(jtTelefono);
-        jtTelefono.setBounds(200, 240, 197, 22);
+        jtTelefono.setBounds(200, 240, 197, 30);
 
         jbLimpiar.setBackground(java.awt.SystemColor.activeCaption);
         jbLimpiar.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
