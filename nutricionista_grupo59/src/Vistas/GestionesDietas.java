@@ -71,8 +71,10 @@ public class GestionesDietas extends javax.swing.JPanel {
         jbSalir = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
 
+        setPreferredSize(new java.awt.Dimension(1000, 680));
         setLayout(null);
 
+        jPanel1.setPreferredSize(new java.awt.Dimension(1000, 680));
         jPanel1.setLayout(null);
 
         jbNueva.setText("Nueva Dieta");
@@ -82,7 +84,7 @@ public class GestionesDietas extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jbNueva);
-        jbNueva.setBounds(12, 395, 99, 25);
+        jbNueva.setBounds(12, 395, 94, 23);
 
         jbGuardar.setText("Guardar Dieta");
         jbGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -91,7 +93,7 @@ public class GestionesDietas extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jbGuardar);
-        jbGuardar.setBounds(129, 395, 107, 25);
+        jbGuardar.setBounds(129, 395, 102, 23);
 
         jbEliminar.setText("Eliminar Dieta");
         jbEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -100,7 +102,7 @@ public class GestionesDietas extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jbEliminar);
-        jbEliminar.setBounds(248, 395, 107, 25);
+        jbEliminar.setBounds(248, 395, 103, 23);
 
         jlDieta.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
         jlDieta.setText("Gestion Dietas");
@@ -175,15 +177,15 @@ public class GestionesDietas extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jbBuscar);
-        jbBuscar.setBounds(350, 60, 65, 25);
+        jbBuscar.setBounds(350, 60, 72, 23);
 
         jdFechaFinal.setBackground(new java.awt.Color(255, 204, 153));
         jPanel1.add(jdFechaFinal);
-        jdFechaFinal.setBounds(130, 180, 82, 22);
+        jdFechaFinal.setBounds(130, 180, 85, 22);
 
         jdFechaInicial.setBackground(new java.awt.Color(255, 204, 153));
         jPanel1.add(jdFechaInicial);
-        jdFechaInicial.setBounds(130, 140, 82, 22);
+        jdFechaInicial.setBounds(130, 140, 85, 22);
 
         jlEstado.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jlEstado.setText("Estado");
@@ -192,7 +194,7 @@ public class GestionesDietas extends javax.swing.JPanel {
 
         jrEstado.setBackground(new java.awt.Color(255, 204, 153));
         jPanel1.add(jrEstado);
-        jrEstado.setBounds(130, 270, 21, 21);
+        jrEstado.setBounds(130, 270, 19, 20);
 
         jtNombre.setBackground(new java.awt.Color(255, 204, 153));
         jPanel1.add(jtNombre);
@@ -218,7 +220,7 @@ public class GestionesDietas extends javax.swing.JPanel {
 
         jbSalir.setText("Salir");
         jPanel1.add(jbSalir);
-        jbSalir.setBounds(362, 395, 57, 25);
+        jbSalir.setBounds(362, 395, 72, 23);
 
         Fondo.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/green-682620_1280.jpg"))); // NOI18N
@@ -226,7 +228,7 @@ public class GestionesDietas extends javax.swing.JPanel {
         Fondo.setBounds(0, 0, 1000, 660);
 
         add(jPanel1);
-        jPanel1.setBounds(0, 0, 1002, 660);
+        jPanel1.setBounds(0, 0, 1000, 680);
     }// </editor-fold>//GEN-END:initComponents
 private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {                                        
          
@@ -302,9 +304,8 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
                 if (dieta == null) {
                     dieta = new Dieta();
                     dieta.setNombre(jtNombre.getText());
-                    Integer ip=Integer.parseInt(jtId.getText());
-                    //paci = pd.buscarPaciente(ip);
-                    paci.setIdPaciente(jtPaciente.getText());
+                    paci = pd.buscarPaciente(dieta.getPaciente().getIdPaciente());
+//                    paci.setIdPaciente(jtPaciente.getText());
                     dieta.setPaciente(paci);
                     dieta.setFechaInicial(fechaInicial);
                     dieta.setPesoInicial(jtPesoInicial.getAlignmentX());
