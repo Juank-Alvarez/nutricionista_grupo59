@@ -10,8 +10,11 @@ import accesoADatos.DietaData;
 import entidades.Comida;
 import entidades.Dieta;
 import entidades.Dietacomida;
+import java.awt.BorderLayout;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -25,6 +28,7 @@ public class PanelManejodeDietaComida extends javax.swing.JPanel {
             return false;
         }
     };
+    
     
     public PanelManejodeDietaComida() {
         initComponents();
@@ -79,7 +83,7 @@ public class PanelManejodeDietaComida extends javax.swing.JPanel {
             }
         });
         contenido.add(jbVolver);
-        jbVolver.setBounds(500, 460, 99, 27);
+        jbVolver.setBounds(500, 460, 99, 24);
 
         jcbDietas.setBackground(new java.awt.Color(255, 204, 153));
         jcbDietas.addActionListener(new java.awt.event.ActionListener() {
@@ -88,7 +92,7 @@ public class PanelManejodeDietaComida extends javax.swing.JPanel {
             }
         });
         contenido.add(jcbDietas);
-        jcbDietas.setBounds(440, 110, 143, 24);
+        jcbDietas.setBounds(440, 110, 143, 22);
 
         jLabel3.setFont(new java.awt.Font("Bodoni MT", 1, 16)); // NOI18N
         jLabel3.setText("Listado de Comidas");
@@ -110,7 +114,7 @@ public class PanelManejodeDietaComida extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jtComidas);
 
         contenido.add(jScrollPane1);
-        jScrollPane1.setBounds(150, 220, 454, 145);
+        jScrollPane1.setBounds(150, 220, 452, 145);
 
         jbAgregar.setBackground(java.awt.SystemColor.activeCaption);
         jbAgregar.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
@@ -144,7 +148,7 @@ public class PanelManejodeDietaComida extends javax.swing.JPanel {
             }
         });
         contenido.add(jrComidasAgregadas);
-        jrComidasAgregadas.setBounds(150, 190, 21, 21);
+        jrComidasAgregadas.setBounds(150, 190, 19, 20);
 
         jrComidasnoAgregadas.setBackground(new java.awt.Color(255, 204, 153));
         jrComidasnoAgregadas.addActionListener(new java.awt.event.ActionListener() {
@@ -153,7 +157,7 @@ public class PanelManejodeDietaComida extends javax.swing.JPanel {
             }
         });
         contenido.add(jrComidasnoAgregadas);
-        jrComidasnoAgregadas.setBounds(580, 190, 21, 21);
+        jrComidasnoAgregadas.setBounds(580, 190, 19, 20);
 
         jLabel4.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jLabel4.setText("Comidas agregadas");
@@ -202,44 +206,60 @@ public class PanelManejodeDietaComida extends javax.swing.JPanel {
     }//GEN-LAST:event_jrComidasnoAgregadasActionPerformed
 
     private void jbAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAgregarActionPerformed
-        DietaComidaData dcd=new DietaComidaData();
-        Dieta diet= (Dieta) jcbDietas.getSelectedItem();
-        Comida comi=new Comida();
-        Dietacomida dietcomi=new Dietacomida();
+        DietaComidaData dcd = new DietaComidaData();
+        Dieta diet = (Dieta) jcbDietas.getSelectedItem();
+
+        Comida comi = new Comida();
+        Dietacomida dietcomi = new Dietacomida();
+        Dietacomida dietcomi2 = new Dietacomida();
+
         int filaseleccionada = jtComidas.getSelectedRow();
-        if(filaseleccionada != -1){
+        if (filaseleccionada != -1) {
             comi.setIdComida((Integer) jtComidas.getValueAt(filaseleccionada, 0));
-            comi.setNombre((String) jtComidas.getValueAt(filaseleccionada, 0));
+            comi.setNombre((String) jtComidas.getValueAt(filaseleccionada, 1));
             comi.setCantCalorias((Integer) jtComidas.getValueAt(filaseleccionada, 2));
             dietcomi.setComida(comi);
             dietcomi.setDieta(diet);
-            dcd.guardarDietaComida(dietcomi);
+            dietcomi2=dcd.buscarDietaComida(diet.getIdDieta(), comi.getIdComida());
+//            if(dietcomi.getIdDietaComida()==dietcomi2.getIdDietaComida()) {
+            if(dietcomi2!=null){
+                JOptionPane.showMessageDialog(this, "Esta comida ya esta agregada");
+            }else {
+                dcd.guardarDietaComida(dietcomi);
+                Dieta selec= (Dieta) jcbDietas.getSelectedItem();
+                List<Comida> lista= dcd.obtenerComidasSinDieta(selec.getIdDieta());
+                borrarFilasTabla();
+                for(Comida com: lista){
+                    modelo.addRow(new Object[]{com.getIdComida(), com.getNombre(), com.getCantCalorias()});
+                }
+            }         
         }
+
     }//GEN-LAST:event_jbAgregarActionPerformed
 
     private void jbQuitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbQuitarActionPerformed
 
-        DietaComidaData dietcomi=new DietaComidaData();
         int idcomida, iddieta;
-        Dieta diet=(Dieta) jcbDietas.getSelectedItem();
-        int filaseleccionada= jtComidas.getSelectedRow();
-        if(filaseleccionada != -1){
-            idcomida=(Integer) jtComidas.getValueAt(filaseleccionada, 0);
-            iddieta= diet.getIdDieta();
-            dietcomi.borrarDietaComida(idcomida, iddieta);
-        }
-        
-        Dieta selec= (Dieta) jcbDietas.getSelectedItem();
-        DietaComidaData dcd= new DietaComidaData();
-        List<Comida> lista= dcd.obtenerComidasPorDieta(selec.getIdDieta());
-        
-        if(jrComidasAgregadas.isSelected()){
-            jrComidasnoAgregadas.setSelected(false);
-            borrarFilasTabla();
-            for(Comida com: lista){
-                modelo.addRow(new Object[]{com.getIdComida(), com.getNombre(), com.getCantCalorias()});
+        Dieta diet = (Dieta) jcbDietas.getSelectedItem();
+        int filaseleccionada = jtComidas.getSelectedRow();
+        Dieta selec = (Dieta) jcbDietas.getSelectedItem();
+        DietaComidaData dcd = new DietaComidaData();
+        Dietacomida dietcomi = new Dietacomida();
+        if (filaseleccionada != -1) {
+            idcomida = (Integer) jtComidas.getValueAt(filaseleccionada, 0);
+            iddieta = diet.getIdDieta();
+            dietcomi = dcd.buscarDietaComida(iddieta, idcomida);
+            if (dietcomi == null) {
+                JOptionPane.showMessageDialog(this, "Comida no agregada");
+            } else {
+                dcd.borrarDietaComida(idcomida, iddieta);
+                borrarFilasTabla();
+                List<Comida> lista = dcd.obtenerComidasPorDieta(selec.getIdDieta());
+                for (Comida com : lista) {
+                    modelo.addRow(new Object[]{com.getIdComida(), com.getNombre(), com.getCantCalorias()});
+                }
             }
-        }else borrarFilasTabla();
+        }
     }//GEN-LAST:event_jbQuitarActionPerformed
 
     private void jcbDietasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbDietasActionPerformed
@@ -251,7 +271,7 @@ public class PanelManejodeDietaComida extends javax.swing.JPanel {
     private void jbVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVolverActionPerformed
 
         PanelPorDefecto bpm = new PanelPorDefecto();
-      //  ShowPanel(bpm);
+        ShowPanel(bpm);
 
     }//GEN-LAST:event_jbVolverActionPerformed
 
@@ -300,4 +320,14 @@ private void cargarCombo() {
         jtComidas.setModel(modelo);
     }
 
+    private void ShowPanel(JPanel panel) {
+
+        panel.setSize(1000, 680);
+        panel.setLocation(0, 0);
+
+        contenido.removeAll();
+        contenido.add(panel, BorderLayout.CENTER);
+        contenido.revalidate();
+        contenido.repaint();
+    }
 }

@@ -133,6 +133,32 @@ public class DietaComidaData {
 
     }
 
+    public Dietacomida buscarDietaComida(int idd, int idc){
+        
+         String sql="SELECT * FROM dietaComida WHERE idDieta = ? AND idComida = ?";
+        Dietacomida dietcomi=null;
+        
+        try {
+            PreparedStatement ps=con.prepareStatement(sql);
+            ps.setInt(1,idd);
+            ps.setInt(2,idc);
+            ResultSet rs=ps.executeQuery();
+            if(rs.next()){
+                dietcomi =new Dietacomida();
+                Comida comi=new Comida();
+                Dieta diet=new Dieta();
+                comi.setIdComida(idc);
+                diet.setIdDieta(idd);
+                dietcomi.setComida(comi);
+                dietcomi.setDieta(diet);
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "No se pudo acceder buscarPacientePor Dni "+ ex);
+        }
+        return dietcomi;
+        
+    } 
     
     public List<Comida> obtenerComidasPorDieta(int idDieta) {
 

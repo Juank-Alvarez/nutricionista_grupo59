@@ -56,7 +56,7 @@ public class PanelListarPacientes extends javax.swing.JPanel {
             }
         });
         contenido.add(jbVolver);
-        jbVolver.setBounds(20, 410, 99, 24);
+        jbVolver.setBounds(20, 404, 99, 30);
 
         jLabel1.setFont(new java.awt.Font("Bodoni MT", 2, 24)); // NOI18N
         jLabel1.setText("Pacientes que no llegaron al peso buscado");
@@ -167,8 +167,8 @@ public class PanelListarPacientes extends javax.swing.JPanel {
 
     private void jbVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVolverActionPerformed
 
-        SegundaVistaPrincipalMenu bpm = new SegundaVistaPrincipalMenu();
-        bpm.setVisible(true);
+        PanelPorDefecto bpm = new PanelPorDefecto();
+        ShowPanel(bpm);
          //dispose();
 
     }//GEN-LAST:event_jbVolverActionPerformed
@@ -209,7 +209,7 @@ public class PanelListarPacientes extends javax.swing.JPanel {
     
     private void ShowPanel(JPanel panel) {
 
-        panel.setSize(680, 420);
+        panel.setSize(1000, 680);
         panel.setLocation(0, 0);
 
         contenido.removeAll();
