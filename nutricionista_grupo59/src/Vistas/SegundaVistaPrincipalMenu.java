@@ -31,6 +31,13 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
         jbCargarAvances = new javax.swing.JButton();
         jbSalir = new javax.swing.JButton();
         Contenido = new javax.swing.JPanel();
+        jlNombre = new javax.swing.JLabel();
+        jlMensaje5 = new javax.swing.JLabel();
+        jlMensaje6 = new javax.swing.JLabel();
+        jlMensaje3 = new javax.swing.JLabel();
+        jlMensaje4 = new javax.swing.JLabel();
+        jMensaje2 = new javax.swing.JLabel();
+        jMensaje1 = new javax.swing.JLabel();
         Fondo = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -38,7 +45,6 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
         jlFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1000, 700));
 
         jPanel1.setPreferredSize(new java.awt.Dimension(1000, 650));
         jPanel1.setLayout(null);
@@ -46,59 +52,105 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
         jbGestionesPaciente.setBackground(java.awt.SystemColor.activeCaption);
         jbGestionesPaciente.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbGestionesPaciente.setText("Gestiones Paciente");
+        jbGestionesPaciente.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbGestionesPaciente.setPreferredSize(new java.awt.Dimension(125, 25));
         jbGestionesPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbGestionesPacienteActionPerformed(evt);
             }
         });
         jPanel1.add(jbGestionesPaciente);
-        jbGestionesPaciente.setBounds(12, 47, 150, 24);
+        jbGestionesPaciente.setBounds(12, 47, 150, 25);
 
         jbGestionesComidas.setBackground(java.awt.SystemColor.activeCaption);
         jbGestionesComidas.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbGestionesComidas.setText("Gestion Comidas");
+        jbGestionesComidas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbGestionesComidas.setPreferredSize(new java.awt.Dimension(125, 25));
         jbGestionesComidas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbGestionesComidasActionPerformed(evt);
             }
         });
         jPanel1.add(jbGestionesComidas);
-        jbGestionesComidas.setBounds(12, 90, 150, 24);
+        jbGestionesComidas.setBounds(12, 90, 150, 25);
 
         jbGestionesDietas.setBackground(java.awt.SystemColor.activeCaption);
         jbGestionesDietas.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbGestionesDietas.setText("Gestion Dietas");
+        jbGestionesDietas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbGestionesDietas.setPreferredSize(new java.awt.Dimension(125, 25));
         jbGestionesDietas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbGestionesDietasActionPerformed(evt);
             }
         });
         jPanel1.add(jbGestionesDietas);
-        jbGestionesDietas.setBounds(12, 133, 150, 24);
+        jbGestionesDietas.setBounds(12, 133, 150, 25);
 
         jbCargarAvances.setBackground(java.awt.SystemColor.activeCaption);
         jbCargarAvances.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbCargarAvances.setText("Listar Pacientes");
+        jbCargarAvances.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbCargarAvances.setPreferredSize(new java.awt.Dimension(125, 25));
         jbCargarAvances.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbCargarAvancesActionPerformed(evt);
             }
         });
         jPanel1.add(jbCargarAvances);
-        jbCargarAvances.setBounds(12, 176, 150, 24);
+        jbCargarAvances.setBounds(12, 176, 150, 30);
 
         jbSalir.setBackground(java.awt.SystemColor.activeCaption);
         jbSalir.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbSalir.setText("Salir");
+        jbSalir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbSalir.setPreferredSize(new java.awt.Dimension(125, 25));
         jbSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbSalirActionPerformed(evt);
             }
         });
         jPanel1.add(jbSalir);
-        jbSalir.setBounds(10, 390, 150, 24);
+        jbSalir.setBounds(10, 300, 150, 25);
 
         Contenido.setLayout(null);
+
+        jlNombre.setFont(new java.awt.Font("Bodoni MT Condensed", 3, 48)); // NOI18N
+        jlNombre.setText("¡Bienvenido a NutriApp!");
+        Contenido.add(jlNombre);
+        jlNombre.setBounds(50, 0, 390, 70);
+
+        jlMensaje5.setFont(new java.awt.Font("Bodoni MT Condensed", 3, 20)); // NOI18N
+        jlMensaje5.setText(" ayudar a tus pacientes a alcanzar sus objetivos de salud.");
+        Contenido.add(jlMensaje5);
+        jlMensaje5.setBounds(10, 230, 510, 20);
+
+        jlMensaje6.setFont(new java.awt.Font("Bodoni MT Condensed", 3, 20)); // NOI18N
+        jlMensaje6.setText("¡Bienvenido a un nuevo nivel de eficiencia en tu consultorio nutricional  con NutriApp! ");
+        Contenido.add(jlMensaje6);
+        jlMensaje6.setBounds(10, 260, 680, 30);
+
+        jlMensaje3.setFont(new java.awt.Font("Bodoni MT Condensed", 3, 20)); // NOI18N
+        jlMensaje3.setText("En NutriApp, nuestra misión es hacer que la gestión de tu consultorio sea");
+        jlMensaje3.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        Contenido.add(jlMensaje3);
+        jlMensaje3.setBounds(10, 150, 600, 40);
+
+        jlMensaje4.setFont(new java.awt.Font("Bodoni MT Condensed", 3, 20)); // NOI18N
+        jlMensaje4.setText("más eficiente para que puedas enfocarte en lo que mejor sabes  hacer:");
+        Contenido.add(jlMensaje4);
+        jlMensaje4.setBounds(10, 190, 560, 30);
+
+        jMensaje2.setFont(new java.awt.Font("Bodoni MT Condensed", 3, 20)); // NOI18N
+        jMensaje2.setText("Estamos encantados de tenerte a bordo para simplificar  y optimizar la administración de tu práctica.");
+        Contenido.add(jMensaje2);
+        jMensaje2.setBounds(10, 120, 740, 30);
+
+        jMensaje1.setFont(new java.awt.Font("Bodoni MT Condensed", 3, 20)); // NOI18N
+        jMensaje1.setText("NutriApp es tu herramienta completa de gestión para tu consultorio nutricional.");
+        Contenido.add(jMensaje1);
+        jMensaje1.setBounds(10, 80, 700, 30);
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/italian-cuisine-2378729_1280.jpg"))); // NOI18N
         Contenido.add(Fondo);
@@ -109,27 +161,36 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
 
         jButton1.setText("jButton1");
         jPanel1.add(jButton1);
-        jButton1.setBounds(20, 230, 75, 23);
+        jButton1.setBounds(20, 470, 79, 25);
 
+        jButton2.setBackground(java.awt.SystemColor.activeCaption);
+        jButton2.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jButton2.setText("Buscar Comidas");
+        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton2.setPreferredSize(new java.awt.Dimension(125, 25));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton2);
-        jButton2.setBounds(10, 280, 150, 23);
+        jButton2.setBounds(10, 220, 150, 30);
 
+        jButton3.setBackground(java.awt.SystemColor.activeCaption);
+        jButton3.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jButton3.setText("Dietas Registradas");
+        jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton3.setPreferredSize(new java.awt.Dimension(125, 25));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton3);
-        jButton3.setBounds(10, 330, 150, 23);
+        jButton3.setBounds(10, 260, 150, 25);
 
         jlFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/paper-1074131_1280.jpg"))); // NOI18N
+        jlFondo.setPreferredSize(new java.awt.Dimension(125, 25));
         jPanel1.add(jlFondo);
         jlFondo.setBounds(0, 0, 170, 680);
 
@@ -236,6 +297,8 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jMensaje1;
+    private javax.swing.JLabel jMensaje2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbCargarAvances;
     private javax.swing.JButton jbGestionesComidas;
@@ -243,6 +306,11 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
     private javax.swing.JButton jbGestionesPaciente;
     private javax.swing.JButton jbSalir;
     private javax.swing.JLabel jlFondo;
+    private javax.swing.JLabel jlMensaje3;
+    private javax.swing.JLabel jlMensaje4;
+    private javax.swing.JLabel jlMensaje5;
+    private javax.swing.JLabel jlMensaje6;
+    private javax.swing.JLabel jlNombre;
     // End of variables declaration//GEN-END:variables
 
 private void ShowPanel(JPanel panel) {
