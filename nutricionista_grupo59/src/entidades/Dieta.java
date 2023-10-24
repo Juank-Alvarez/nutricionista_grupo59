@@ -136,7 +136,8 @@ public class Dieta {
 
     @Override
     public String toString() {
-        return "Dieta{" + "idDieta=" + idDieta + ", nombre=" + nombre + ", paciente=" + paciente + ", fechaInicial=" + fechaInicial + ", pesoInicial=" + pesoInicial + ", pesoBuscado=" + pesoBuscado + ", fechaFinal=" + fechaFinal + ", pesoFinal=" + pesoFinal + ", genero=" + genero + ", altura=" + altura + ", estado=" + estado + '}';
+        return idDieta + " - " + nombre;
+        //return "Dieta{" + "idDieta=" + idDieta + ", nombre=" + nombre + ", paciente=" + paciente + ", fechaInicial=" + fechaInicial + ", pesoInicial=" + pesoInicial + ", pesoBuscado=" + pesoBuscado + ", fechaFinal=" + fechaFinal + ", pesoFinal=" + pesoFinal + ", genero=" + genero + ", altura=" + altura + ", estado=" + estado + '}';
     }
 
     

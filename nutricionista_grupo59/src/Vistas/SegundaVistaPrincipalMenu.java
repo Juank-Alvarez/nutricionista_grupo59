@@ -111,9 +111,14 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
         jPanel1.add(jButton1);
         jButton1.setBounds(20, 230, 75, 23);
 
-        jButton2.setText("jButton2");
+        jButton2.setText("Buscar Comidas");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2);
-        jButton2.setBounds(20, 280, 75, 23);
+        jButton2.setBounds(10, 280, 150, 23);
 
         jButton3.setText("Dietas Registradas");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -184,6 +189,11 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
        PanelManejodeDietaComida p1=new PanelManejodeDietaComida();
        ShowPanel(p1);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        PanelBuscarComidas p1=new PanelBuscarComidas();
+       ShowPanel(p1);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     
      
