@@ -39,9 +39,21 @@ public class PanelBuscarComidas extends javax.swing.JPanel {
         jtComidas = new javax.swing.JTable();
         jbBuscar = new javax.swing.JButton();
         jbGestionComida = new javax.swing.JButton();
+        Fondo = new javax.swing.JLabel();
+
+        setLayout(null);
+
+        contenido.setLayout(null);
 
         jLabel1.setText("Ingresar cantidad de calorias");
+        contenido.add(jLabel1);
+        jLabel1.setBounds(96, 54, 150, 16);
 
+        jtCantCalorias.setBackground(new java.awt.Color(255, 204, 153));
+        contenido.add(jtCantCalorias);
+        jtCantCalorias.setBounds(264, 51, 134, 22);
+
+        jtComidas.setBackground(new java.awt.Color(255, 204, 153));
         jtComidas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -55,70 +67,39 @@ public class PanelBuscarComidas extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jtComidas);
 
+        contenido.add(jScrollPane1);
+        jScrollPane1.setBounds(96, 93, 454, 314);
+
+        jbBuscar.setBackground(java.awt.SystemColor.activeCaption);
+        jbBuscar.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbBuscar.setText("Buscar");
+        jbBuscar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbBuscarActionPerformed(evt);
             }
         });
+        contenido.add(jbBuscar);
+        jbBuscar.setBounds(449, 50, 100, 25);
 
+        jbGestionComida.setBackground(java.awt.SystemColor.activeCaption);
+        jbGestionComida.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbGestionComida.setText("Ir a Gestion de Comida");
+        jbGestionComida.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbGestionComida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbGestionComidaActionPerformed(evt);
             }
         });
+        contenido.add(jbGestionComida);
+        jbGestionComida.setBounds(360, 440, 190, 30);
 
-        javax.swing.GroupLayout contenidoLayout = new javax.swing.GroupLayout(contenido);
-        contenido.setLayout(contenidoLayout);
-        contenidoLayout.setHorizontalGroup(
-            contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(contenidoLayout.createSequentialGroup()
-                .addGap(96, 96, 96)
-                .addGroup(contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(contenidoLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jtCantCalorias, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(jbBuscar))
-                    .addGroup(contenidoLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jbGestionComida, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(60, Short.MAX_VALUE))
-        );
-        contenidoLayout.setVerticalGroup(
-            contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(contenidoLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtCantCalorias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbBuscar)
-                    .addComponent(jLabel1))
-                .addGroup(contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(contenidoLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(185, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contenidoLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jbGestionComida)
-                        .addGap(217, 217, 217))))
-        );
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/tomato-2823820_1280.jpg"))); // NOI18N
+        contenido.add(Fondo);
+        Fondo.setBounds(0, 0, 1030, 680);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(contenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(contenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        add(contenido);
+        contenido.setBounds(0, 0, 1030, 690);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
@@ -145,6 +126,7 @@ public class PanelBuscarComidas extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Fondo;
     private javax.swing.JPanel contenido;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;

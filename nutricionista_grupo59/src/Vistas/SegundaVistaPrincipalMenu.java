@@ -38,7 +38,6 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
         jlFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1000, 700));
 
         jPanel1.setPreferredSize(new java.awt.Dimension(1000, 650));
         jPanel1.setLayout(null);
@@ -46,57 +45,67 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
         jbGestionesPaciente.setBackground(java.awt.SystemColor.activeCaption);
         jbGestionesPaciente.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbGestionesPaciente.setText("Gestiones Paciente");
+        jbGestionesPaciente.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbGestionesPaciente.setPreferredSize(new java.awt.Dimension(125, 25));
         jbGestionesPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbGestionesPacienteActionPerformed(evt);
             }
         });
         jPanel1.add(jbGestionesPaciente);
-        jbGestionesPaciente.setBounds(12, 47, 150, 24);
+        jbGestionesPaciente.setBounds(12, 47, 150, 25);
 
         jbGestionesComidas.setBackground(java.awt.SystemColor.activeCaption);
         jbGestionesComidas.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbGestionesComidas.setText("Gestion Comidas");
+        jbGestionesComidas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbGestionesComidas.setPreferredSize(new java.awt.Dimension(125, 25));
         jbGestionesComidas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbGestionesComidasActionPerformed(evt);
             }
         });
         jPanel1.add(jbGestionesComidas);
-        jbGestionesComidas.setBounds(12, 90, 150, 24);
+        jbGestionesComidas.setBounds(12, 90, 150, 25);
 
         jbGestionesDietas.setBackground(java.awt.SystemColor.activeCaption);
         jbGestionesDietas.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbGestionesDietas.setText("Gestion Dietas");
+        jbGestionesDietas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbGestionesDietas.setPreferredSize(new java.awt.Dimension(125, 25));
         jbGestionesDietas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbGestionesDietasActionPerformed(evt);
             }
         });
         jPanel1.add(jbGestionesDietas);
-        jbGestionesDietas.setBounds(12, 133, 150, 24);
+        jbGestionesDietas.setBounds(12, 133, 150, 25);
 
         jbCargarAvances.setBackground(java.awt.SystemColor.activeCaption);
         jbCargarAvances.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbCargarAvances.setText("Listar Pacientes");
+        jbCargarAvances.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbCargarAvances.setPreferredSize(new java.awt.Dimension(125, 25));
         jbCargarAvances.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbCargarAvancesActionPerformed(evt);
             }
         });
         jPanel1.add(jbCargarAvances);
-        jbCargarAvances.setBounds(12, 176, 150, 24);
+        jbCargarAvances.setBounds(12, 176, 150, 30);
 
         jbSalir.setBackground(java.awt.SystemColor.activeCaption);
         jbSalir.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbSalir.setText("Salir");
+        jbSalir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbSalir.setPreferredSize(new java.awt.Dimension(125, 25));
         jbSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbSalirActionPerformed(evt);
             }
         });
         jPanel1.add(jbSalir);
-        jbSalir.setBounds(10, 390, 150, 24);
+        jbSalir.setBounds(10, 300, 150, 25);
 
         Contenido.setLayout(null);
 
@@ -109,27 +118,36 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
 
         jButton1.setText("jButton1");
         jPanel1.add(jButton1);
-        jButton1.setBounds(20, 230, 75, 23);
+        jButton1.setBounds(20, 470, 79, 25);
 
+        jButton2.setBackground(java.awt.SystemColor.activeCaption);
+        jButton2.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jButton2.setText("Buscar Comidas");
+        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton2.setPreferredSize(new java.awt.Dimension(125, 25));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton2);
-        jButton2.setBounds(10, 280, 150, 23);
+        jButton2.setBounds(10, 220, 150, 30);
 
+        jButton3.setBackground(java.awt.SystemColor.activeCaption);
+        jButton3.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jButton3.setText("Dietas Registradas");
+        jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton3.setPreferredSize(new java.awt.Dimension(125, 25));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton3);
-        jButton3.setBounds(10, 330, 150, 23);
+        jButton3.setBounds(10, 260, 150, 25);
 
         jlFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/paper-1074131_1280.jpg"))); // NOI18N
+        jlFondo.setPreferredSize(new java.awt.Dimension(125, 25));
         jPanel1.add(jlFondo);
         jlFondo.setBounds(0, 0, 170, 680);
 
