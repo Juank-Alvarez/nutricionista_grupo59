@@ -68,6 +68,7 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
         jbLimpiarCampos = new javax.swing.JButton();
         jbModificar = new javax.swing.JButton();
         jbBuscar = new javax.swing.JButton();
+        jbVolver = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -96,46 +97,67 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
         jbAgregar.setBackground(java.awt.SystemColor.activeCaption);
         jbAgregar.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbAgregar.setText("Agregar");
+        jbAgregar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbAgregar.setPreferredSize(new java.awt.Dimension(125, 25));
         jbAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbAgregarActionPerformed(evt);
             }
         });
         contenido.add(jbAgregar);
-        jbAgregar.setBounds(14, 367, 121, 27);
+        jbAgregar.setBounds(14, 367, 121, 25);
 
         jbLimpiarCampos.setBackground(java.awt.SystemColor.activeCaption);
         jbLimpiarCampos.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbLimpiarCampos.setText("Limpiar Campos");
+        jbLimpiarCampos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbLimpiarCampos.setPreferredSize(new java.awt.Dimension(125, 25));
         jbLimpiarCampos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbLimpiarCamposActionPerformed(evt);
             }
         });
         contenido.add(jbLimpiarCampos);
-        jbLimpiarCampos.setBounds(14, 238, 129, 27);
+        jbLimpiarCampos.setBounds(14, 238, 125, 25);
 
         jbModificar.setBackground(java.awt.SystemColor.activeCaption);
         jbModificar.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbModificar.setText("Modificar");
+        jbModificar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbModificar.setPreferredSize(new java.awt.Dimension(125, 25));
         jbModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbModificarActionPerformed(evt);
             }
         });
         contenido.add(jbModificar);
-        jbModificar.setBounds(14, 324, 121, 27);
+        jbModificar.setBounds(14, 324, 121, 25);
 
         jbBuscar.setBackground(java.awt.SystemColor.activeCaption);
         jbBuscar.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbBuscar.setText("Buscar");
+        jbBuscar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbBuscar.setPreferredSize(new java.awt.Dimension(125, 25));
         jbBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbBuscarActionPerformed(evt);
             }
         });
         contenido.add(jbBuscar);
-        jbBuscar.setBounds(14, 281, 121, 27);
+        jbBuscar.setBounds(14, 281, 121, 25);
+
+        jbVolver.setBackground(java.awt.SystemColor.activeCaption);
+        jbVolver.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        jbVolver.setText("Volver");
+        jbVolver.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbVolver.setPreferredSize(new java.awt.Dimension(125, 25));
+        jbVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbVolverActionPerformed(evt);
+            }
+        });
+        contenido.add(jbVolver);
+        jbVolver.setBounds(10, 420, 120, 25);
 
         jLabel2.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jLabel2.setText("Nombre Comida");
@@ -162,26 +184,29 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
         rbEstado.setBounds(190, 200, 21, 21);
 
         jtNombreComida.setBackground(new java.awt.Color(255, 204, 153));
+        jtNombreComida.setPreferredSize(new java.awt.Dimension(10, 30));
         jtNombreComida.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jtNombreComidaKeyTyped(evt);
             }
         });
         contenido.add(jtNombreComida);
-        jtNombreComida.setBounds(190, 70, 224, 22);
+        jtNombreComida.setBounds(190, 70, 224, 30);
 
         jtDetalle.setBackground(new java.awt.Color(255, 204, 153));
+        jtDetalle.setPreferredSize(new java.awt.Dimension(10, 30));
         contenido.add(jtDetalle);
-        jtDetalle.setBounds(190, 110, 224, 22);
+        jtDetalle.setBounds(190, 110, 224, 30);
 
         jtCantCalorias.setBackground(new java.awt.Color(255, 204, 153));
+        jtCantCalorias.setPreferredSize(new java.awt.Dimension(10, 30));
         jtCantCalorias.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jtCantCaloriasKeyTyped(evt);
             }
         });
         contenido.add(jtCantCalorias);
-        jtCantCalorias.setBounds(190, 160, 224, 22);
+        jtCantCalorias.setBounds(190, 160, 224, 30);
 
         jtComidas.setBackground(new java.awt.Color(255, 204, 153));
         jtComidas.setBorder(javax.swing.BorderFactory.createCompoundBorder(null, new javax.swing.border.MatteBorder(null)));
@@ -204,13 +229,15 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
         jbSeleccionar.setBackground(java.awt.SystemColor.activeCaption);
         jbSeleccionar.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbSeleccionar.setText("Seleccionar");
+        jbSeleccionar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbSeleccionar.setPreferredSize(new java.awt.Dimension(125, 25));
         jbSeleccionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbSeleccionarActionPerformed(evt);
             }
         });
         contenido.add(jbSeleccionar);
-        jbSeleccionar.setBounds(500, 290, 109, 27);
+        jbSeleccionar.setBounds(500, 290, 109, 25);
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/breakfast-5132879_1920.jpg"))); // NOI18N
         contenido.add(Fondo);
@@ -344,6 +371,13 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jbSeleccionarActionPerformed
 
+    private void jbVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVolverActionPerformed
+
+        PanelPorDefecto bpm = new PanelPorDefecto();
+        ShowPanel(bpm);
+
+    }//GEN-LAST:event_jbVolverActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fondo;
@@ -359,6 +393,7 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
     private javax.swing.JButton jbLimpiarCampos;
     private javax.swing.JButton jbModificar;
     private javax.swing.JButton jbSeleccionar;
+    private javax.swing.JButton jbVolver;
     private javax.swing.JTextField jtCantCalorias;
     private javax.swing.JTable jtComidas;
     private javax.swing.JTextField jtDetalle;
