@@ -87,6 +87,11 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
                 jtNombreActionPerformed(evt);
             }
         });
+        jtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtNombreKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtNombre);
         jtNombre.setBounds(200, 60, 197, 30);
 
@@ -97,6 +102,11 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
 
         jtApellido.setBackground(new java.awt.Color(255, 204, 153));
         jtApellido.setPreferredSize(new java.awt.Dimension(10, 30));
+        jtApellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtApellidoKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtApellido);
         jtApellido.setBounds(200, 100, 197, 30);
 
@@ -137,6 +147,11 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
 
         jtTelefono.setBackground(new java.awt.Color(255, 204, 153));
         jtTelefono.setPreferredSize(new java.awt.Dimension(10, 30));
+        jtTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtTelefonoKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtTelefono);
         jtTelefono.setBounds(200, 240, 197, 30);
 
@@ -340,6 +355,28 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
         char c = evt.getKeyChar();
         if (c < '0' || c > '9') evt.consume();
     }//GEN-LAST:event_jtDniKeyTyped
+
+    private void jtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtNombreKeyTyped
+        
+        char c = evt.getKeyChar();
+        if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && (c!= ' '))
+            evt.consume();
+        
+    }//GEN-LAST:event_jtNombreKeyTyped
+
+    private void jtApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtApellidoKeyTyped
+      
+        char c = evt.getKeyChar();
+        if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && (c!= ' '))
+            evt.consume();
+        
+    }//GEN-LAST:event_jtApellidoKeyTyped
+
+    private void jtTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtTelefonoKeyTyped
+       char c = evt.getKeyChar();
+        if ((c < '0' || c > '9') && (c!= '+')) 
+        evt.consume();
+    }//GEN-LAST:event_jtTelefonoKeyTyped
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
