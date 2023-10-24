@@ -12,14 +12,14 @@ public class Dieta {
     private double pesoBuscado;
     private LocalDate fechaFinal;
     private double pesoFinal;
-    private String genero;
     private double altura;
+    private String genero;
     private boolean estado;
 
     public Dieta() {
     }
 
-    public Dieta(int idDieta, String nombre, Paciente paciente, LocalDate fechaInicial, double pesoInicial, double pesoBuscado, LocalDate fechaFinal, double pesoFinal, String genero, double altura, boolean estado) {
+    public Dieta(int idDieta, String nombre, Paciente paciente, LocalDate fechaInicial, double pesoInicial, double pesoBuscado, LocalDate fechaFinal, double pesoFinal, double altura, String genero, boolean estado) {
         this.idDieta = idDieta;
         this.nombre = nombre;
         this.paciente = paciente;
@@ -28,12 +28,12 @@ public class Dieta {
         this.pesoBuscado = pesoBuscado;
         this.fechaFinal = fechaFinal;
         this.pesoFinal = pesoFinal;
-        this.genero = genero;
         this.altura = altura;
+        this.genero = genero;
         this.estado = estado;
     }
 
-    public Dieta(String nombre, Paciente paciente, LocalDate fechaInicial, double pesoInicial, double pesoBuscado, LocalDate fechaFinal, double pesoFinal, String genero, double altura, boolean estado) {
+    public Dieta(String nombre, Paciente paciente, LocalDate fechaInicial, double pesoInicial, double pesoBuscado, LocalDate fechaFinal, double pesoFinal, double altura, String genero, boolean estado) {
         this.nombre = nombre;
         this.paciente = paciente;
         this.fechaInicial = fechaInicial;
@@ -41,8 +41,8 @@ public class Dieta {
         this.pesoBuscado = pesoBuscado;
         this.fechaFinal = fechaFinal;
         this.pesoFinal = pesoFinal;
-        this.genero = genero;
         this.altura = altura;
+        this.genero = genero;
         this.estado = estado;
     }
 
@@ -110,20 +110,20 @@ public class Dieta {
         this.pesoFinal = pesoFinal;
     }
 
-    public String getGenero() {
-        return genero;
-    }
-
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
-
     public double getAltura() {
         return altura;
     }
 
     public void setAltura(double altura) {
         this.altura = altura;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
     }
 
     public boolean isEstado() {
@@ -136,8 +136,10 @@ public class Dieta {
 
     @Override
     public String toString() {
-        return "Dieta{" + "idDieta=" + idDieta + ", nombre=" + nombre + ", paciente=" + paciente + ", fechaInicial=" + fechaInicial + ", pesoInicial=" + pesoInicial + ", pesoBuscado=" + pesoBuscado + ", fechaFinal=" + fechaFinal + ", pesoFinal=" + pesoFinal + ", genero=" + genero + ", altura=" + altura + ", estado=" + estado + '}';
+        return "Dieta{" + "idDieta=" + idDieta + ", nombre=" + nombre + ", paciente=" + paciente + ", fechaInicial=" + fechaInicial + ", pesoInicial=" + pesoInicial + ", pesoBuscado=" + pesoBuscado + ", fechaFinal=" + fechaFinal + ", pesoFinal=" + pesoFinal + ", altura=" + altura + ", genero=" + genero + ", estado=" + estado + '}';
     }
+
+   
 
     
     

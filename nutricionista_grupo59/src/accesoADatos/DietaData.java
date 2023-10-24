@@ -23,7 +23,7 @@ public class DietaData {
     }
     
     public void guardarDieta(Dieta dieta){
-        String sql="INSERT INTO dieta ( idDieta, nombre,idPaciente,fechaInicial, pesoInicial,pesoBuscado,fechaFinal, "
+        String sql="INSERT INTO dieta ( idDieta, nombre,dieta.idPaciente,fechaInicial, pesoInicial,pesoBuscado,fechaFinal, "
                 + "pesoFinal, altura, genero, estado) VALUES (? ,? ,? , ?, ? ,? , ? ,? ,?,?,?)";
         try {
             PreparedStatement ps=con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);

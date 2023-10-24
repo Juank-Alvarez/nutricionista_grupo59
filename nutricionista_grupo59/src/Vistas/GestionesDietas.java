@@ -288,7 +288,7 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
         PacienteData pd=new PacienteData();
         Paciente paci=new Paciente();
 
-        if (jtNombre.getText().isEmpty() || jtPaciente.getText().isEmpty() || jdFechaInicial.getDate() == null || jtPesoInicial.getText().isEmpty()|| jdFechaFinal.getDate() == null || jtPesoInicial.getText().isEmpty()|| jtPesoBuscado.getText().isEmpty()) {
+        if (jtNombre.getText().isEmpty() || jtPaciente.getText().isEmpty() || jdFechaInicial.getDate() == null || jtPesoInicial.getText().isEmpty()|| jtPesoBuscado.getText().isEmpty() ||jdFechaFinal.getDate() == null || jtPesoFinal.getText().isEmpty()|| jtAltura.getText().isEmpty()||jtGenero.getText().isEmpty()) {//||jrEstado.getText().isEmpty()
             JOptionPane.showMessageDialog(this, "no puede haber campos vacios");
             return;
         }
@@ -302,13 +302,17 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
                 if (dieta == null) {
                     dieta = new Dieta();
                     dieta.setNombre(jtNombre.getText());
-                    paci.setNombre(jtPaciente.getText());
+                    Integer ip=Integer.parseInt(jtId.getText());
+                    //paci = pd.buscarPaciente(ip);
+                    paci.setIdPaciente(jtPaciente.getText());
                     dieta.setPaciente(paci);
                     dieta.setFechaInicial(fechaInicial);
                     dieta.setPesoInicial(jtPesoInicial.getAlignmentX());
+                    dieta.setPesoBuscado(jtPesoBuscado.getAlignmentX());
                     dieta.setFechaFinal(fechaInicial);
-                     dieta.setPesoFinal(jtPesoFinal.getAlignmentX());
-                     dieta.setPesoBuscado(jtPesoBuscado.getAlignmentX());
+                    dieta.setPesoFinal(jtPesoFinal.getAlignmentX());
+                    dieta.setAltura(jtAltura.getAlignmentX());
+                    dieta.setGenero(jtGenero.getText());
                     dieta.setEstado(jrEstado.isSelected());
                     dd.guardarDieta(dieta);
                 } else {
@@ -317,15 +321,17 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
                     dieta.setPaciente(paci);
                     dieta.setFechaInicial(fechaInicial);
                     dieta.setPesoInicial(jtPesoInicial.getAlignmentX());
-                    dieta.setFechaFinal(fechaInicial);
+                    dieta.setPesoBuscado(jtPesoBuscado.getAlignmentX());
+                    dieta.setFechaFinal(fechaFinal);
                     dieta.setPesoFinal(jtPesoFinal.getAlignmentX());
-                    dieta.setEstado(jrEstado.isSelected());
+                    dieta.setAltura(jtAltura.getAlignmentX());
+                    dieta.setGenero(jtGenero.getText());
                    dieta.setEstado(jrEstado.isSelected());
                     dd.modificarDieta(dieta);
                 }
 
         } catch (NumberFormatException nfe) {
-            JOptionPane.showMessageDialog(this, "Debe ingresar un numero valido");
+            JOptionPane.showMessageDialog(this, "Debe ingresar un numero valido"+nfe);
         }
        
         
