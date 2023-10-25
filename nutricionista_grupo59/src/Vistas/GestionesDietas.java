@@ -104,7 +104,7 @@ public class GestionesDietas extends javax.swing.JPanel {
 
         jbEliminar.setBackground(java.awt.SystemColor.activeCaption);
         jbEliminar.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        jbEliminar.setText("Eliminar Dieta");
+        jbEliminar.setText("Alta/Baja");
         jbEliminar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,14 +157,29 @@ public class GestionesDietas extends javax.swing.JPanel {
                 jtPacienteActionPerformed(evt);
             }
         });
+        jtPaciente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtPacienteKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtPaciente);
         jtPaciente.setBounds(170, 100, 160, 30);
 
         jtPesoInicial.setBackground(new java.awt.Color(255, 204, 153));
+        jtPesoInicial.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtPesoInicialKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtPesoInicial);
         jtPesoInicial.setBounds(430, 140, 100, 30);
 
         jtPesoFinal.setBackground(new java.awt.Color(255, 204, 153));
+        jtPesoFinal.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtPesoFinalKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtPesoFinal);
         jtPesoFinal.setBounds(430, 190, 100, 30);
 
@@ -183,6 +198,11 @@ public class GestionesDietas extends javax.swing.JPanel {
         jLabel2.setBounds(10, 190, 86, 23);
 
         jtAltura.setBackground(new java.awt.Color(255, 204, 153));
+        jtAltura.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtAlturaKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtAltura);
         jtAltura.setBounds(430, 240, 100, 30);
 
@@ -200,11 +220,11 @@ public class GestionesDietas extends javax.swing.JPanel {
 
         jdFechaFinal.setBackground(new java.awt.Color(255, 204, 153));
         jPanel1.add(jdFechaFinal);
-        jdFechaFinal.setBounds(170, 190, 82, 22);
+        jdFechaFinal.setBounds(170, 190, 85, 22);
 
         jdFechaInicial.setBackground(new java.awt.Color(255, 204, 153));
         jPanel1.add(jdFechaInicial);
-        jdFechaInicial.setBounds(170, 150, 82, 22);
+        jdFechaInicial.setBounds(170, 150, 85, 22);
 
         jlEstado.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jlEstado.setText("Estado");
@@ -213,10 +233,15 @@ public class GestionesDietas extends javax.swing.JPanel {
 
         jrEstado.setBackground(new java.awt.Color(255, 204, 153));
         jPanel1.add(jrEstado);
-        jrEstado.setBounds(170, 290, 21, 21);
+        jrEstado.setBounds(170, 290, 19, 20);
 
         jtNombre.setBackground(new java.awt.Color(255, 204, 153));
         jtNombre.setPreferredSize(new java.awt.Dimension(10, 25));
+        jtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtNombreKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtNombre);
         jtNombre.setBounds(170, 50, 160, 30);
 
@@ -226,6 +251,11 @@ public class GestionesDietas extends javax.swing.JPanel {
         jLabel7.setBounds(12, 63, 25, 23);
 
         jtId.setBackground(new java.awt.Color(255, 204, 153));
+        jtId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtIdKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtId);
         jtId.setBounds(40, 52, 40, 30);
 
@@ -235,6 +265,11 @@ public class GestionesDietas extends javax.swing.JPanel {
         jLabel8.setBounds(300, 290, 110, 23);
 
         jtPesoBuscado.setBackground(new java.awt.Color(255, 204, 153));
+        jtPesoBuscado.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtPesoBuscadoKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtPesoBuscado);
         jtPesoBuscado.setBounds(430, 280, 100, 30);
 
@@ -284,7 +319,7 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
             PacienteData pd = new PacienteData();
             Paciente paci = new Paciente();
             dieta = dd.buscarDieta(Integer.parseInt(jtId.getText()));
-            paci = pd.buscarPaciente(Integer.parseInt(jtId.getText()));
+            paci = pd.buscarPaciente(dieta.getPaciente().getIdPaciente());
             if (dieta == null) {
                 JOptionPane.showMessageDialog(this, "Dieta no existe");
 
@@ -292,10 +327,14 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
                 jtNombre.setText(dieta.getNombre());
                 jtPaciente.setText(paci.getIdPaciente()+"");
                 LocalDate lc = dieta.getFechaInicial();
-                //java.util.Date date = java.util.Date.from(lc.atStartOfDay(ZoneId.systemDefault()).toInstant());
-                //jdFechaInicial.setDate(date);
+                java.util.Date date = java.util.Date.from(lc.atStartOfDay(ZoneId.systemDefault()).toInstant());
+                jdFechaInicial.setDate(date);
                 jtPesoInicial.setText(Double.toString((Double)dieta.getPesoInicial()));
-                //jdFechaFinal.setDate(date);
+                jdFechaFinal.setDate(date);
+                jtGenero.setText(dieta.getGenero());
+//                JOptionPane.showConfirmDialog(this, dieta.getAltura());
+                jtAltura.setText(Double.toString((Double)dieta.getAltura()));
+                jtPesoBuscado.setText(Double.toString((Double)dieta.getPesoBuscado()));
                 jtPesoFinal.setText(Double.toString((Double)dieta.getPesoFinal()));
                 jrEstado.setSelected(paci.isEstado());
             }
@@ -313,10 +352,17 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
         PacienteData pd=new PacienteData();
         Paciente paci=new Paciente();
 
-        if (jtNombre.getText().isEmpty() || jtPaciente.getText().isEmpty() || jdFechaInicial.getDate() == null || jtPesoInicial.getText().isEmpty()|| jtPesoBuscado.getText().isEmpty() ||jdFechaFinal.getDate() == null || jtPesoFinal.getText().isEmpty()|| jtAltura.getText().isEmpty()||jtGenero.getText().isEmpty()) {//||jrEstado.getText().isEmpty()
+        if (jtNombre.getText().isEmpty() || jtPaciente.getText().isEmpty() || jdFechaInicial.getDate() == null || jtPesoInicial.getText().isEmpty()|| jtPesoBuscado.getText().isEmpty() ||jdFechaFinal.getDate() == null || jtPesoFinal.getText().isEmpty()|| jtAltura.getText().isEmpty()||jtGenero.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "no puede haber campos vacios");
             return;
         }
+        if(jtGenero.getText().equalsIgnoreCase("Masculino") || jtGenero.getText().equalsIgnoreCase("Femenino")){
+        
+        }else {
+            JOptionPane.showMessageDialog(this, "Ingrese un genero valido");
+            return;
+        }
+            
         try {
             java.util.Date fechaIni = jdFechaInicial.getDate();
             java.util.Date fechaFin = jdFechaFinal.getDate();
@@ -326,37 +372,91 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
                dieta = dd.buscarDieta(id);
                 if (dieta == null) {
                     dieta = new Dieta();
+                 
                     dieta.setNombre(jtNombre.getText());
-                    paci = pd.buscarPaciente(dieta.getPaciente().getIdPaciente());
-//                    paci.setIdPaciente(jtPaciente.getText());
+                    //paci = pd.buscarPaciente(dieta.getPaciente().getIdPaciente());
+                   
+                   // paci.setNombre(jtPaciente.getText()) ;
+                    paci.setIdPaciente(Integer.parseInt(jtPaciente.getText()));
+                   
                     dieta.setPaciente(paci);
                     dieta.setFechaInicial(fechaInicial);
-                    dieta.setPesoInicial(jtPesoInicial.getAlignmentX());
-                    dieta.setPesoBuscado(jtPesoBuscado.getAlignmentX());
+                    dieta.setPesoInicial(Double.parseDouble(jtPesoInicial.getText()));
+                    dieta.setPesoBuscado(Double.parseDouble(jtPesoBuscado.getText()));
                     dieta.setFechaFinal(fechaInicial);
-                    dieta.setPesoFinal(jtPesoFinal.getAlignmentX());
-                    dieta.setAltura(jtAltura.getAlignmentX());
+                    dieta.setPesoFinal(Double.parseDouble(jtPesoFinal.getText()));
+                    dieta.setAltura(Double.parseDouble(jtAltura.getText()));
                     dieta.setGenero(jtGenero.getText());
                     dieta.setEstado(jrEstado.isSelected());
                     dd.guardarDieta(dieta);
                 } else {
                     dieta.setNombre(jtNombre.getText());
-                    paci.setNombre(jtPaciente.getText());
+                   // paci.setIdPaciente(Integer.parseInteger(jtPaciente.getText()));
                     dieta.setPaciente(paci);
                     dieta.setFechaInicial(fechaInicial);
-                    dieta.setPesoInicial(jtPesoInicial.getAlignmentX());
-                    dieta.setPesoBuscado(jtPesoBuscado.getAlignmentX());
+                    dieta.setPesoInicial(Double.parseDouble(jtPesoInicial.getText()));
+                    dieta.setPesoBuscado(Double.parseDouble(jtPesoBuscado.getText()));
                     dieta.setFechaFinal(fechaFinal);
-                    dieta.setPesoFinal(jtPesoFinal.getAlignmentX());
-                    dieta.setAltura(jtAltura.getAlignmentX());
+                    dieta.setPesoFinal(Double.parseDouble(jtPesoFinal.getText()));
+                    dieta.setAltura(Double.parseDouble(jtAltura.getText()));
                     dieta.setGenero(jtGenero.getText());
-                   dieta.setEstado(jrEstado.isSelected());
+                    dieta.setEstado(jrEstado.isSelected());
                     dd.modificarDieta(dieta);
                 }
 
         } catch (NumberFormatException nfe) {
             JOptionPane.showMessageDialog(this, "Debe ingresar un numero valido"+nfe);
         }
+
+//        DietaData dd = new DietaData();
+//        Dieta dieta = null;
+//        PacienteData pd=new PacienteData();
+//        Paciente paci=new Paciente();
+//
+//        if (jtNombre.getText().isEmpty() || jtPaciente.getText().isEmpty() || jdFechaInicial.getDate() == null || jtPesoInicial.getText().isEmpty()|| jtPesoBuscado.getText().isEmpty() ||jdFechaFinal.getDate() == null || jtPesoFinal.getText().isEmpty()|| jtAltura.getText().isEmpty()||jtGenero.getText().isEmpty()) {//||jrEstado.getText().isEmpty()
+//            JOptionPane.showMessageDialog(this, "no puede haber campos vacios");
+//            return;
+//        }
+//        try {
+//            java.util.Date fechaIni = jdFechaInicial.getDate();
+//            java.util.Date fechaFin = jdFechaFinal.getDate();
+//            LocalDate fechaInicial = fechaIni.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+//            LocalDate fechaFinal = fechaFin.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+//               Integer id=Integer.parseInt(jtId.getText());
+//               dieta = dd.buscarDieta(id);
+//                if (dieta == null) {
+//                    dieta = new Dieta();
+//                    dieta.setNombre(jtNombre.getText());
+//                    paci = pd.buscarPaciente(dieta.getPaciente().getIdPaciente());
+////                    paci.setIdPaciente(jtPaciente.getText());
+//                    dieta.setPaciente(paci);
+//                    dieta.setFechaInicial(fechaInicial);
+//                    dieta.setPesoInicial(jtPesoInicial.getAlignmentX());
+//                    dieta.setPesoBuscado(jtPesoBuscado.getAlignmentX());
+//                    dieta.setFechaFinal(fechaInicial);
+//                    dieta.setPesoFinal(jtPesoFinal.getAlignmentX());
+//                    dieta.setAltura(jtAltura.getAlignmentX());
+//                    dieta.setGenero(jtGenero.getText());
+//                    dieta.setEstado(jrEstado.isSelected());
+//                    dd.guardarDieta(dieta);
+//                } else {
+//                    dieta.setNombre(jtNombre.getText());
+//                    paci.setNombre(jtPaciente.getText());
+//                    dieta.setPaciente(paci);
+//                    dieta.setFechaInicial(fechaInicial);
+//                    dieta.setPesoInicial(jtPesoInicial.getAlignmentX());
+//                    dieta.setPesoBuscado(jtPesoBuscado.getAlignmentX());
+//                    dieta.setFechaFinal(fechaFinal);
+//                    dieta.setPesoFinal(jtPesoFinal.getAlignmentX());
+//                    dieta.setAltura(jtAltura.getAlignmentX());
+//                    dieta.setGenero(jtGenero.getText());
+//                   dieta.setEstado(jrEstado.isSelected());
+//                    dd.modificarDieta(dieta);
+//                }
+//
+//        } catch (NumberFormatException nfe) {
+//            JOptionPane.showMessageDialog(this, "Debe ingresar un numero valido"+nfe);
+//        }
        
         
 
@@ -364,32 +464,75 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
     }//GEN-LAST:event_jbGuardarActionPerformed
 
     private void jbEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEliminarActionPerformed
- if (jtNombre.getText().isEmpty())  {//seria id y nombre???
-                JOptionPane.showMessageDialog(this, "no puede haber campos vacios");
-                return;
-        }
-        try{
-        
-        DietaData ad = new DietaData();
-        Dieta dieta = new Dieta();
-        Integer id=Integer.parseInt(jtId.getText()); 
-
-        dieta=ad.buscarDieta(id);
-        if(dieta==null){
-            JOptionPane.showMessageDialog(this,"No existe dieta");
+        if (jtNombre.getText().isEmpty()) {//seria id y nombre???
+            JOptionPane.showMessageDialog(this, "no puede haber campos vacios");
             return;
         }
-        ad.eliminarDieta(dieta.getIdDieta());
-        }catch(NumberFormatException nfe){
+        try {
+
+            DietaData ad = new DietaData();
+            Dieta dieta = new Dieta();
+            Integer id = Integer.parseInt(jtId.getText());
+
+            dieta = ad.buscarDieta(id);
+            boolean b=dieta.isEstado();
+            JOptionPane.showMessageDialog(this, b);
+            if (dieta == null) {
+                JOptionPane.showMessageDialog(this, "No existe dieta");
+                return;
+            }
+            if(b!=jrEstado.isSelected()){
+                ad.eliminarDieta(dieta.getIdDieta(), jrEstado.isSelected());
+                if(dieta.isEstado()){
+                    JOptionPane.showMessageDialog(this, "Se dio de Alta a la dieta");
+                }else JOptionPane.showMessageDialog(this, "Se dio de Baja a la dieta");
+            }
+        } catch (NumberFormatException nfe) {
             JOptionPane.showMessageDialog(this, "Debe ingresar un numero valido");
         }
-                  
-       
+
+
     }//GEN-LAST:event_jbEliminarActionPerformed
 
     private void jtPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtPacienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtPacienteActionPerformed
+
+    private void jtIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtIdKeyTyped
+        char c = evt.getKeyChar();
+        if (c < '0' || c > '9') evt.consume();
+    }//GEN-LAST:event_jtIdKeyTyped
+
+    private void jtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtNombreKeyTyped
+        char c = evt.getKeyChar();
+        if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && (c!= ' '))
+            evt.consume();
+    }//GEN-LAST:event_jtNombreKeyTyped
+
+    private void jtPacienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtPacienteKeyTyped
+        char c = evt.getKeyChar();
+        if (c < '0' || c > '9') evt.consume();
+    }//GEN-LAST:event_jtPacienteKeyTyped
+
+    private void jtPesoInicialKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtPesoInicialKeyTyped
+        char c = evt.getKeyChar();
+        if ((c < '0' || c > '9') && (c != '.')) evt.consume();
+    }//GEN-LAST:event_jtPesoInicialKeyTyped
+
+    private void jtPesoFinalKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtPesoFinalKeyTyped
+        char c = evt.getKeyChar();
+        if ((c < '0' || c > '9') && (c != '.')) evt.consume();
+    }//GEN-LAST:event_jtPesoFinalKeyTyped
+
+    private void jtAlturaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtAlturaKeyTyped
+        char c = evt.getKeyChar();
+        if ((c < '0' || c > '9') && (c != '.')) evt.consume();
+    }//GEN-LAST:event_jtAlturaKeyTyped
+
+    private void jtPesoBuscadoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtPesoBuscadoKeyTyped
+        char c = evt.getKeyChar();
+        if ((c < '0' || c > '9') && (c != '.')) evt.consume();
+    }//GEN-LAST:event_jtPesoBuscadoKeyTyped
 
 
 

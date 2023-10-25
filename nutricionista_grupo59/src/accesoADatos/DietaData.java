@@ -54,15 +54,16 @@ public class DietaData {
         }
     }
     
-    public void eliminarDieta(int id){
-        String sql="UPDATE dieta SET estado = 0 WHERE idDieta = ?";
+    public void eliminarDieta(int id, boolean e){
+        String sql="UPDATE dieta SET estado = ? WHERE idDieta = ?";
         
         try {
             PreparedStatement ps=con.prepareStatement(sql);
-            ps.setInt (1,id);
+            ps.setBoolean(1, e);
+            ps.setInt (2,id);
             int exito= ps.executeUpdate();
             if(exito==1){
-                JOptionPane.showMessageDialog(null, "Dieta borrada");
+                JOptionPane.showMessageDialog(null, "Estado actualizado");
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a eliminarDieta");
@@ -84,15 +85,15 @@ public class DietaData {
                 paciente=new Paciente();
                 dieta.setIdDieta(id);
                 dieta.setNombre(rs.getString("dieta.nombre"));
-                paciente.setIdPaciente(id);
+                paciente.setIdPaciente(rs.getInt("dieta.idpaciente"));
                 dieta.setPaciente(paciente);
-                dieta.setFechaInicial(LocalDate.MIN);
-                //dieta.setFechaInicial(rs.getDate("fechaInicial").toLocalDate());
+                dieta.setFechaInicial(rs.getDate("fechaInicial").toLocalDate());
                 dieta.setPesoInicial(rs.getDouble("pesoInicial"));
                 dieta.setPesoBuscado(rs.getDouble("pesoBuscado"));
-                dieta.setFechaFinal(LocalDate.MIN);
-                //dieta.setFechaInicial(rs.getDate("fechafinal").toLocalDate());
+                dieta.setFechaInicial(rs.getDate("fechafinal").toLocalDate());
                 dieta.setPesoFinal(rs.getDouble("pesoFinal"));
+                dieta.setGenero(rs.getString("genero"));
+                dieta.setAltura(rs.getDouble("altura"));
                 dieta.setEstado(rs.getBoolean("estado"));
             }
             ps.close();
@@ -114,17 +115,16 @@ public class DietaData {
             ps.setString(1, dieta.getNombre());
             ps.setDate(2, Date.valueOf(dieta.getFechaInicial()));
             ps.setDouble(3, dieta.getPesoInicial());
-            
-            ps.setDouble(5, dieta.getPesoFinal());
-            ps.setDate(6, Date.valueOf(dieta.getFechaFinal()));
-            ps.setDouble(7, dieta.getAltura());
-            ps.setString(8, dieta.getGenero());
-            ps.setInt(9, dieta.getIdDieta());
+            ps.setDouble(4, dieta.getPesoFinal());
+            ps.setDate(5, Date.valueOf(dieta.getFechaFinal()));
+            ps.setDouble(6, dieta.getAltura());
+            ps.setString(7, dieta.getGenero());
+            ps.setInt(8, dieta.getIdDieta());
             
             
             int exito = ps.executeUpdate();
             if(exito==1){
-                JOptionPane.showMessageDialog(null, "Dieta modificada");
+                JOptionPane.showMessageDialog(null, "Se actualizaron los datos de la dieta");
             }else{
                 JOptionPane.showMessageDialog(null, "Dieta no se pudo modificar");
             }

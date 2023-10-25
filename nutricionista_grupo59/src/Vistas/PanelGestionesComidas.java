@@ -105,7 +105,7 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
             }
         });
         contenido.add(jbAgregar);
-        jbAgregar.setBounds(14, 367, 121, 25);
+        jbAgregar.setBounds(15, 360, 121, 25);
 
         jbLimpiarCampos.setBackground(java.awt.SystemColor.activeCaption);
         jbLimpiarCampos.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
@@ -118,7 +118,7 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
             }
         });
         contenido.add(jbLimpiarCampos);
-        jbLimpiarCampos.setBounds(14, 238, 125, 25);
+        jbLimpiarCampos.setBounds(15, 240, 120, 25);
 
         jbModificar.setBackground(java.awt.SystemColor.activeCaption);
         jbModificar.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
@@ -131,7 +131,7 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
             }
         });
         contenido.add(jbModificar);
-        jbModificar.setBounds(14, 324, 121, 25);
+        jbModificar.setBounds(15, 320, 121, 25);
 
         jbBuscar.setBackground(java.awt.SystemColor.activeCaption);
         jbBuscar.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
@@ -144,7 +144,7 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
             }
         });
         contenido.add(jbBuscar);
-        jbBuscar.setBounds(14, 281, 121, 25);
+        jbBuscar.setBounds(15, 280, 121, 25);
 
         jbVolver.setBackground(java.awt.SystemColor.activeCaption);
         jbVolver.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
@@ -157,7 +157,7 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
             }
         });
         contenido.add(jbVolver);
-        jbVolver.setBounds(10, 420, 120, 25);
+        jbVolver.setBounds(15, 400, 120, 25);
 
         jLabel2.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jLabel2.setText("Nombre Comida");
@@ -181,7 +181,7 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
 
         rbEstado.setBackground(new java.awt.Color(255, 204, 153));
         contenido.add(rbEstado);
-        rbEstado.setBounds(190, 200, 21, 21);
+        rbEstado.setBounds(190, 200, 19, 20);
 
         jtNombreComida.setBackground(new java.awt.Color(255, 204, 153));
         jtNombreComida.setPreferredSize(new java.awt.Dimension(10, 30));
@@ -250,18 +250,21 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
     private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
         
 
-//        ComidaData cm= new ComidaData();
-//        Comida comi = new Comida();
-//        comi = cm.buscarNombreComida(jtNombreComida.getText());
-//        
-//        if (comi == null){
-//            JOptionPane.showMessageDialog(this,"La comida no existe");
-//        }else{
-//            
-//            jtDetalle.setText(comi.getDetalle());
-//            jtCantCalorias.setText(Integer.toString(comi.getCantCalorias()));
-//            rbEstado.setSelected(comi.isEstado());
-//        }        
+        ComidaData cm= new ComidaData();
+        Comida comi = new Comida();
+        comi = cm.buscarNombreComida(jtNombreComida.getText());
+        if(jtNombreComida.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Debe ingresar un nombre para buscar");
+            return;
+        }
+        if (comi == null){
+            JOptionPane.showMessageDialog(this,"La comida no existe");
+        }else{
+            
+            jtDetalle.setText(comi.getDetalle());
+            jtCantCalorias.setText(Integer.toString(comi.getCantCalorias()));
+            rbEstado.setSelected(comi.isEstado());
+        }        
             
             
     }//GEN-LAST:event_jbBuscarActionPerformed
@@ -315,12 +318,18 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
             ComidaData cd = new ComidaData();
             Comida comi = new Comida();
             comi = cd.buscarComida(id);
+            boolean b=comi.isEstado();
             if (comi != null) {
                 comi.setIdComida(id);
                 comi.setDetalle(jtDetalle.getText());
                 comi.setNombre(jtNombreComida.getText());
                 comi.setCantCalorias(Integer.parseInt(jtCantCalorias.getText()));
                 comi.setEstado(rbEstado.isSelected());
+                if(b!=rbEstado.isSelected()){
+                    if(rbEstado.isSelected()){
+                        JOptionPane.showMessageDialog(this, "Se dio de Alta a la comida");
+                    }else JOptionPane.showMessageDialog(this, "Se dio de Baja a la comida");
+                }
                 cd.modificarComida(comi);
                 
                 borrarFilasTabla();

@@ -323,8 +323,10 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
         }
         try {
             Paciente paci = new Paciente();
+            Paciente paci2 = new Paciente();
             PacienteData pd = new PacienteData();
             paci = pd.buscarPacientePorDni(Integer.parseInt(jtDni.getText()));
+            boolean b = paci.isEstado();
             if (paci != null) {
                 paci.setNombre(jtNombre.getText());
                 paci.setApellido(jtApellido.getText());
@@ -333,7 +335,13 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
                 paci.setTelefono(jtTelefono.getText());
                 paci.setEstado(jrEstado.isSelected());
                 pd.modificarPaciente(paci);
-
+                if (b != jrEstado.isSelected()) {
+                    if (jrEstado.isSelected()) {
+                        JOptionPane.showMessageDialog(this, "Se dio de Alta al paciente");
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Se dio de Baja al paciente");
+                    }
+                }
             } else {
                 JOptionPane.showMessageDialog(this, "El paciente no existe");
             }

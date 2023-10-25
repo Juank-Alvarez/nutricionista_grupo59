@@ -146,7 +146,7 @@ public class PacienteData {
     } 
      
      public void modificarPaciente(Paciente paciente){
-        String sql="UPDATE paciente SET dni = ?, apellido = ?, nombre = ?, domicilio = ? , telefono =?"
+        String sql="UPDATE paciente SET dni = ?, apellido = ?, nombre = ?, domicilio = ? , telefono =?, estado = ? "
                 + "WHERE idPaciente = ?";
         
         try {
@@ -156,7 +156,8 @@ public class PacienteData {
             ps.setString(3, paciente.getNombre());
             ps.setString(4, paciente.getDomicilio());
             ps.setString(5, paciente.getTelefono());
-            ps.setInt(6, paciente.getIdPaciente());
+            ps.setBoolean(6, paciente.isEstado());
+            ps.setInt(7, paciente.getIdPaciente());
             
             int exito = ps.executeUpdate();
             if(exito==1){
