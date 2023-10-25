@@ -165,7 +165,7 @@ public class PacienteData {
                 JOptionPane.showMessageDialog(null, "Paciente no se pudo modificar");
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a modificar al paciente"+ex);
+            JOptionPane.showMessageDialog(null, "Error al acceder a modificar al paciente");
         }
         
     }

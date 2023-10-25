@@ -159,9 +159,17 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
         jPanel1.add(Contenido);
         Contenido.setBounds(170, 0, 830, 650);
 
-        jButton1.setText("jButton1");
+        jButton1.setBackground(java.awt.SystemColor.activeCaption);
+        jButton1.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        jButton1.setText("Nuestro Equipo");
+        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1);
-        jButton1.setBounds(20, 470, 79, 25);
+        jButton1.setBounds(10, 610, 140, 30);
 
         jButton2.setBackground(java.awt.SystemColor.activeCaption);
         jButton2.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
@@ -255,6 +263,12 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
         PanelBuscarComidas p1=new PanelBuscarComidas();
        ShowPanel(p1);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        Nuestro_equipo p1 = new Nuestro_equipo();
+        ShowPanel(p1);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     
      
