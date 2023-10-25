@@ -33,8 +33,8 @@ public class DietaData {
             ps.setDate(4, Date.valueOf(dieta.getFechaInicial()));
             ps.setDouble(5, dieta.getPesoInicial());
             ps.setDouble(6, dieta.getPesoBuscado());
-            ps.setDouble(7, dieta.getPesoFinal());
-            ps.setDate(8, Date.valueOf(dieta.getFechaFinal()));
+            ps.setDate(7, Date.valueOf(dieta.getFechaFinal()));
+            ps.setDouble(8, dieta.getPesoFinal());
             ps.setDouble(9, dieta.getAltura());
             ps.setString(10, dieta.getGenero());
             ps.setBoolean(11, dieta.isEstado());

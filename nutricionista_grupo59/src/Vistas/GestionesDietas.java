@@ -232,6 +232,11 @@ public class GestionesDietas extends javax.swing.JPanel {
         jlEstado.setBounds(10, 290, 70, 23);
 
         jrEstado.setBackground(new java.awt.Color(255, 204, 153));
+        jrEstado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrEstadoActionPerformed(evt);
+            }
+        });
         jPanel1.add(jrEstado);
         jrEstado.setBounds(170, 290, 19, 20);
 
@@ -359,7 +364,7 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
         if(jtGenero.getText().equalsIgnoreCase("Masculino") || jtGenero.getText().equalsIgnoreCase("Femenino")){
         
         }else {
-            JOptionPane.showMessageDialog(this, "Ingrese un genero valido");
+            JOptionPane.showMessageDialog(this, "Para guardar un genero, se debe ingresar Masculino o Femenino ");
             return;
         }
             
@@ -368,9 +373,11 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
             java.util.Date fechaFin = jdFechaFinal.getDate();
             LocalDate fechaInicial = fechaIni.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
             LocalDate fechaFinal = fechaFin.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-               Integer id=Integer.parseInt(jtId.getText());
-               dieta = dd.buscarDieta(id);
+            
+                
                 if (dieta == null) {
+                    if(jtId.getText().isEmpty()){
+                    }else JOptionPane.showMessageDialog(this,"no es necesario ingresar el id de dieta para guardar");
                     dieta = new Dieta();
                  
                     dieta.setNombre(jtNombre.getText());
@@ -383,13 +390,15 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
                     dieta.setFechaInicial(fechaInicial);
                     dieta.setPesoInicial(Double.parseDouble(jtPesoInicial.getText()));
                     dieta.setPesoBuscado(Double.parseDouble(jtPesoBuscado.getText()));
-                    dieta.setFechaFinal(fechaInicial);
+                    dieta.setFechaFinal(fechaFinal);
                     dieta.setPesoFinal(Double.parseDouble(jtPesoFinal.getText()));
                     dieta.setAltura(Double.parseDouble(jtAltura.getText()));
                     dieta.setGenero(jtGenero.getText());
                     dieta.setEstado(jrEstado.isSelected());
                     dd.guardarDieta(dieta);
                 } else {
+                    Integer id=Integer.parseInt(jtId.getText());
+                    dieta = dd.buscarDieta(id);
                     dieta.setNombre(jtNombre.getText());
                    // paci.setIdPaciente(Integer.parseInteger(jtPaciente.getText()));
                     dieta.setPaciente(paci);
@@ -476,7 +485,6 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
 
             dieta = ad.buscarDieta(id);
             boolean b=dieta.isEstado();
-            JOptionPane.showMessageDialog(this, b);
             if (dieta == null) {
                 JOptionPane.showMessageDialog(this, "No existe dieta");
                 return;
@@ -484,8 +492,8 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
             if(b!=jrEstado.isSelected()){
                 ad.eliminarDieta(dieta.getIdDieta(), jrEstado.isSelected());
                 if(dieta.isEstado()){
-                    JOptionPane.showMessageDialog(this, "Se dio de Alta a la dieta");
-                }else JOptionPane.showMessageDialog(this, "Se dio de Baja a la dieta");
+                    JOptionPane.showMessageDialog(this, "Se dio de Baja a la dieta");
+                }else JOptionPane.showMessageDialog(this, "Se dio de Alta a la dieta");
             }
         } catch (NumberFormatException nfe) {
             JOptionPane.showMessageDialog(this, "Debe ingresar un numero valido");
@@ -533,6 +541,10 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
         char c = evt.getKeyChar();
         if ((c < '0' || c > '9') && (c != '.')) evt.consume();
     }//GEN-LAST:event_jtPesoBuscadoKeyTyped
+
+    private void jrEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrEstadoActionPerformed
+        
+    }//GEN-LAST:event_jrEstadoActionPerformed
 
 
 

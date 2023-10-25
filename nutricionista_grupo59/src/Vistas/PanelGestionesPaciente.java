@@ -208,8 +208,13 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
         jbBuscar.setBounds(610, 130, 99, 21);
 
         jrEstado.setBackground(new java.awt.Color(255, 204, 153));
+        jrEstado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrEstadoActionPerformed(evt);
+            }
+        });
         jPanel1.add(jrEstado);
-        jrEstado.setBounds(200, 290, 21, 21);
+        jrEstado.setBounds(200, 290, 19, 20);
 
         jLabel7.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jLabel7.setText("Estado");
@@ -385,6 +390,10 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
         if ((c < '0' || c > '9') && (c!= '+')) 
         evt.consume();
     }//GEN-LAST:event_jtTelefonoKeyTyped
+
+    private void jrEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrEstadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jrEstadoActionPerformed
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
