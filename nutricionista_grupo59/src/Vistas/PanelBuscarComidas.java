@@ -35,6 +35,7 @@ public class PanelBuscarComidas extends javax.swing.JPanel {
         contenido = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jtCantCalorias = new javax.swing.JTextField();
+        jbVolver = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtComidas = new javax.swing.JTable();
         jbBuscar = new javax.swing.JButton();
@@ -45,13 +46,27 @@ public class PanelBuscarComidas extends javax.swing.JPanel {
 
         contenido.setLayout(null);
 
+        jLabel1.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Ingresar cantidad de calorias");
         contenido.add(jLabel1);
-        jLabel1.setBounds(96, 54, 150, 16);
+        jLabel1.setBounds(16, 54, 230, 23);
 
         jtCantCalorias.setBackground(new java.awt.Color(255, 204, 153));
         contenido.add(jtCantCalorias);
         jtCantCalorias.setBounds(264, 51, 134, 22);
+
+        jbVolver.setBackground(java.awt.SystemColor.activeCaption);
+        jbVolver.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        jbVolver.setText("Volver");
+        jbVolver.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbVolverActionPerformed(evt);
+            }
+        });
+        contenido.add(jbVolver);
+        jbVolver.setBounds(440, 510, 110, 30);
 
         jtComidas.setBackground(new java.awt.Color(255, 204, 153));
         jtComidas.setModel(new javax.swing.table.DefaultTableModel(
@@ -124,6 +139,12 @@ public class PanelBuscarComidas extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jbGestionComidaActionPerformed
 
+    private void jbVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVolverActionPerformed
+
+        PanelPorDefecto bpm = new PanelPorDefecto();
+        ShowPanel(bpm);
+    }//GEN-LAST:event_jbVolverActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fondo;
@@ -132,6 +153,7 @@ public class PanelBuscarComidas extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbBuscar;
     private javax.swing.JButton jbGestionComida;
+    private javax.swing.JButton jbVolver;
     private javax.swing.JTextField jtCantCalorias;
     private javax.swing.JTable jtComidas;
     // End of variables declaration//GEN-END:variables
