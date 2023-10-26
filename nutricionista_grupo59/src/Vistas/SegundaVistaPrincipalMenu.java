@@ -60,7 +60,7 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jbGestionesPaciente);
-        jbGestionesPaciente.setBounds(12, 47, 150, 25);
+        jbGestionesPaciente.setBounds(10, 50, 150, 30);
 
         jbGestionesComidas.setBackground(java.awt.SystemColor.activeCaption);
         jbGestionesComidas.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
@@ -73,12 +73,14 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jbGestionesComidas);
-        jbGestionesComidas.setBounds(12, 90, 150, 25);
+        jbGestionesComidas.setBounds(10, 90, 150, 30);
 
         jbGestionesDietas.setBackground(java.awt.SystemColor.activeCaption);
         jbGestionesDietas.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jbGestionesDietas.setText("Gestion Dietas");
         jbGestionesDietas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbGestionesDietas.setMaximumSize(new java.awt.Dimension(96, 21));
+        jbGestionesDietas.setMinimumSize(new java.awt.Dimension(96, 21));
         jbGestionesDietas.setPreferredSize(new java.awt.Dimension(125, 25));
         jbGestionesDietas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,7 +88,7 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jbGestionesDietas);
-        jbGestionesDietas.setBounds(12, 133, 150, 25);
+        jbGestionesDietas.setBounds(10, 130, 150, 30);
 
         jbCargarAvances.setBackground(java.awt.SystemColor.activeCaption);
         jbCargarAvances.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
@@ -99,7 +101,7 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jbCargarAvances);
-        jbCargarAvances.setBounds(12, 176, 150, 30);
+        jbCargarAvances.setBounds(10, 170, 150, 30);
 
         jbSalir.setBackground(java.awt.SystemColor.activeCaption);
         jbSalir.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
@@ -112,7 +114,7 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jbSalir);
-        jbSalir.setBounds(10, 300, 150, 25);
+        jbSalir.setBounds(10, 290, 150, 30);
 
         Contenido.setLayout(null);
 
@@ -182,7 +184,7 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton2);
-        jButton2.setBounds(10, 220, 150, 30);
+        jButton2.setBounds(10, 210, 150, 30);
 
         jButton3.setBackground(java.awt.SystemColor.activeCaption);
         jButton3.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
@@ -195,7 +197,7 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton3);
-        jButton3.setBounds(10, 260, 150, 25);
+        jButton3.setBounds(10, 250, 150, 30);
 
         jlFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/paper-1074131_1280.jpg"))); // NOI18N
         jlFondo.setPreferredSize(new java.awt.Dimension(125, 25));
