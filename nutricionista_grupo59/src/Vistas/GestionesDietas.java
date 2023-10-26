@@ -377,7 +377,8 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
             java.util.Date fechaFin = jdFechaFinal.getDate();
             LocalDate fechaInicial = fechaIni.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
             LocalDate fechaFinal = fechaFin.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-            
+            Integer id=Integer.parseInt(jtId.getText());
+            dieta = dd.buscarDieta(id);
                 
                 if (dieta == null) {
                     if(jtId.getText().isEmpty()){
@@ -401,8 +402,7 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
                     dieta.setEstado(jrEstado.isSelected());
                     dd.guardarDieta(dieta);
                 } else {
-                    Integer id=Integer.parseInt(jtId.getText());
-                    dieta = dd.buscarDieta(id);
+                    
                     dieta.setNombre(jtNombre.getText());
                    // paci.setIdPaciente(Integer.parseInteger(jtPaciente.getText()));
                     dieta.setPaciente(paci);
@@ -542,5 +542,13 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
             bpn.setVisible(true);
                 
     }
+    
+    private void limiteInt() {
+        int i = 0, cont = 0;
+        for (i = 0; i < 9; i++) {
+            cont++;
+        }
+    }
+
 }
 

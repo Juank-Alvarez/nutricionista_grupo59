@@ -299,25 +299,46 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
     }//GEN-LAST:event_jbVolverActionPerformed
 
     private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
-        
-        if (jtDni.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Para buscar un paciente debe ingresar un dni");
-        } else {
-            PacienteData pd = new PacienteData();
-            Paciente paci = new Paciente();
-            paci = pd.buscarPacientePorDni(Integer.parseInt(jtDni.getText()));
-            if (paci == null) {
-                JOptionPane.showMessageDialog(this, "El paciente no existe");
+        String entrada;
+        int numero = 0;
+        boolean entradaValida = false;
 
-            } else {
-                jtNombre.setText(paci.getNombre());
-                jtApellido.setText(paci.getApellido());
-                jtDomicilio.setText(paci.getDomicilio());
-                jtTelefono.setText(paci.getTelefono());
-                jrEstado.setSelected(paci.isEstado());
+            if (!entradaValida) {
+
+                entrada = jtDni.getText();
+
+                if (entrada.length() <= 9) {
+                    try {
+                        numero = Integer.parseInt(entrada);
+                        entradaValida = true;
+                    } catch (NumberFormatException e) {
+                        JOptionPane.showMessageDialog(this, "Error: Ingresa un número entero válido.");
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(this, "Error: Ingresa un Dni válido.");
+                    return;
+                }
             }
-        }
-       
+
+            if (jtDni.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Para buscar un paciente debe ingresar un dni");
+            } else {
+                PacienteData pd = new PacienteData();
+                Paciente paci = new Paciente();
+                paci = pd.buscarPacientePorDni(Integer.parseInt(jtDni.getText()));
+                if (paci == null) {
+                    JOptionPane.showMessageDialog(this, "El paciente no existe");
+
+                } else {
+                    jtNombre.setText(paci.getNombre());
+                    jtApellido.setText(paci.getApellido());
+                    jtDomicilio.setText(paci.getDomicilio());
+                    jtTelefono.setText(paci.getTelefono());
+                    jrEstado.setSelected(paci.isEstado());
+                }
+            }
+
+
     }//GEN-LAST:event_jbBuscarActionPerformed
 
     private void jbModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbModificarActionPerformed
