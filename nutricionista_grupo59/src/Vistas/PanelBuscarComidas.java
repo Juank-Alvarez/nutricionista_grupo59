@@ -34,6 +34,7 @@ public class PanelBuscarComidas extends javax.swing.JPanel {
 
         contenido = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        CArtel = new javax.swing.JLabel();
         jtCantCalorias = new javax.swing.JTextField();
         jbVolver = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -52,6 +53,10 @@ public class PanelBuscarComidas extends javax.swing.JPanel {
         contenido.add(jLabel1);
         jLabel1.setBounds(16, 54, 230, 23);
 
+        CArtel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/Cartel comidas mejorado.jpg"))); // NOI18N
+        contenido.add(CArtel);
+        CArtel.setBounds(100, 430, 425, 140);
+
         jtCantCalorias.setBackground(new java.awt.Color(255, 204, 153));
         contenido.add(jtCantCalorias);
         jtCantCalorias.setBounds(264, 51, 134, 22);
@@ -66,7 +71,7 @@ public class PanelBuscarComidas extends javax.swing.JPanel {
             }
         });
         contenido.add(jbVolver);
-        jbVolver.setBounds(440, 510, 110, 30);
+        jbVolver.setBounds(570, 150, 110, 30);
 
         jtComidas.setBackground(new java.awt.Color(255, 204, 153));
         jtComidas.setModel(new javax.swing.table.DefaultTableModel(
@@ -107,7 +112,7 @@ public class PanelBuscarComidas extends javax.swing.JPanel {
             }
         });
         contenido.add(jbGestionComida);
-        jbGestionComida.setBounds(360, 440, 190, 30);
+        jbGestionComida.setBounds(570, 100, 190, 30);
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/tomato-2823820_1280.jpg"))); // NOI18N
         contenido.add(Fondo);
@@ -147,6 +152,7 @@ public class PanelBuscarComidas extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel CArtel;
     private javax.swing.JLabel Fondo;
     private javax.swing.JPanel contenido;
     private javax.swing.JLabel jLabel1;
@@ -176,7 +182,7 @@ public class PanelBuscarComidas extends javax.swing.JPanel {
     
     private void ShowPanel(JPanel panel) {
 
-        panel.setSize(680, 420);
+        panel.setSize(1000, 680);
         panel.setLocation(0, 0);
 
         contenido.removeAll();
