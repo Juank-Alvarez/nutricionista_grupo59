@@ -83,19 +83,20 @@ public class DietaData {
             if(rs.next()){
                 dieta=new Dieta();
                 paciente=new Paciente();
-                dieta.setIdDieta(id);
+                dieta.setIdDieta(rs.getInt(id));
                 dieta.setNombre(rs.getString("dieta.nombre"));
                 paciente.setIdPaciente(rs.getInt("dieta.idpaciente"));
                 dieta.setPaciente(paciente);
                 dieta.setFechaInicial(rs.getDate("fechaInicial").toLocalDate());
                 dieta.setPesoInicial(rs.getDouble("pesoInicial"));
                 dieta.setPesoBuscado(rs.getDouble("pesoBuscado"));
-                dieta.setFechaInicial(rs.getDate("fechafinal").toLocalDate());
+                dieta.setFechaFinal(rs.getDate("fechaFinal").toLocalDate());
                 dieta.setPesoFinal(rs.getDouble("pesoFinal"));
                 dieta.setGenero(rs.getString("genero"));
                 dieta.setAltura(rs.getDouble("altura"));
                 dieta.setEstado(rs.getBoolean("estado"));
             }
+            rs.close();
             ps.close();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "No se pudo acceder a buscarDieta"+ex);

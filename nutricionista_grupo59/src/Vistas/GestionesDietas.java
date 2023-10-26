@@ -220,11 +220,11 @@ public class GestionesDietas extends javax.swing.JPanel {
 
         jdFechaFinal.setBackground(new java.awt.Color(255, 204, 153));
         jPanel1.add(jdFechaFinal);
-        jdFechaFinal.setBounds(170, 190, 85, 22);
+        jdFechaFinal.setBounds(122, 190, 150, 22);
 
         jdFechaInicial.setBackground(new java.awt.Color(255, 204, 153));
         jPanel1.add(jdFechaInicial);
-        jdFechaInicial.setBounds(170, 150, 85, 22);
+        jdFechaInicial.setBounds(122, 150, 150, 22);
 
         jlEstado.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jlEstado.setText("Estado");
@@ -238,7 +238,7 @@ public class GestionesDietas extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jrEstado);
-        jrEstado.setBounds(170, 290, 19, 20);
+        jrEstado.setBounds(170, 290, 19, 19);
 
         jtNombre.setBackground(new java.awt.Color(255, 204, 153));
         jtNombre.setPreferredSize(new java.awt.Dimension(10, 25));
@@ -307,6 +307,7 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
         jtPesoInicial.setText("");
         jdFechaFinal.setDate(new java.util.Date());
         jtPesoFinal.setText("");
+        jtPesoBuscado.setText("");
         jtGenero.setText("");
         jtAltura.setText("");
         jrEstado.setSelected(false);
@@ -324,18 +325,21 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
             PacienteData pd = new PacienteData();
             Paciente paci = new Paciente();
             dieta = dd.buscarDieta(Integer.parseInt(jtId.getText()));
-            paci = pd.buscarPaciente(dieta.getPaciente().getIdPaciente());
+            
             if (dieta == null) {
                 JOptionPane.showMessageDialog(this, "Dieta no existe");
 
             } else {
+                paci = pd.buscarPaciente(dieta.getPaciente().getIdPaciente());
                 jtNombre.setText(dieta.getNombre());
                 jtPaciente.setText(paci.getIdPaciente()+"");
-                LocalDate lc = dieta.getFechaInicial();
-                java.util.Date date = java.util.Date.from(lc.atStartOfDay(ZoneId.systemDefault()).toInstant());
-                jdFechaInicial.setDate(date);
+                LocalDate fi = dieta.getFechaInicial();
+                LocalDate ff = dieta.getFechaFinal();
+                java.util.Date date1 = java.util.Date.from(fi.atStartOfDay(ZoneId.systemDefault()).toInstant());
+                java.util.Date date2 = java.util.Date.from(ff.atStartOfDay(ZoneId.systemDefault()).toInstant());
+                jdFechaInicial.setDate(date1);
                 jtPesoInicial.setText(Double.toString((Double)dieta.getPesoInicial()));
-                jdFechaFinal.setDate(date);
+                jdFechaFinal.setDate(date2);
                 jtGenero.setText(dieta.getGenero());
 //                JOptionPane.showConfirmDialog(this, dieta.getAltura());
                 jtAltura.setText(Double.toString((Double)dieta.getAltura()));
@@ -417,56 +421,7 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
             JOptionPane.showMessageDialog(this, "Debe ingresar un numero valido"+nfe);
         }
 
-//        DietaData dd = new DietaData();
-//        Dieta dieta = null;
-//        PacienteData pd=new PacienteData();
-//        Paciente paci=new Paciente();
-//
-//        if (jtNombre.getText().isEmpty() || jtPaciente.getText().isEmpty() || jdFechaInicial.getDate() == null || jtPesoInicial.getText().isEmpty()|| jtPesoBuscado.getText().isEmpty() ||jdFechaFinal.getDate() == null || jtPesoFinal.getText().isEmpty()|| jtAltura.getText().isEmpty()||jtGenero.getText().isEmpty()) {//||jrEstado.getText().isEmpty()
-//            JOptionPane.showMessageDialog(this, "no puede haber campos vacios");
-//            return;
-//        }
-//        try {
-//            java.util.Date fechaIni = jdFechaInicial.getDate();
-//            java.util.Date fechaFin = jdFechaFinal.getDate();
-//            LocalDate fechaInicial = fechaIni.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-//            LocalDate fechaFinal = fechaFin.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-//               Integer id=Integer.parseInt(jtId.getText());
-//               dieta = dd.buscarDieta(id);
-//                if (dieta == null) {
-//                    dieta = new Dieta();
-//                    dieta.setNombre(jtNombre.getText());
-//                    paci = pd.buscarPaciente(dieta.getPaciente().getIdPaciente());
-////                    paci.setIdPaciente(jtPaciente.getText());
-//                    dieta.setPaciente(paci);
-//                    dieta.setFechaInicial(fechaInicial);
-//                    dieta.setPesoInicial(jtPesoInicial.getAlignmentX());
-//                    dieta.setPesoBuscado(jtPesoBuscado.getAlignmentX());
-//                    dieta.setFechaFinal(fechaInicial);
-//                    dieta.setPesoFinal(jtPesoFinal.getAlignmentX());
-//                    dieta.setAltura(jtAltura.getAlignmentX());
-//                    dieta.setGenero(jtGenero.getText());
-//                    dieta.setEstado(jrEstado.isSelected());
-//                    dd.guardarDieta(dieta);
-//                } else {
-//                    dieta.setNombre(jtNombre.getText());
-//                    paci.setNombre(jtPaciente.getText());
-//                    dieta.setPaciente(paci);
-//                    dieta.setFechaInicial(fechaInicial);
-//                    dieta.setPesoInicial(jtPesoInicial.getAlignmentX());
-//                    dieta.setPesoBuscado(jtPesoBuscado.getAlignmentX());
-//                    dieta.setFechaFinal(fechaFinal);
-//                    dieta.setPesoFinal(jtPesoFinal.getAlignmentX());
-//                    dieta.setAltura(jtAltura.getAlignmentX());
-//                    dieta.setGenero(jtGenero.getText());
-//                   dieta.setEstado(jrEstado.isSelected());
-//                    dd.modificarDieta(dieta);
-//                }
-//
-//        } catch (NumberFormatException nfe) {
-//            JOptionPane.showMessageDialog(this, "Debe ingresar un numero valido"+nfe);
-//        }
-       
+
         
 
 

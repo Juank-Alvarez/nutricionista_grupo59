@@ -33,7 +33,7 @@ public class Dieta {
         this.estado = estado;
     }
 
-    public Dieta(String nombre, Paciente paciente, LocalDate fechaInicial, double pesoInicial, double pesoBuscado, LocalDate fechaFinal, double pesoFinal, String genero, double altura, boolean estado) {
+    public Dieta(String nombre, Paciente paciente, LocalDate fechaInicial, double pesoInicial,double pesoBuscado,  LocalDate fechaFinal, double pesoFinal,double altura, String genero,  boolean estado) {
         this.nombre = nombre;
         this.paciente = paciente;
         this.fechaInicial = fechaInicial;
@@ -41,8 +41,8 @@ public class Dieta {
         this.pesoBuscado = pesoBuscado;
         this.fechaFinal = fechaFinal;
         this.pesoFinal = pesoFinal;
-        this.genero = genero;
         this.altura = altura;
+        this.genero = genero;
         this.estado = estado;
     }
 
@@ -136,8 +136,8 @@ public class Dieta {
 
     @Override
     public String toString() {
-        return idDieta + " - " + nombre;
-        //return "Dieta{" + "idDieta=" + idDieta + ", nombre=" + nombre + ", paciente=" + paciente + ", fechaInicial=" + fechaInicial + ", pesoInicial=" + pesoInicial + ", pesoBuscado=" + pesoBuscado + ", fechaFinal=" + fechaFinal + ", pesoFinal=" + pesoFinal + ", genero=" + genero + ", altura=" + altura + ", estado=" + estado + '}';
+       // return idDieta + " - " + nombre;
+        return "Dieta{" + "idDieta=" + idDieta + ", nombre=" + nombre + ", paciente=" + paciente + ", fechaInicial=" + fechaInicial + ", pesoInicial=" + pesoInicial + ", pesoBuscado=" + pesoBuscado + ", fechaFinal=" + fechaFinal + ", pesoFinal=" + pesoFinal + ", genero=" + genero + ", altura=" + altura + ", estado=" + estado + '}';
     }
 
     
