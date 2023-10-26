@@ -15,6 +15,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -332,7 +333,7 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
             } else {
                 paci = pd.buscarPaciente(dieta.getPaciente().getIdPaciente());
                 jtNombre.setText(dieta.getNombre());
-                jtPaciente.setText(paci.getIdPaciente()+"");
+                jtPaciente.setText("id: "+paci.getIdPaciente()+ ", nombre: " + paci.getNombre());
                 LocalDate fi = dieta.getFechaInicial();
                 LocalDate ff = dieta.getFechaFinal();
                 java.util.Date date1 = java.util.Date.from(fi.atStartOfDay(ZoneId.systemDefault()).toInstant());
@@ -341,7 +342,6 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
                 jtPesoInicial.setText(Double.toString((Double)dieta.getPesoInicial()));
                 jdFechaFinal.setDate(date2);
                 jtGenero.setText(dieta.getGenero());
-//                JOptionPane.showConfirmDialog(this, dieta.getAltura());
                 jtAltura.setText(Double.toString((Double)dieta.getAltura()));
                 jtPesoBuscado.setText(Double.toString((Double)dieta.getPesoBuscado()));
                 jtPesoFinal.setText(Double.toString((Double)dieta.getPesoFinal()));
@@ -355,84 +355,96 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
 
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
 
-        
         DietaData dd = new DietaData();
         Dieta dieta = null;
-        PacienteData pd=new PacienteData();
-        Paciente paci=new Paciente();
+        PacienteData pd = new PacienteData();
+        Paciente paci = new Paciente();
 
-        if (jtNombre.getText().isEmpty() || jtPaciente.getText().isEmpty() || jdFechaInicial.getDate() == null || jtPesoInicial.getText().isEmpty()|| jtPesoBuscado.getText().isEmpty() ||jdFechaFinal.getDate() == null || jtPesoFinal.getText().isEmpty()|| jtAltura.getText().isEmpty()||jtGenero.getText().isEmpty()) {
+        if (jtNombre.getText().isEmpty() || jtPaciente.getText().isEmpty() || jdFechaInicial.getDate() == null || jtPesoInicial.getText().isEmpty() || jtPesoBuscado.getText().isEmpty() || jdFechaFinal.getDate() == null || jtPesoFinal.getText().isEmpty() || jtAltura.getText().isEmpty() || jtGenero.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "no puede haber campos vacios");
             return;
         }
-        if(jtGenero.getText().equalsIgnoreCase("Masculino") || jtGenero.getText().equalsIgnoreCase("Femenino")){
-        
-        }else {
+        if (jtGenero.getText().equalsIgnoreCase("Masculino") || jtGenero.getText().equalsIgnoreCase("Femenino")) {
+
+        } else {
             JOptionPane.showMessageDialog(this, "Para guardar un genero, se debe ingresar Masculino o Femenino ");
             return;
         }
-        
-            
+
         try {
             java.util.Date fechaIni = jdFechaInicial.getDate();
             java.util.Date fechaFin = jdFechaFinal.getDate();
             LocalDate fechaInicial = fechaIni.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
             LocalDate fechaFinal = fechaFin.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-            Integer id=Integer.parseInt(jtId.getText());
+            int id;
+            if(jtId.getText().isEmpty()){
+                id=0;
+            }else id = Integer.parseInt(jtId.getText());
+
             dieta = dd.buscarDieta(id);
-                
-                if (dieta == null) {
-                    if(jtId.getText().isEmpty()){
-                    }else {
-                        JOptionPane.showMessageDialog(this,"no es necesario ingresar el id de dieta para guardar");
-                        jtId.setText("");
-                    }
-                    
-                    dieta = new Dieta();
-                 
-                    dieta.setNombre(jtNombre.getText());
-                    //paci = pd.buscarPaciente(dieta.getPaciente().getIdPaciente());
-                   
-                   // paci.setNombre(jtPaciente.getText()) ;
-                    paci.setIdPaciente(Integer.parseInt(jtPaciente.getText()));
-                   
-                    dieta.setPaciente(paci);
-                    dieta.setFechaInicial(fechaInicial);
-                    dieta.setPesoInicial(Double.parseDouble(jtPesoInicial.getText()));
-                    dieta.setPesoBuscado(Double.parseDouble(jtPesoBuscado.getText()));
-                    dieta.setFechaFinal(fechaFinal);
-                    dieta.setPesoFinal(Double.parseDouble(jtPesoFinal.getText()));
-                    dieta.setAltura(Double.parseDouble(jtAltura.getText()));
-                    dieta.setGenero(jtGenero.getText());
-                    dieta.setEstado(jrEstado.isSelected());
-                    dd.guardarDieta(dieta);
+ 
+            if (dieta == null) {
+                if (jtId.getText().isEmpty()) {
+
                 } else {
-                    if(dieta.isEstado()!=jrEstado.isSelected()){
-                        JOptionPane.showMessageDialog(this,"El estado no se puede modificar");
-                        if(jrEstado.isSelected()){
-                            jrEstado.setSelected(false);
-                        }else jrEstado.setSelected(true);
+                    JOptionPane.showMessageDialog(this, "no es necesario ingresar el id de dieta para guardar");
+                    jtId.setText("");
+                }
+                ArrayList<Dieta> lista = new ArrayList<>();
+                lista = (ArrayList<Dieta>) dd.listarDietas();
+                dieta = new Dieta();
+
+                dieta.setNombre(jtNombre.getText());
+                //paci = pd.buscarPaciente(dieta.getPaciente().getIdPaciente());
+
+                // paci.setNombre(jtPaciente.getText()) ;
+                paci.setIdPaciente(Integer.parseInt(jtPaciente.getText()));
+
+                dieta.setPaciente(paci);
+                dieta.setFechaInicial(fechaInicial);
+                dieta.setPesoInicial(Double.parseDouble(jtPesoInicial.getText()));
+                dieta.setPesoBuscado(Double.parseDouble(jtPesoBuscado.getText()));
+                dieta.setFechaFinal(fechaFinal);
+                dieta.setPesoFinal(Double.parseDouble(jtPesoFinal.getText()));
+                dieta.setAltura(Double.parseDouble(jtAltura.getText()));
+                dieta.setGenero(jtGenero.getText());
+                dieta.setEstado(jrEstado.isSelected());
+                for (Dieta d : lista) {
+                    if (d.getNombre().equals(dieta.getNombre()) ) {
+                        JOptionPane.showMessageDialog(this, "La dieta ya existe, para modificar ingresar la id");
+                        return;
+                    } else {
+                        dd.guardarDieta(dieta);
                     }
-                    dieta.setNombre(jtNombre.getText());
-                   // paci.setIdPaciente(Integer.parseInteger(jtPaciente.getText()));
-                    dieta.setPaciente(paci);
-                    dieta.setFechaInicial(fechaInicial);
-                    dieta.setPesoInicial(Double.parseDouble(jtPesoInicial.getText()));
-                    dieta.setPesoBuscado(Double.parseDouble(jtPesoBuscado.getText()));
-                    dieta.setFechaFinal(fechaFinal);
-                    dieta.setPesoFinal(Double.parseDouble(jtPesoFinal.getText()));
-                    dieta.setAltura(Double.parseDouble(jtAltura.getText()));
-                    dieta.setGenero(jtGenero.getText());
-                    dieta.setEstado(jrEstado.isSelected());
-                    dd.modificarDieta(dieta);
                 }
 
+            } else {
+
+                if (dieta.isEstado() != jrEstado.isSelected()) {
+                    JOptionPane.showMessageDialog(this, "Para cambiar el estado utilizar Alta/Baja");
+                    if (jrEstado.isSelected()) {
+                        jrEstado.setSelected(false);
+                    } else {
+                        jrEstado.setSelected(true);
+                    }
+                }
+                dieta.setNombre(jtNombre.getText());
+                // paci.setIdPaciente(Integer.parseInteger(jtPaciente.getText()));
+                dieta.setPaciente(paci);
+                dieta.setFechaInicial(fechaInicial);
+                dieta.setPesoInicial(Double.parseDouble(jtPesoInicial.getText()));
+                dieta.setPesoBuscado(Double.parseDouble(jtPesoBuscado.getText()));
+                dieta.setFechaFinal(fechaFinal);
+                dieta.setPesoFinal(Double.parseDouble(jtPesoFinal.getText()));
+                dieta.setAltura(Double.parseDouble(jtAltura.getText()));
+                dieta.setGenero(jtGenero.getText());
+                dieta.setEstado(jrEstado.isSelected());
+                dd.modificarDieta(dieta);
+            }
+
         } catch (NumberFormatException nfe) {
-            JOptionPane.showMessageDialog(this, "Debe ingresar un numero valido"+nfe);
+            JOptionPane.showMessageDialog(this, "Debe ingresar un numero valido " + nfe);
         }
-
-
-        
 
 
     }//GEN-LAST:event_jbGuardarActionPerformed

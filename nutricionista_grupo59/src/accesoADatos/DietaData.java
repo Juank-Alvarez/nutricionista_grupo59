@@ -150,7 +150,7 @@ public class DietaData {
                 paci.setIdPaciente(rs.getInt("idPaciente"));
                 dieta.setFechaInicial(rs.getDate("fechaInicial").toLocalDate());
                 dieta.setPesoInicial(rs.getInt("pesoInicial"));
-//                dieta.setPesoBuscado(rs.getInt("pesoBuscado");
+                dieta.setPesoBuscado(rs.getInt("pesoBuscado"));
                 dieta.setPesoFinal(rs.getInt("pesoFinal"));
                 dieta.setAltura(rs.getDouble("altura"));
                 dieta.setGenero(rs.getString("genero"));
