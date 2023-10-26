@@ -45,6 +45,7 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
 
     public PanelGestionesComidas(String nombre){
         initComponents();
+        JOptionPane.showMessageDialog(this, nombre);
         if(nombre.isEmpty()){
             
         }else{

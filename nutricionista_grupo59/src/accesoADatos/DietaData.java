@@ -56,15 +56,16 @@ public class DietaData {
     
     public void eliminarDieta(int id, boolean e){
         String sql="UPDATE dieta SET estado = ? WHERE idDieta = ?";
+        JOptionPane.showMessageDialog(null, id + " " + e);
         
         try {
             PreparedStatement ps=con.prepareStatement(sql);
             ps.setBoolean(1, e);
             ps.setInt (2,id);
             int exito= ps.executeUpdate();
-            if(exito==1){
-                JOptionPane.showMessageDialog(null, "Estado actualizado");
-            }
+//            if(exito==1){
+//                JOptionPane.showMessageDialog(null, "Estado actualizado");
+//            }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a eliminarDieta");
         }

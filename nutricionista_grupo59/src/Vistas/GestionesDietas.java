@@ -371,6 +371,7 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
             JOptionPane.showMessageDialog(this, "Para guardar un genero, se debe ingresar Masculino o Femenino ");
             return;
         }
+        
             
         try {
             java.util.Date fechaIni = jdFechaInicial.getDate();
@@ -382,7 +383,11 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
                 
                 if (dieta == null) {
                     if(jtId.getText().isEmpty()){
-                    }else JOptionPane.showMessageDialog(this,"no es necesario ingresar el id de dieta para guardar");
+                    }else {
+                        JOptionPane.showMessageDialog(this,"no es necesario ingresar el id de dieta para guardar");
+                        jtId.setText("");
+                    }
+                    
                     dieta = new Dieta();
                  
                     dieta.setNombre(jtNombre.getText());
@@ -402,7 +407,12 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
                     dieta.setEstado(jrEstado.isSelected());
                     dd.guardarDieta(dieta);
                 } else {
-                    
+                    if(dieta.isEstado()!=jrEstado.isSelected()){
+                        JOptionPane.showMessageDialog(this,"El estado no se puede modificar");
+                        if(jrEstado.isSelected()){
+                            jrEstado.setSelected(false);
+                        }else jrEstado.setSelected(true);
+                    }
                     dieta.setNombre(jtNombre.getText());
                    // paci.setIdPaciente(Integer.parseInteger(jtPaciente.getText()));
                     dieta.setPaciente(paci);
@@ -428,7 +438,7 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
     }//GEN-LAST:event_jbGuardarActionPerformed
 
     private void jbEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEliminarActionPerformed
-        if (jtNombre.getText().isEmpty()) {//seria id y nombre???
+        if (jtNombre.getText().isEmpty() || jtPaciente.getText().isEmpty() || jdFechaInicial.getDate() == null || jtPesoInicial.getText().isEmpty()|| jtPesoBuscado.getText().isEmpty() ||jdFechaFinal.getDate() == null || jtPesoFinal.getText().isEmpty()|| jtAltura.getText().isEmpty()||jtGenero.getText().isEmpty()) {//seria id y nombre???
             JOptionPane.showMessageDialog(this, "no puede haber campos vacios");
             return;
         }
@@ -444,12 +454,21 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
                 JOptionPane.showMessageDialog(this, "No existe dieta");
                 return;
             }
-            if(b!=jrEstado.isSelected()){
-                ad.eliminarDieta(dieta.getIdDieta(), jrEstado.isSelected());
-                if(dieta.isEstado()){
-                    JOptionPane.showMessageDialog(this, "Se dio de Baja a la dieta");
-                }else JOptionPane.showMessageDialog(this, "Se dio de Alta a la dieta");
+            if(jrEstado.isSelected()){
+                ad.eliminarDieta(dieta.getIdDieta(), false);
+                JOptionPane.showMessageDialog(this, "Se dio de Baja a la dieta");
+                jrEstado.setSelected(false);
+            }else{
+                ad.eliminarDieta(dieta.getIdDieta(), true);
+                JOptionPane.showMessageDialog(this, "Se dio de Alta a la dieta");
+                jrEstado.setSelected(true);
             }
+//            if(b!=jrEstado.isSelected()){
+//                ad.eliminarDieta(dieta.getIdDieta(), jrEstado.isSelected());
+//                if(dieta.isEstado()){
+//                    JOptionPane.showMessageDialog(this, "Se dio de Baja a la dieta");
+//                }else JOptionPane.showMessageDialog(this, "Se dio de Alta a la dieta");
+//            }
         } catch (NumberFormatException nfe) {
             JOptionPane.showMessageDialog(this, "Debe ingresar un numero valido");
         }
