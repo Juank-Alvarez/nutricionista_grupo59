@@ -41,13 +41,13 @@ public class VistaPrincipalMenu extends javax.swing.JFrame {
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jbIngresar.setFont(new java.awt.Font("Bodoni MT", 1, 12)); // NOI18N
         jbIngresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/flecha entrar.png"))); // NOI18N
         jbIngresar.setText("Ingresar");
         jbIngresar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jbIngresar.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
-        jbIngresar.setOpaque(false);
         jbIngresar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/Flecha entrar mas grand.png"))); // NOI18N
         jbIngresar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/Flecha entrar mas grande todavia.png"))); // NOI18N
         jbIngresar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);

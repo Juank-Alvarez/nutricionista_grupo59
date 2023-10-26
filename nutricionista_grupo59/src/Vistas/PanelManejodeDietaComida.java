@@ -92,7 +92,7 @@ public class PanelManejodeDietaComida extends javax.swing.JPanel {
             }
         });
         contenido.add(jcbDietas);
-        jcbDietas.setBounds(440, 110, 143, 22);
+        jcbDietas.setBounds(410, 110, 190, 22);
 
         jLabel3.setFont(new java.awt.Font("Bodoni MT", 1, 16)); // NOI18N
         jLabel3.setText("Listado de Comidas");

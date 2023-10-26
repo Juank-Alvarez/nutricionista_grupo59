@@ -45,6 +45,7 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
         jlFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setPreferredSize(new java.awt.Dimension(1000, 650));
         jPanel1.setLayout(null);
