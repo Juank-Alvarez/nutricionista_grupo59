@@ -266,7 +266,7 @@ public class SegundaVistaPrincipalMenu extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-        Nuestro_equipo p1 = new Nuestro_equipo();
+        PanelNuestroEquipo p1 = new PanelNuestroEquipo();
         ShowPanel(p1);
     }//GEN-LAST:event_jButton1ActionPerformed
 

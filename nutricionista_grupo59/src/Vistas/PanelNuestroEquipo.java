@@ -11,12 +11,12 @@ import javax.swing.JPanel;
  *
  * @author Juan
  */
-public class Nuestro_equipo extends javax.swing.JPanel {
+public class PanelNuestroEquipo extends javax.swing.JPanel {
 
     /**
-     * Creates new form Nuestro_equipo
+     * Creates new form PanelNuestroEquipo
      */
-    public Nuestro_equipo() {
+    public PanelNuestroEquipo() {
         initComponents();
     }
 
@@ -29,25 +29,18 @@ public class Nuestro_equipo extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Correo1 = new javax.swing.JLabel();
-        Correo3 = new javax.swing.JLabel();
-        jbVolver = new javax.swing.JButton();
-        Correo4 = new javax.swing.JLabel();
-        Correo2 = new javax.swing.JLabel();
-        Fondo = new javax.swing.JLabel();
         Contenido = new javax.swing.JPanel();
+        jbVolver = new javax.swing.JButton();
+        Correo_1 = new javax.swing.JLabel();
+        Correo_2 = new javax.swing.JLabel();
+        Correo_3 = new javax.swing.JLabel();
+        Correo_4 = new javax.swing.JLabel();
+        Fondo = new javax.swing.JLabel();
+        Fondo1 = new javax.swing.JLabel();
 
         setLayout(null);
 
-        Correo1.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
-        Correo1.setText("(fasegyra@gmail.com)");
-        add(Correo1);
-        Correo1.setBounds(210, 410, 230, 30);
-
-        Correo3.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
-        Correo3.setText("(juank.Alvarez004@gmail.com)");
-        add(Correo3);
-        Correo3.setBounds(270, 500, 300, 30);
+        Contenido.setLayout(null);
 
         jbVolver.setBackground(java.awt.SystemColor.activeCaption);
         jbVolver.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
@@ -58,30 +51,43 @@ public class Nuestro_equipo extends javax.swing.JPanel {
                 jbVolverActionPerformed(evt);
             }
         });
-        add(jbVolver);
+        Contenido.add(jbVolver);
         jbVolver.setBounds(590, 540, 110, 40);
 
-        Correo4.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
-        Correo4.setText("(eglezalazar@gmail.com)");
-        add(Correo4);
-        Correo4.setBounds(200, 450, 270, 20);
+        Correo_1.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
+        Correo_1.setText("(fasegyra@gmail.com)");
+        Contenido.add(Correo_1);
+        Correo_1.setBounds(220, 420, 220, 20);
 
-        Correo2.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
-        Correo2.setText("(gustavo_02_16@hotmail.com)");
-        add(Correo2);
-        Correo2.setBounds(220, 470, 350, 30);
+        Correo_2.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
+        Correo_2.setText("(eglezalazar@gmail.com)");
+        Contenido.add(Correo_2);
+        Correo_2.setBounds(210, 450, 240, 20);
+
+        Correo_3.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
+        Correo_3.setText("(gustavo_02_16@hotmail.com)");
+        Contenido.add(Correo_3);
+        Correo_3.setBounds(220, 475, 310, 23);
+
+        Correo_4.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
+        Correo_4.setText("(juank.Alvarez004@gmail.com)");
+        Contenido.add(Correo_4);
+        Correo_4.setBounds(270, 500, 300, 20);
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/pineapple-867245_1280.jpg"))); // NOI18N
-        add(Fondo);
+        Contenido.add(Fondo);
         Fondo.setBounds(0, 0, 1010, 850);
 
-        Contenido.setLayout(null);
+        Fondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/pineapple-867245_1280.jpg"))); // NOI18N
+        Contenido.add(Fondo1);
+        Fondo1.setBounds(0, 0, 1010, 850);
+
         add(Contenido);
-        Contenido.setBounds(0, 0, 1000, 660);
+        Contenido.setBounds(0, 0, 1010, 850);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVolverActionPerformed
-    
+
         PanelPorDefecto bpm = new PanelPorDefecto();
         ShowPanel(bpm);
     }//GEN-LAST:event_jbVolverActionPerformed
@@ -89,11 +95,12 @@ public class Nuestro_equipo extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Contenido;
-    private javax.swing.JLabel Correo1;
-    private javax.swing.JLabel Correo2;
-    private javax.swing.JLabel Correo3;
-    private javax.swing.JLabel Correo4;
+    private javax.swing.JLabel Correo_1;
+    private javax.swing.JLabel Correo_2;
+    private javax.swing.JLabel Correo_3;
+    private javax.swing.JLabel Correo_4;
     private javax.swing.JLabel Fondo;
+    private javax.swing.JLabel Fondo1;
     private javax.swing.JButton jbVolver;
     // End of variables declaration//GEN-END:variables
 
@@ -107,6 +114,9 @@ private void ShowPanel(JPanel panel) {
         Contenido.revalidate();
         Contenido.repaint();
     }
+
+
+
 
 
 }
