@@ -45,11 +45,17 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
 
     public PanelGestionesComidas(String nombre){
         initComponents();
-        JOptionPane.showMessageDialog(this, nombre);
+        armarCabecera();
+        ComidaData cd=new ComidaData();
+        ArrayList<Comida> lista= new ArrayList<>();
+        lista=(ArrayList<Comida>) cd.listarComida();
+        for(Comida m: lista){
+            modelo.addRow(new Object[]{m.getIdComida(), m.getNombre(), m.getCantCalorias()});
+        }
+//        JOptionPane.showMessageDialog(this, nombre);
         if(nombre.isEmpty()){
             
         }else{
-            ComidaData cd=new ComidaData();
             Comida comi=new Comida();
             comi=cd.buscarNombreComida(nombre);
             jtNombreComida.setText(nombre);
