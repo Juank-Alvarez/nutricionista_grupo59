@@ -35,7 +35,7 @@ public class DietaComidaData {
                 if (rs.next()) {
 
                     diet.setIdDietaComida(rs.getInt(1));
-                    JOptionPane.showMessageDialog(null, "Dieta Registrada");
+                    JOptionPane.showMessageDialog(null, "Comida agregada");
                 }
                 ps.close();
             }
@@ -58,7 +58,7 @@ public class DietaComidaData {
             int filas = ps.executeUpdate();
             if (filas > 0) {
 
-                JOptionPane.showMessageDialog(null, "Dieta Borrada ");
+                JOptionPane.showMessageDialog(null, "Se elimino la comida ");
             }
 
             ps.close();

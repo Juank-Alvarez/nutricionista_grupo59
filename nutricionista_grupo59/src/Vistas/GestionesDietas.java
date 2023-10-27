@@ -115,7 +115,7 @@ public class GestionesDietas extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jbEliminar);
-        jbEliminar.setBounds(270, 360, 100, 30);
+        jbEliminar.setBounds(270, 360, 110, 30);
 
         jlDieta.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
         jlDieta.setText("Gestion Dietas");
@@ -151,7 +151,7 @@ public class GestionesDietas extends javax.swing.JPanel {
         jLabel6.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jLabel6.setText("Genero");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(10, 240, 54, 23);
+        jLabel6.setBounds(10, 250, 54, 23);
 
         jtPaciente.setBackground(new java.awt.Color(255, 204, 153));
         jtPaciente.setPreferredSize(new java.awt.Dimension(10, 25));
@@ -175,7 +175,7 @@ public class GestionesDietas extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jtPesoInicial);
-        jtPesoInicial.setBounds(430, 140, 100, 30);
+        jtPesoInicial.setBounds(430, 150, 100, 30);
 
         jtPesoFinal.setBackground(new java.awt.Color(255, 204, 153));
         jtPesoFinal.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -184,11 +184,11 @@ public class GestionesDietas extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jtPesoFinal);
-        jtPesoFinal.setBounds(430, 190, 100, 30);
+        jtPesoFinal.setBounds(430, 200, 100, 30);
 
         jtGenero.setBackground(new java.awt.Color(255, 204, 153));
         jPanel1.add(jtGenero);
-        jtGenero.setBounds(170, 240, 90, 30);
+        jtGenero.setBounds(170, 250, 90, 30);
 
         jLabel1.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jLabel1.setText("Altura");
@@ -198,7 +198,7 @@ public class GestionesDietas extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jLabel2.setText("FechaFinal");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(10, 190, 86, 23);
+        jLabel2.setBounds(10, 200, 86, 23);
 
         jtAltura.setBackground(new java.awt.Color(255, 204, 153));
         jtAltura.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -207,7 +207,7 @@ public class GestionesDietas extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jtAltura);
-        jtAltura.setBounds(430, 240, 100, 30);
+        jtAltura.setBounds(430, 250, 100, 30);
 
         jbBuscar.setBackground(java.awt.SystemColor.activeCaption);
         jbBuscar.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
@@ -223,7 +223,7 @@ public class GestionesDietas extends javax.swing.JPanel {
 
         jdFechaFinal.setBackground(new java.awt.Color(255, 204, 153));
         jPanel1.add(jdFechaFinal);
-        jdFechaFinal.setBounds(122, 190, 150, 22);
+        jdFechaFinal.setBounds(122, 200, 150, 22);
 
         jdFechaInicial.setBackground(new java.awt.Color(255, 204, 153));
         jPanel1.add(jdFechaInicial);
@@ -232,7 +232,7 @@ public class GestionesDietas extends javax.swing.JPanel {
         jlEstado.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jlEstado.setText("Estado");
         jPanel1.add(jlEstado);
-        jlEstado.setBounds(10, 290, 70, 23);
+        jlEstado.setBounds(10, 300, 70, 23);
 
         jrEstado.setBackground(new java.awt.Color(255, 204, 153));
         jrEstado.addActionListener(new java.awt.event.ActionListener() {
@@ -241,7 +241,7 @@ public class GestionesDietas extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jrEstado);
-        jrEstado.setBounds(170, 290, 19, 20);
+        jrEstado.setBounds(170, 300, 19, 20);
 
         jtNombre.setBackground(new java.awt.Color(255, 204, 153));
         jtNombre.setPreferredSize(new java.awt.Dimension(10, 25));
@@ -270,7 +270,7 @@ public class GestionesDietas extends javax.swing.JPanel {
         jLabel8.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jLabel8.setText("Peso Buscado");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(300, 290, 110, 23);
+        jLabel8.setBounds(300, 300, 110, 23);
 
         jtPesoBuscado.setBackground(new java.awt.Color(255, 204, 153));
         jtPesoBuscado.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -279,7 +279,7 @@ public class GestionesDietas extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jtPesoBuscado);
-        jtPesoBuscado.setBounds(430, 280, 100, 30);
+        jtPesoBuscado.setBounds(430, 300, 100, 30);
 
         jbSalir.setBackground(java.awt.SystemColor.activeCaption);
         jbSalir.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N

@@ -106,7 +106,7 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
             }
         });
         contenido.add(jbAgregar);
-        jbAgregar.setBounds(15, 360, 121, 25);
+        jbAgregar.setBounds(15, 360, 120, 25);
 
         jbLimpiarCampos.setBackground(java.awt.SystemColor.activeCaption);
         jbLimpiarCampos.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
@@ -132,7 +132,7 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
             }
         });
         contenido.add(jbModificar);
-        jbModificar.setBounds(15, 320, 121, 25);
+        jbModificar.setBounds(15, 320, 120, 25);
 
         jbBuscar.setBackground(java.awt.SystemColor.activeCaption);
         jbBuscar.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
@@ -145,7 +145,7 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
             }
         });
         contenido.add(jbBuscar);
-        jbBuscar.setBounds(15, 280, 121, 25);
+        jbBuscar.setBounds(15, 280, 120, 25);
 
         jbVolver.setBackground(java.awt.SystemColor.activeCaption);
         jbVolver.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
@@ -197,7 +197,7 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
         jtDetalle.setBackground(new java.awt.Color(255, 204, 153));
         jtDetalle.setPreferredSize(new java.awt.Dimension(10, 30));
         contenido.add(jtDetalle);
-        jtDetalle.setBounds(190, 110, 224, 30);
+        jtDetalle.setBounds(190, 116, 224, 30);
 
         jtCantCalorias.setBackground(new java.awt.Color(255, 204, 153));
         jtCantCalorias.setPreferredSize(new java.awt.Dimension(10, 30));
@@ -207,7 +207,7 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
             }
         });
         contenido.add(jtCantCalorias);
-        jtCantCalorias.setBounds(190, 160, 224, 30);
+        jtCantCalorias.setBounds(190, 162, 224, 30);
 
         jtComidas.setBackground(new java.awt.Color(255, 204, 153));
         jtComidas.setBorder(javax.swing.BorderFactory.createCompoundBorder(null, new javax.swing.border.MatteBorder(null)));
@@ -238,7 +238,7 @@ public class PanelGestionesComidas extends javax.swing.JPanel {
             }
         });
         contenido.add(jbSeleccionar);
-        jbSeleccionar.setBounds(500, 290, 109, 25);
+        jbSeleccionar.setBounds(500, 290, 120, 25);
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/breakfast-5132879_1920.jpg"))); // NOI18N
         contenido.add(Fondo);

@@ -98,7 +98,7 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jLabel3.setText("Apellido");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(20, 100, 100, 23);
+        jLabel3.setBounds(20, 101, 100, 23);
 
         jtApellido.setBackground(new java.awt.Color(255, 204, 153));
         jtApellido.setPreferredSize(new java.awt.Dimension(10, 30));
@@ -108,12 +108,12 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jtApellido);
-        jtApellido.setBounds(200, 100, 197, 30);
+        jtApellido.setBounds(200, 101, 197, 30);
 
         jLabel4.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jLabel4.setText("Dni");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(20, 150, 100, 23);
+        jLabel4.setBounds(20, 142, 100, 23);
 
         jtDni.setBackground(new java.awt.Color(255, 204, 153));
         jtDni.setPreferredSize(new java.awt.Dimension(10, 30));
@@ -128,22 +128,22 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jtDni);
-        jtDni.setBounds(200, 150, 197, 30);
+        jtDni.setBounds(200, 142, 197, 30);
 
         jLabel5.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jLabel5.setText("Domicilio");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(20, 190, 100, 23);
+        jLabel5.setBounds(20, 183, 100, 23);
 
         jtDomicilio.setBackground(new java.awt.Color(255, 204, 153));
         jtDomicilio.setPreferredSize(new java.awt.Dimension(10, 30));
         jPanel1.add(jtDomicilio);
-        jtDomicilio.setBounds(200, 190, 197, 30);
+        jtDomicilio.setBounds(200, 183, 197, 30);
 
         jLabel6.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jLabel6.setText("Telefono");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(20, 240, 100, 23);
+        jLabel6.setBounds(20, 224, 100, 23);
 
         jtTelefono.setBackground(new java.awt.Color(255, 204, 153));
         jtTelefono.setPreferredSize(new java.awt.Dimension(10, 30));
@@ -153,7 +153,7 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jtTelefono);
-        jtTelefono.setBounds(200, 240, 197, 30);
+        jtTelefono.setBounds(200, 224, 197, 30);
 
         jbLimpiar.setBackground(java.awt.SystemColor.activeCaption);
         jbLimpiar.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
@@ -181,7 +181,7 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jbGuardar);
-        jbGuardar.setBounds(610, 60, 100, 40);
+        jbGuardar.setBounds(610, 50, 100, 40);
 
         jbVolver.setBackground(java.awt.SystemColor.activeCaption);
         jbVolver.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
@@ -193,7 +193,7 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jbVolver);
-        jbVolver.setBounds(610, 260, 99, 21);
+        jbVolver.setBounds(610, 260, 100, 21);
 
         jbBuscar.setBackground(java.awt.SystemColor.activeCaption);
         jbBuscar.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
@@ -205,7 +205,7 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jbBuscar);
-        jbBuscar.setBounds(610, 130, 99, 21);
+        jbBuscar.setBounds(610, 120, 100, 21);
 
         jrEstado.setBackground(new java.awt.Color(255, 204, 153));
         jrEstado.addActionListener(new java.awt.event.ActionListener() {
@@ -231,7 +231,7 @@ public class PanelGestionesPaciente extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jbModificar);
-        jbModificar.setBounds(610, 190, 99, 21);
+        jbModificar.setBounds(610, 190, 100, 21);
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/bell-pepper-2179100_1280.jpg"))); // NOI18N
         jPanel1.add(Fondo);

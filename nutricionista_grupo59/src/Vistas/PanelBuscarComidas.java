@@ -88,7 +88,7 @@ public class PanelBuscarComidas extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jtComidas);
 
         contenido.add(jScrollPane1);
-        jScrollPane1.setBounds(96, 93, 454, 314);
+        jScrollPane1.setBounds(96, 93, 452, 314);
 
         jbBuscar.setBackground(java.awt.SystemColor.activeCaption);
         jbBuscar.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N

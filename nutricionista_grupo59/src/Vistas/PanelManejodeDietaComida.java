@@ -97,7 +97,7 @@ public class PanelManejodeDietaComida extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Bodoni MT", 1, 16)); // NOI18N
         jLabel3.setText("Listado de Comidas");
         contenido.add(jLabel3);
-        jLabel3.setBounds(280, 150, 140, 20);
+        jLabel3.setBounds(300, 150, 140, 20);
 
         jtComidas.setBackground(new java.awt.Color(255, 204, 153));
         jtComidas.setModel(new javax.swing.table.DefaultTableModel(
@@ -126,7 +126,7 @@ public class PanelManejodeDietaComida extends javax.swing.JPanel {
             }
         });
         contenido.add(jbAgregar);
-        jbAgregar.setBounds(150, 390, 140, 30);
+        jbAgregar.setBounds(150, 390, 150, 30);
 
         jbQuitar.setBackground(java.awt.SystemColor.activeCaption);
         jbQuitar.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
@@ -250,7 +250,7 @@ public class PanelManejodeDietaComida extends javax.swing.JPanel {
             iddieta = diet.getIdDieta();
             dietcomi = dcd.buscarDietaComida(iddieta, idcomida);
             if (dietcomi == null) {
-                JOptionPane.showMessageDialog(this, "Comida no agregada");
+                JOptionPane.showMessageDialog(this, "Para quitar una comida debe estar agregada");
             } else {
                 dcd.borrarDietaComida(idcomida, iddieta);
                 borrarFilasTabla();
