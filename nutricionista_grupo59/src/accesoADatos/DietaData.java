@@ -72,8 +72,7 @@ public class DietaData {
     }
     
     public Dieta buscarDieta(int id){
-        String sql="SELECT idDieta,dieta.nombre, dieta.idpaciente, fechaInicial, pesoInicial,pesoBuscado,fechaFinal, pesoFinal,altura, genero, dieta.estado "
-                + "FROM dieta, paciente WHERE idDieta = ? ";
+        String sql="SELECT * FROM dieta, paciente WHERE idDieta = ? ";
         Dieta dieta= null;
         Paciente paciente=null;
         
@@ -84,20 +83,21 @@ public class DietaData {
             if(rs.next()){
                 dieta=new Dieta();
                 paciente=new Paciente();
-                dieta.setIdDieta(rs.getInt(id));
+                dieta.setIdDieta(id);
                 dieta.setNombre(rs.getString("dieta.nombre"));
+                
                 paciente.setIdPaciente(rs.getInt("dieta.idpaciente"));
                 dieta.setPaciente(paciente);
                 dieta.setFechaInicial(rs.getDate("fechaInicial").toLocalDate());
                 dieta.setPesoInicial(rs.getDouble("pesoInicial"));
                 dieta.setPesoBuscado(rs.getDouble("pesoBuscado"));
                 dieta.setFechaFinal(rs.getDate("fechaFinal").toLocalDate());
+                
                 dieta.setPesoFinal(rs.getDouble("pesoFinal"));
                 dieta.setGenero(rs.getString("genero"));
                 dieta.setAltura(rs.getDouble("altura"));
                 dieta.setEstado(rs.getBoolean("estado"));
             }
-            rs.close();
             ps.close();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "No se pudo acceder a buscarDieta"+ex);

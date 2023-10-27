@@ -414,7 +414,7 @@ public class GestionesDietas extends javax.swing.JPanel {
                 dieta.setEstado(jrEstado.isSelected());
                 for (Dieta d : lista) {
                     if (d.getNombre().equals(dieta.getNombre()) ) {
-                        JOptionPane.showMessageDialog(this, "La dieta ya existe, para modificar ingresar la id");
+                        JOptionPane.showMessageDialog(this, "La dieta ya existe, para modificar ingresar el id");
                         return;
                     } else {
                         dd.guardarDieta(dieta);
@@ -432,7 +432,7 @@ public class GestionesDietas extends javax.swing.JPanel {
                     }
                 }
                 dieta.setNombre(jtNombre.getText());
-                // paci.setIdPaciente(Integer.parseInteger(jtPaciente.getText()));
+                paci.setIdPaciente(Integer.parseInt(jtPaciente.getText()));
                 dieta.setPaciente(paci);
                 dieta.setFechaInicial(fechaInicial);
                 dieta.setPesoInicial(Double.parseDouble(jtPesoInicial.getText()));
