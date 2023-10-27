@@ -8,6 +8,7 @@ import accesoADatos.DietaData;
 import accesoADatos.PacienteData;
 import entidades.Dieta;
 import entidades.Paciente;
+import java.awt.BorderLayout;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,6 +18,7 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -239,7 +241,7 @@ public class GestionesDietas extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jrEstado);
-        jrEstado.setBounds(170, 290, 19, 19);
+        jrEstado.setBounds(170, 290, 19, 20);
 
         jtNombre.setBackground(new java.awt.Color(255, 204, 153));
         jtNombre.setPreferredSize(new java.awt.Dimension(10, 25));
@@ -281,8 +283,13 @@ public class GestionesDietas extends javax.swing.JPanel {
 
         jbSalir.setBackground(java.awt.SystemColor.activeCaption);
         jbSalir.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        jbSalir.setText("Salir");
+        jbSalir.setText("Volver");
         jbSalir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSalirActionPerformed(evt);
+            }
+        });
         jPanel1.add(jbSalir);
         jbSalir.setBounds(10, 420, 110, 25);
 
@@ -294,11 +301,7 @@ public class GestionesDietas extends javax.swing.JPanel {
         add(jPanel1);
         jPanel1.setBounds(0, 0, 1000, 680);
     }// </editor-fold>//GEN-END:initComponents
-private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {                                        
-         
-            dispose();
-        
-    }
+
     private void jbNuevaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNuevaActionPerformed
         
         jtId.setText("");
@@ -532,6 +535,11 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
         
     }//GEN-LAST:event_jrEstadoActionPerformed
 
+    private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
+        PanelPorDefecto bpm = new PanelPorDefecto();
+        ShowPanel(bpm);
+    }//GEN-LAST:event_jbSalirActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -581,5 +589,15 @@ private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {
         }
     }
 
+    private void ShowPanel(JPanel panel) {
+
+        panel.setSize(1000, 680);
+        panel.setLocation(0, 0);
+
+        jPanel1.removeAll();
+        jPanel1.add(panel, BorderLayout.CENTER);
+        jPanel1.revalidate();
+        jPanel1.repaint();
+    }
 }
 
